@@ -1,12 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-// import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
 import ButtonLink from '../src/components/buttonLink';
-import { useEffect, useState } from 'react';
-
-
-// const inter = Inter({ subsets: ['latin'] })
+import { useEffect, useState, useRef } from 'react';
 
 export default function Home() {
   return (
@@ -19,7 +14,7 @@ export default function Home() {
         <header className='flex flex-col w-full pb-32 items-center md:flex-row'>
           <h1 className='flex flex-col items-center mb-16 md:mb-0 md:items-start'>
             <span className='mb-8 md:mb-0 text-24 md:text-18 font-semibold'>Milan Gladiš</span>
-            <span className='text-14 md:text-12 -mt-4 font-medium opacity-50'>full-stack product designer</span>
+            <span className='text-14 md:text-12 -mt-4 font-medium opacity-50'>Product · Design · Code</span>
           </h1>
           <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-center md:justify-end gap-32 list-none align-middle flex-wrap '>
             {/* <li>
@@ -29,14 +24,14 @@ export default function Home() {
               <a href="/blog">Résumé</a>
             </li> */}
             <div className="flex justify-center gap-8">
-              <a className='p-0' href="https://twitter.com/milangladis" target="_blank" rel="noreferrer">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5300)"><path d="M35.954 16.569C35.069 16.958 34.124 17.223 33.129 17.344C34.143 16.733 34.923 15.77 35.292 14.621C34.341 15.176 33.287 15.58 32.165 15.805C31.269 14.846 29.992 14.246 28.574 14.246C25.857 14.246 23.654 16.449 23.654 19.163C23.654 19.553 23.699 19.928 23.781 20.287C19.691 20.094 16.066 18.13 13.64 15.161C13.213 15.883 12.974 16.722 12.974 17.636C12.974 19.346 13.844 20.849 15.162 21.732C14.355 21.706 13.596 21.484 12.934 21.116V21.177C12.934 23.562 14.627 25.551 16.88 26.004C16.467 26.115 16.031 26.175 15.584 26.175C15.27 26.175 14.969 26.145 14.668 26.089C15.299 28.042 17.113 29.466 19.272 29.506C17.592 30.825 15.463 31.611 13.17 31.611C12.78 31.611 12.391 31.588 12 31.544C14.189 32.938 16.768 33.753 19.557 33.753C28.611 33.753 33.556 26.257 33.556 19.767C33.556 19.558 33.556 19.347 33.541 19.137C34.502 18.448 35.341 17.577 36.001 16.589L35.954 16.569Z" fill="black"/></g><defs><clipPath id="clip0_201_5300"><rect width="24" height="24" fill="white" transform="translate(12 12)"/></clipPath></defs></svg>
+              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://blog.milangladis.com" target="_blank" rel="noreferrer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_545_6425)"><path d="M1.44408 1.03513L14.724 0.0542516C16.3553 -0.0856684 16.7743 0.00865156 17.8001 0.754332L22.0392 3.74065C22.7383 4.25425 22.9711 4.39417 22.9711 4.95337V21.3317C22.9711 22.3582 22.5984 22.9654 21.2935 23.058L5.87208 23.9921C4.89288 24.0384 4.42656 23.8985 3.91368 23.245L0.792 19.1856C0.23208 18.4385 0 17.8793 0 17.2255V2.66713C0 1.82785 0.37272 1.12801 1.44408 1.03513Z" fill="white"/><path fillRule="evenodd" clipRule="evenodd" d="M14.724 0.0544916L1.44408 1.03537C0.37272 1.12801 0 1.82809 0 2.66713V17.2255C0 17.8791 0.23208 18.4383 0.792 19.1856L3.91368 23.2447C4.42656 23.8983 4.89288 24.0384 5.87208 23.9919L21.2938 23.0583C22.5977 22.9654 22.9714 22.3582 22.9714 21.3319V4.95361C22.9714 4.42321 22.7618 4.27033 22.145 3.81769L17.8001 0.754332C16.7746 0.00865156 16.3553 -0.0856684 14.724 0.0542516V0.0544916ZM6.2208 4.68553C4.96152 4.77025 4.67592 4.78945 3.96072 4.20793L2.14248 2.76169C1.95768 2.57449 2.05056 2.34097 2.51616 2.29441L15.2825 1.36153C16.3546 1.26793 16.9128 1.64161 17.3321 1.96801L19.5216 3.55441C19.6152 3.60169 19.848 3.88081 19.5679 3.88081L6.384 4.67449L6.2208 4.68577V4.68553ZM4.75272 21.192V7.28809C4.75272 6.68089 4.9392 6.40081 5.49744 6.35377L20.64 5.46721C21.1536 5.42089 21.3857 5.74729 21.3857 6.35353V20.1648C21.3857 20.772 21.2921 21.2856 20.4538 21.3319L5.96328 22.1719C5.12496 22.2183 4.75296 21.9391 4.75296 21.192H4.75272ZM19.0567 8.03353C19.1496 8.45353 19.0567 8.87353 18.6367 8.92153L17.9383 9.06001V19.3255C17.3318 19.6519 16.7736 19.8384 16.307 19.8384C15.5614 19.8384 15.3751 19.6049 14.8166 18.9055L10.2494 11.7199V18.672L11.6942 18.9991C11.6942 18.9991 11.6942 19.8391 10.5286 19.8391L7.31496 20.0256C7.22136 19.8384 7.31496 19.3721 7.64064 19.2792L8.47992 19.0464V9.85441L7.3152 9.76009C7.2216 9.34009 7.4544 8.73361 8.1072 8.68657L11.5553 8.45449L16.3073 15.733V9.29377L15.096 9.15457C15.0024 8.64025 15.3751 8.26657 15.8407 8.22097L19.0567 8.03377V8.03353Z" fill="black"/></g><defs><clipPath id="clip0_545_6425"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
               </a>
-              <a className='p-0' href="https://www.linkedin.com/in/milangladis/" target="_blank" rel="noreferrer">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5303)"><path d="M32.447 32.452H28.893V26.883C28.893 25.555 28.866 23.846 27.041 23.846C25.188 23.846 24.905 25.291 24.905 26.785V32.452H21.351V21H24.765V22.561H24.811C25.288 21.661 26.448 20.711 28.181 20.711C31.782 20.711 32.448 23.081 32.448 26.166V32.452H32.447ZM17.337 19.433C16.193 19.433 15.274 18.507 15.274 17.368C15.274 16.23 16.194 15.305 17.337 15.305C18.477 15.305 19.401 16.23 19.401 17.368C19.401 18.507 18.476 19.433 17.337 19.433ZM19.119 32.452H15.555V21H19.119V32.452ZM34.225 12H13.771C12.792 12 12 12.774 12 13.729V34.271C12 35.227 12.792 36 13.771 36H34.222C35.2 36 36 35.227 36 34.271V13.729C36 12.774 35.2 12 34.222 12H34.225Z" fill="black"/></g><defs><clipPath id="clip0_201_5303"><rect width="24" height="24" fill="white" transform="translate(12 12)"/></clipPath></defs></svg>
+              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://www.linkedin.com/in/milangladis/" target="_blank" rel="noreferrer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_546_6429)"><path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z" fill="black"/></g><defs><clipPath id="clip0_546_6429"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
               </a>
-              <a className='p-0' href="https://blog.milangladis.com" target="_blank" rel="noreferrer">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5303)"><path d="M13.4441 13.0351L26.724 12.0543C28.3553 11.9143 28.7743 12.0087 29.8001 12.7543L34.0392 15.7407C34.7383 16.2543 34.9711 16.3942 34.9711 16.9534V33.3317C34.9711 34.3582 34.5984 34.9654 33.2935 35.058L17.8721 35.9921C16.8929 36.0384 16.4266 35.8985 15.9137 35.245L12.792 31.1856C12.2321 30.4385 12 29.8793 12 29.2255V14.6671C12 13.8279 12.3727 13.128 13.4441 13.0351Z" fill="white"/><path fillRule="evenodd" clipRule="evenodd" d="M26.724 12.0545L13.4441 13.0354C12.3727 13.128 12 13.8281 12 14.6671V29.2255C12 29.8791 12.2321 30.4383 12.792 31.1856L15.9137 35.2447C16.4266 35.8983 16.8929 36.0384 17.8721 35.9919L33.2938 35.0583C34.5977 34.9654 34.9714 34.3582 34.9714 33.3319V16.9536C34.9714 16.4232 34.7618 16.2703 34.145 15.8177L29.8001 12.7543C28.7746 12.0087 28.3553 11.9143 26.724 12.0543V12.0545ZM18.2208 16.6855C16.9615 16.7703 16.6759 16.7895 15.9607 16.2079L14.1425 14.7617C13.9577 14.5745 14.0506 14.341 14.5162 14.2944L27.2825 13.3615C28.3546 13.2679 28.9128 13.6416 29.3321 13.968L31.5216 15.5544C31.6152 15.6017 31.848 15.8808 31.5679 15.8808L18.384 16.6745L18.2208 16.6858V16.6855ZM16.7527 33.192V19.2881C16.7527 18.6809 16.9392 18.4008 17.4974 18.3538L32.64 17.4672C33.1536 17.4209 33.3857 17.7473 33.3857 18.3535V32.1648C33.3857 32.772 33.2921 33.2856 32.4538 33.3319L17.9633 34.1719C17.125 34.2183 16.753 33.9391 16.753 33.192H16.7527ZM31.0567 20.0335C31.1496 20.4535 31.0567 20.8735 30.6367 20.9215L29.9383 21.06V31.3255C29.3318 31.6519 28.7736 31.8384 28.307 31.8384C27.5614 31.8384 27.3751 31.6049 26.8166 30.9055L22.2494 23.7199V30.672L23.6942 30.9991C23.6942 30.9991 23.6942 31.8391 22.5286 31.8391L19.315 32.0256C19.2214 31.8384 19.315 31.3721 19.6406 31.2792L20.4799 31.0464V21.8544L19.3152 21.7601C19.2216 21.3401 19.4544 20.7336 20.1072 20.6866L23.5553 20.4545L28.3073 27.733V21.2938L27.096 21.1546C27.0024 20.6403 27.3751 20.2666 27.8407 20.221L31.0567 20.0338V20.0335Z" fill="black"/></g><defs><clipPath id="clip0_201_5303"><rect width="24" height="24" fill="white" transform="translate(12 12)"/></clipPath></defs></svg>
+              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://twitter.com/milangladis" target="_blank" rel="noreferrer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5301)"><path d="M23.954 4.569C23.069 4.958 22.124 5.223 21.129 5.344C22.143 4.733 22.923 3.77 23.292 2.621C22.341 3.176 21.287 3.58 20.165 3.805C19.269 2.846 17.992 2.246 16.574 2.246C13.857 2.246 11.654 4.449 11.654 7.163C11.654 7.553 11.699 7.928 11.781 8.287C7.691 8.094 4.066 6.13 1.64 3.161C1.213 3.883 0.974 4.722 0.974 5.636C0.974 7.346 1.844 8.849 3.162 9.732C2.355 9.706 1.596 9.484 0.934 9.116V9.177C0.934 11.562 2.627 13.551 4.88 14.004C4.467 14.115 4.031 14.175 3.584 14.175C3.27 14.175 2.969 14.145 2.668 14.089C3.299 16.042 5.113 17.466 7.272 17.506C5.592 18.825 3.463 19.611 1.17 19.611C0.78 19.611 0.391 19.588 0 19.544C2.189 20.938 4.768 21.753 7.557 21.753C16.611 21.753 21.556 14.257 21.556 7.767C21.556 7.558 21.556 7.347 21.541 7.137C22.502 6.448 23.341 5.577 24.001 4.589L23.954 4.569Z" fill="black"/></g><defs><clipPath id="clip0_201_5301"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
               </a>
             
             </div>
@@ -52,15 +47,12 @@ export default function Home() {
         </header>
 
         <div className="flex flex-1 items-center justify-center">
-          <div className="flex flex-col md:flex-row promo mb-64 gap-96 justify-center items-center">
+          <div className="flex flex-col md:flex-row promo mb-64 gap-64 lg:gap-96 justify-center items-center">
             <div className="relative max-w-[190px] md:max-w-[290px]">
-              {/* <RotationImage src="./images/MilanGladisProfile.png" className="block rounded-16" /> */}
-              <Image className="block rounded-16" src="/images/MilanGladisProfile.png" alt="Milan Gladis profile" width="290" height="407" />
-              <div className="absolute w-full aspect-[290/407] bg-grey rounded-16 top-16 -left-16 -z-10"></div>
+              <RotationImage src="/images/MilanGladisProfile.png" className="block rounded-16" />
             </div>
 
             <div className="flex flex-col justify-center">
-              
               <span className='block mb-16'>
                 <span className='relative text-32 md:text-48 font-bold'>
                   Hi 👋🏻 I’m Milan
@@ -71,10 +63,10 @@ export default function Home() {
                 </span>
               </span>
               <div className="text-24 mb-32 leading-16">
-                Product, Design and Tech person <br className='hidden sm:block' />
-                who builds web products for 3D,<br className='hidden sm:block' />
-                AR, AI, AdTech, blockchain, <br className='hidden sm:block' />
-                metaverse, and IoT.
+                Product, Design and Technology <br className='hidden sm:block' />
+                person who builds web products<br className='hidden sm:block' />
+                for 3D, AR, AI, AdTech, blockchain, <br className='hidden sm:block' />
+                and metaverse.
               </div>
               <div className=''>
                 <ButtonLink href="mailto:hello@milangladis.com" target="_blank" className="pl-24 text-16 text-white bg-black">
@@ -100,38 +92,91 @@ export default function Home() {
 
 
 
-function RotationImage({src}) {
-  const [rotation, setRotation] = useState({ x: 0, y: 0, z: 0 })
+function RotationImage({src, ...props}) {
+  const elementRef = useRef()
+
+  const [gazePosition, setGazePosition] = useState({x: 0, y:0, opacity: 0})
 
   useEffect(() => {
-    const handleMouseMove = event => {
-      const { clientX, clientY } = event
-      const x = (clientY / window.innerHeight) * 20
-      const y = (clientX / window.innerWidth) * 20
-      setRotation({ x, y, z: 0 })
-    }
+    if (elementRef.current) {
 
-    window.addEventListener('mousemove', handleMouseMove)
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
+      const tiltEffectSettings = {
+        max: 5,
+        perspective: 500,
+        scale: 1.05,
+        speed: 500,
+        easing: "cubic-bezier(.03,.98,.52,.99)"
+      };
       
+      elementRef.current.addEventListener("mouseenter", cardMouseEnter);
+      elementRef.current.addEventListener("mousemove", cardMouseMove);
+      elementRef.current.addEventListener("mouseleave", cardMouseLeave);
+      
+      function cardMouseEnter(event) {
+        setTransition();
+        setGazePosition({
+          opacity: 1
+        })
+      }
+      
+      function cardMouseMove(event) {
+        const cardRect = elementRef.current.getBoundingClientRect();
+        const cardWidth = elementRef.current.offsetWidth;
+        const cardHeight = elementRef.current.offsetHeight;
+        const centerX = cardRect.left + cardRect.width / 2;
+        const centerY = cardRect.top + cardRect.height / 2;
+        const mouseX = event.clientX - centerX;
+        const mouseY = event.clientY - centerY;
+        const rotateXUncapped = (+1)*(tiltEffectSettings.max*mouseY/(cardHeight/2));
+        const rotateYUncapped = (-1)*(tiltEffectSettings.max*mouseX/(cardWidth/2));
+        const rotateX = rotateXUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateXUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateXUncapped);
+        const rotateY = rotateYUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateYUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateYUncapped);
+      
+        setGazePosition({
+          x: event.clientX - cardRect.left - 48,
+          y: event.clientY - cardRect.top - 48
+        })
+        console.log(gazePosition)
+
+        elementRef.current.style.transform = `
+          perspective(${tiltEffectSettings.perspective}px) 
+          rotateX(${rotateX}deg) 
+          rotateY(${rotateY}deg) 
+          scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
+      }
+      
+      function cardMouseLeave(event) {
+        elementRef.current.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        setTransition();
+        setGazePosition({
+          opacity: 0
+        })
+      }
+      
+      function setTransition() {
+        clearTimeout(elementRef.current.transitionTimeoutId);
+        elementRef.current.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
+        elementRef.current.transitionTimeoutId = setTimeout(() => {
+          elementRef.current.style.transition = "";
+        }, tiltEffectSettings.speed);
+      }
+    }
+
+  }, [])
+
   return (
-    <>
+    <div className="cursor-none">
+      <div 
+        style={{ transform: `translate(${gazePosition.x}px, ${gazePosition.y}px)`, opacity: gazePosition.opacity }}
+        className="absolute block w-96 h-96 rounded-full z-50 bg-white blur-3xl pointer-events-none transition-opacity opacity-50"></div>
       <Image
+        ref={elementRef}
+        {...props} 
         src={src}
+        width="290" height="407"
         alt="Image"
-        // style={{
-        //   transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`,
-        // }}
       />
-      {/* <div className="absolute w-full aspect-[290/407] bg-grey rounded-16 top-16 -left-16 -z-10"
-        style={{
-          transform: `rotateX(${-rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`,
-        }}
-      ></div> */}
-    </>
+      <div className="absolute w-full aspect-[290/407] bg-grey rounded-16 top-16 -left-16 -z-10"></div>
+    </div>
   )
 }
