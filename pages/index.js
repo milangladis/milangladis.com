@@ -13,40 +13,42 @@ export default function Home() {
     <>
       <Head>
         <title>Milan Gladiš · Product · Design · Code</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       </Head>
       <main className="flex flex-col min-h-screen p-32">
         <header className='flex flex-col w-full pb-32 items-center md:flex-row'>
           <h1 className='flex flex-col items-center mb-16 md:mb-0 md:items-start'>
-            <span className='text-18 font-semibold'>Milan Gladiš</span>
-            <span className='text-12 -mt-4 font-medium opacity-50'>full-stack product designer</span>
+            <span className='mb-8 md:mb-0 text-24 md:text-18 font-semibold'>Milan Gladiš</span>
+            <span className='text-14 md:text-12 -mt-4 font-medium opacity-50'>full-stack product designer</span>
           </h1>
-          <nav className='flex-1 justify-center md:justify-end flex gap-16 list-none align-middle flex-wrap '>
+          <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-center md:justify-end gap-32 list-none align-middle flex-wrap '>
             {/* <li>
               <a href="/blog">Blog</a>
             </li> */}
             {/* <li>
               <a href="/blog">Résumé</a>
             </li> */}
-            <li>
+            <div className="flex justify-center gap-8">
               <a className='p-0' href="https://twitter.com/milangladis" target="_blank" rel="noreferrer">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5300)"><path d="M35.954 16.569C35.069 16.958 34.124 17.223 33.129 17.344C34.143 16.733 34.923 15.77 35.292 14.621C34.341 15.176 33.287 15.58 32.165 15.805C31.269 14.846 29.992 14.246 28.574 14.246C25.857 14.246 23.654 16.449 23.654 19.163C23.654 19.553 23.699 19.928 23.781 20.287C19.691 20.094 16.066 18.13 13.64 15.161C13.213 15.883 12.974 16.722 12.974 17.636C12.974 19.346 13.844 20.849 15.162 21.732C14.355 21.706 13.596 21.484 12.934 21.116V21.177C12.934 23.562 14.627 25.551 16.88 26.004C16.467 26.115 16.031 26.175 15.584 26.175C15.27 26.175 14.969 26.145 14.668 26.089C15.299 28.042 17.113 29.466 19.272 29.506C17.592 30.825 15.463 31.611 13.17 31.611C12.78 31.611 12.391 31.588 12 31.544C14.189 32.938 16.768 33.753 19.557 33.753C28.611 33.753 33.556 26.257 33.556 19.767C33.556 19.558 33.556 19.347 33.541 19.137C34.502 18.448 35.341 17.577 36.001 16.589L35.954 16.569Z" fill="black"/></g><defs><clipPath id="clip0_201_5300"><rect width="24" height="24" fill="white" transform="translate(12 12)"/></clipPath></defs></svg>
               </a>
-            </li>
-            <li>
               <a className='p-0' href="https://www.linkedin.com/in/milangladis/" target="_blank" rel="noreferrer">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5303)"><path d="M32.447 32.452H28.893V26.883C28.893 25.555 28.866 23.846 27.041 23.846C25.188 23.846 24.905 25.291 24.905 26.785V32.452H21.351V21H24.765V22.561H24.811C25.288 21.661 26.448 20.711 28.181 20.711C31.782 20.711 32.448 23.081 32.448 26.166V32.452H32.447ZM17.337 19.433C16.193 19.433 15.274 18.507 15.274 17.368C15.274 16.23 16.194 15.305 17.337 15.305C18.477 15.305 19.401 16.23 19.401 17.368C19.401 18.507 18.476 19.433 17.337 19.433ZM19.119 32.452H15.555V21H19.119V32.452ZM34.225 12H13.771C12.792 12 12 12.774 12 13.729V34.271C12 35.227 12.792 36 13.771 36H34.222C35.2 36 36 35.227 36 34.271V13.729C36 12.774 35.2 12 34.222 12H34.225Z" fill="black"/></g><defs><clipPath id="clip0_201_5303"><rect width="24" height="24" fill="white" transform="translate(12 12)"/></clipPath></defs></svg>
               </a>
-            </li>
-            <li>
-              <ButtonLink className="group border-2 hover:bg-black transition" href="mailto:hello@milangladis.com" target="_blank">
+              <a className='p-0' href="https://blog.milangladis.com" target="_blank" rel="noreferrer">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5303)"><path d="M13.4441 13.0351L26.724 12.0543C28.3553 11.9143 28.7743 12.0087 29.8001 12.7543L34.0392 15.7407C34.7383 16.2543 34.9711 16.3942 34.9711 16.9534V33.3317C34.9711 34.3582 34.5984 34.9654 33.2935 35.058L17.8721 35.9921C16.8929 36.0384 16.4266 35.8985 15.9137 35.245L12.792 31.1856C12.2321 30.4385 12 29.8793 12 29.2255V14.6671C12 13.8279 12.3727 13.128 13.4441 13.0351Z" fill="white"/><path fillRule="evenodd" clipRule="evenodd" d="M26.724 12.0545L13.4441 13.0354C12.3727 13.128 12 13.8281 12 14.6671V29.2255C12 29.8791 12.2321 30.4383 12.792 31.1856L15.9137 35.2447C16.4266 35.8983 16.8929 36.0384 17.8721 35.9919L33.2938 35.0583C34.5977 34.9654 34.9714 34.3582 34.9714 33.3319V16.9536C34.9714 16.4232 34.7618 16.2703 34.145 15.8177L29.8001 12.7543C28.7746 12.0087 28.3553 11.9143 26.724 12.0543V12.0545ZM18.2208 16.6855C16.9615 16.7703 16.6759 16.7895 15.9607 16.2079L14.1425 14.7617C13.9577 14.5745 14.0506 14.341 14.5162 14.2944L27.2825 13.3615C28.3546 13.2679 28.9128 13.6416 29.3321 13.968L31.5216 15.5544C31.6152 15.6017 31.848 15.8808 31.5679 15.8808L18.384 16.6745L18.2208 16.6858V16.6855ZM16.7527 33.192V19.2881C16.7527 18.6809 16.9392 18.4008 17.4974 18.3538L32.64 17.4672C33.1536 17.4209 33.3857 17.7473 33.3857 18.3535V32.1648C33.3857 32.772 33.2921 33.2856 32.4538 33.3319L17.9633 34.1719C17.125 34.2183 16.753 33.9391 16.753 33.192H16.7527ZM31.0567 20.0335C31.1496 20.4535 31.0567 20.8735 30.6367 20.9215L29.9383 21.06V31.3255C29.3318 31.6519 28.7736 31.8384 28.307 31.8384C27.5614 31.8384 27.3751 31.6049 26.8166 30.9055L22.2494 23.7199V30.672L23.6942 30.9991C23.6942 30.9991 23.6942 31.8391 22.5286 31.8391L19.315 32.0256C19.2214 31.8384 19.315 31.3721 19.6406 31.2792L20.4799 31.0464V21.8544L19.3152 21.7601C19.2216 21.3401 19.4544 20.7336 20.1072 20.6866L23.5553 20.4545L28.3073 27.733V21.2938L27.096 21.1546C27.0024 20.6403 27.3751 20.2666 27.8407 20.221L31.0567 20.0338V20.0335Z" fill="black"/></g><defs><clipPath id="clip0_201_5303"><rect width="24" height="24" fill="white" transform="translate(12 12)"/></clipPath></defs></svg>
+              </a>
+            
+            </div>
+            <div>
+              <ButtonLink className="hidden md:flex group border-2 hover:bg-black transition" href="mailto:hello@milangladis.com" target="_blank">
                 <span className='group-hover:text-white transition'>Contact me</span>
                 <svg className='group-hover:invert transition' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </ButtonLink>
-            </li>
-          </nav>
+            </div>
+          </div>
         </header>
 
         <div className="flex flex-1 items-center justify-center">
