@@ -55,7 +55,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row promo mb-64 gap-96 justify-center items-center">
             <div className="relative max-w-[190px] md:max-w-[290px]">
               {/* <RotationImage src="./images/MilanGladisProfile.png" className="block rounded-16" /> */}
-              <Image className="block rounded-16" src="./images/MilanGladisProfile.png" alt="Milan Gladis profile" />
+              <Image className="block rounded-16" src="/images/MilanGladisProfile.png" alt="Milan Gladis profile" width="290" height="407" />
               <div className="absolute w-full aspect-[290/407] bg-grey rounded-16 top-16 -left-16 -z-10"></div>
             </div>
 
