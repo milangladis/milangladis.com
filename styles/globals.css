@@ -2,13 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'header';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import 'fonts';
 
+/* 
 @layer base {
   p {
     @apply mb-8;
   }
-}
+} */
 
 html {
   padding: 0;
