@@ -63,7 +63,7 @@ export default function Home() {
                 </span>
               </span>
               <div className="text-24 mb-32 leading-16">
-                Product, Design and Technology <br className='hidden sm:block' />
+                Product, Design, and Technology <br className='hidden sm:block' />
                 person who builds web products<br className='hidden sm:block' />
                 for 3D, AR, AI, AdTech, blockchain, <br className='hidden sm:block' />
                 and metaverse.
