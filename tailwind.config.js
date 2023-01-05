@@ -16,9 +16,6 @@ module.exports = {
       'black': '#000',
       'orange': '#E95A29',
     },
-    fontFamily: {
-      sans: ['Poppins', 'sans-serif'],
-    },
     fontSize: {
       '11': '1.1rem',
       '12': '1.2rem',
