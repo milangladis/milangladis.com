@@ -9,6 +9,7 @@ export default function Home() {
       <Head>
         <title>Milan Gladiš · Product · Design · Code</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="Hi 👋 I'm Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, and metaverse." />
       </Head>
       <main className="flex flex-col min-h-screen p-32">
         <header className='flex flex-col w-full pb-32 items-center md:flex-row'>
