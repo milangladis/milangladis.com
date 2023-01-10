@@ -175,7 +175,7 @@ function RotationImage({src, ...props}) {
         {...props} 
         src={src}
         width="290" height="407"
-        alt="Image"
+        alt="Milan Gladis - Profile"
       />
       <div className="absolute w-full aspect-[290/407] bg-grey rounded-16 top-16 -left-16 -z-10"></div>
     </div>
