@@ -18,7 +18,7 @@ export default function Home() {
             <span className='text-14 md:text-12 -mt-4 font-medium opacity-50'>Product · Design · Code</span>
           </h1>
           <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-center md:justify-end gap-32 list-none align-middle flex-wrap '>
-            {/* <li>
+            {/* <li> 
               <a href="/blog">Blog</a>
             </li> */}
             {/* <li>
