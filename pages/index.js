@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import ButtonLink from '../src/components/buttonLink';
-import { useEffect, useState, useRef } from 'react';
+import Timeline from '../src/components/timeline';
+import RotationImage from '../src/components/rotationImage';
+
 
 export default function Home() {
   return (
@@ -17,13 +18,7 @@ export default function Home() {
             <span className='mb-8 md:mb-0 text-24 md:text-18 font-semibold'>Milan Gladiš</span>
             <span className='text-14 md:text-12 -mt-4 font-medium opacity-50'>Product · Design · Code</span>
           </h1>
-          <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-center md:justify-end gap-32 list-none align-middle flex-wrap '>
-            {/* <li> 
-              <a href="/blog">Blog</a>
-            </li> */}
-            {/* <li>
-              <a href="/blog">Résumé</a>
-            </li> */}
+          <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-center md:justify-end gap-32 list-none align-middle flex-wrap '>            
             <div className="flex justify-center gap-8">
               <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://blog.milangladis.com" target="_blank" rel="noreferrer">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_545_6425)"><path d="M1.44408 1.03513L14.724 0.0542516C16.3553 -0.0856684 16.7743 0.00865156 17.8001 0.754332L22.0392 3.74065C22.7383 4.25425 22.9711 4.39417 22.9711 4.95337V21.3317C22.9711 22.3582 22.5984 22.9654 21.2935 23.058L5.87208 23.9921C4.89288 24.0384 4.42656 23.8985 3.91368 23.245L0.792 19.1856C0.23208 18.4385 0 17.8793 0 17.2255V2.66713C0 1.82785 0.37272 1.12801 1.44408 1.03513Z" fill="white"/><path fillRule="evenodd" clipRule="evenodd" d="M14.724 0.0544916L1.44408 1.03537C0.37272 1.12801 0 1.82809 0 2.66713V17.2255C0 17.8791 0.23208 18.4383 0.792 19.1856L3.91368 23.2447C4.42656 23.8983 4.89288 24.0384 5.87208 23.9919L21.2938 23.0583C22.5977 22.9654 22.9714 22.3582 22.9714 21.3319V4.95361C22.9714 4.42321 22.7618 4.27033 22.145 3.81769L17.8001 0.754332C16.7746 0.00865156 16.3553 -0.0856684 14.724 0.0542516V0.0544916ZM6.2208 4.68553C4.96152 4.77025 4.67592 4.78945 3.96072 4.20793L2.14248 2.76169C1.95768 2.57449 2.05056 2.34097 2.51616 2.29441L15.2825 1.36153C16.3546 1.26793 16.9128 1.64161 17.3321 1.96801L19.5216 3.55441C19.6152 3.60169 19.848 3.88081 19.5679 3.88081L6.384 4.67449L6.2208 4.68577V4.68553ZM4.75272 21.192V7.28809C4.75272 6.68089 4.9392 6.40081 5.49744 6.35377L20.64 5.46721C21.1536 5.42089 21.3857 5.74729 21.3857 6.35353V20.1648C21.3857 20.772 21.2921 21.2856 20.4538 21.3319L5.96328 22.1719C5.12496 22.2183 4.75296 21.9391 4.75296 21.192H4.75272ZM19.0567 8.03353C19.1496 8.45353 19.0567 8.87353 18.6367 8.92153L17.9383 9.06001V19.3255C17.3318 19.6519 16.7736 19.8384 16.307 19.8384C15.5614 19.8384 15.3751 19.6049 14.8166 18.9055L10.2494 11.7199V18.672L11.6942 18.9991C11.6942 18.9991 11.6942 19.8391 10.5286 19.8391L7.31496 20.0256C7.22136 19.8384 7.31496 19.3721 7.64064 19.2792L8.47992 19.0464V9.85441L7.3152 9.76009C7.2216 9.34009 7.4544 8.73361 8.1072 8.68657L11.5553 8.45449L16.3073 15.733V9.29377L15.096 9.15457C15.0024 8.64025 15.3751 8.26657 15.8407 8.22097L19.0567 8.03377V8.03353Z" fill="black"/></g><defs><clipPath id="clip0_545_6425"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
@@ -47,10 +42,10 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="flex flex-1 items-center justify-center">
-          <div className="flex flex-col md:flex-row promo mb-64 gap-64 lg:gap-96 justify-center items-center">
+        <div className="flex-1 items-center justify-center">
+          <div className="flex flex-col md:flex-row promo my-96 gap-64 lg:gap-96 justify-center items-center">
             <div className="relative max-w-[190px] md:max-w-[290px]">
-              <RotationImage src="/images/MilanGladisProfile.png" className="block rounded-16" />
+              <RotationImage src="/images/MilanGladisProfile.png" width="290" height="407" alt="Milan Gladis - Profile"/>
             </div>
 
             <div className="flex flex-col justify-center">
@@ -81,6 +76,15 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="text-center mt-64">
+          <div className="text-40 font-bold">Experience</div>
+          <div className="text-18 max-w-1/2 mt-8 leading-16">
+            I built a bunch of projects for fun, <br /> 
+            and to learn new tech and explore new markets</div>
+        </div>
+
+        <Timeline />
+
       </main>
     </>
   )
@@ -93,91 +97,3 @@ export default function Home() {
 
 
 
-function RotationImage({src, ...props}) {
-  const elementRef = useRef()
-
-  const [gazePosition, setGazePosition] = useState({x: 0, y:0, opacity: 0})
-
-  useEffect(() => {
-    if (elementRef.current) {
-
-      const tiltEffectSettings = {
-        max: 5,
-        perspective: 500,
-        scale: 1.05,
-        speed: 500,
-        easing: "cubic-bezier(.03,.98,.52,.99)"
-      };
-      
-      elementRef.current.addEventListener("mouseenter", cardMouseEnter);
-      elementRef.current.addEventListener("mousemove", cardMouseMove);
-      elementRef.current.addEventListener("mouseleave", cardMouseLeave);
-      
-      function cardMouseEnter(event) {
-        setTransition();
-        setGazePosition({
-          opacity: 1
-        })
-      }
-      
-      function cardMouseMove(event) {
-        const cardRect = elementRef.current.getBoundingClientRect();
-        const cardWidth = elementRef.current.offsetWidth;
-        const cardHeight = elementRef.current.offsetHeight;
-        const centerX = cardRect.left + cardRect.width / 2;
-        const centerY = cardRect.top + cardRect.height / 2;
-        const mouseX = event.clientX - centerX;
-        const mouseY = event.clientY - centerY;
-        const rotateXUncapped = (+1)*(tiltEffectSettings.max*mouseY/(cardHeight/2));
-        const rotateYUncapped = (-1)*(tiltEffectSettings.max*mouseX/(cardWidth/2));
-        const rotateX = rotateXUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateXUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateXUncapped);
-        const rotateY = rotateYUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateYUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateYUncapped);
-      
-        setGazePosition({
-          x: event.clientX - cardRect.left - 48,
-          y: event.clientY - cardRect.top - 48
-        })
-        console.log(gazePosition)
-
-        elementRef.current.style.transform = `
-          perspective(${tiltEffectSettings.perspective}px) 
-          rotateX(${rotateX}deg) 
-          rotateY(${rotateY}deg) 
-          scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
-      }
-      
-      function cardMouseLeave(event) {
-        elementRef.current.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-        setTransition();
-        setGazePosition({
-          opacity: 0
-        })
-      }
-      
-      function setTransition() {
-        clearTimeout(elementRef.current.transitionTimeoutId);
-        elementRef.current.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
-        elementRef.current.transitionTimeoutId = setTimeout(() => {
-          elementRef.current.style.transition = "";
-        }, tiltEffectSettings.speed);
-      }
-    }
-
-  }, [])
-
-  return (
-    <div className="cursor-none">
-      <div 
-        style={{ transform: `translate(${gazePosition.x}px, ${gazePosition.y}px)`, opacity: gazePosition.opacity }}
-        className="absolute block w-96 h-96 rounded-full z-50 bg-white blur-3xl pointer-events-none transition-opacity opacity-50"></div>
-      <Image
-        ref={elementRef}
-        {...props} 
-        src={src}
-        width="290" height="407"
-        alt="Milan Gladis - Profile"
-      />
-      <div className="absolute w-full aspect-[290/407] bg-grey rounded-16 top-16 -left-16 -z-10"></div>
-    </div>
-  )
-}
