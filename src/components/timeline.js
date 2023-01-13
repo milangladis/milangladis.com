@@ -74,13 +74,14 @@ export default function Timeline(){
       <div className="flex flex-1 flex-col relative">
         <div className="flex flex-col flex-0 gap-8">
           <div className="w-2 top-32 bottom-32 absolute bg-grey left-[44px]"></div>
-          <Item clickable year="2022" icon="landvault" role="Product Design Lead" company="LandVault" onMouseOver={() => setHoveredItem('landvault')}  className={`${(hoveredItem === 'landvault' && 'active bg-grey')}`} />
-          <Item clickable year="2021" icon="admix" role="Product Lead" company="Admix" onMouseOver={() => setHoveredItem('admix')} className={`${(hoveredItem === 'admix' && 'active bg-grey')}`} />
-          <Item clickable year="2016" icon="vectary" role="Head of Product" company="Vectary" onMouseOver={() => setHoveredItem('vectary')} className={`${(hoveredItem === 'vectary' && 'active bg-grey')}`}/>
-          <Item clickable year="2014" icon="vectary2" role="Product Designer & Front-End Engineer" company="Vectary" onMouseOver={() => setHoveredItem('vectary2')} className={`${(hoveredItem === 'vectary2' && 'active bg-grey')}`}/>
-          <Item clickable year="2013" icon="bonetics" role="UX/UI Designer & Front-End Developer" company="Bonetics" onMouseOver={() => setHoveredItem('bonetics')} className={`${(hoveredItem === 'bonetics' && 'active bg-grey')}`}/>
+          <Item year="2006" company="Built first website" />
           <Item clickable year="2012" icon="meo" role="Web Designer & Developer" company="Freelancer" onMouseOver={() => setHoveredItem('freelancer')} className={`${(hoveredItem === 'freelancer' && 'active bg-grey')}`}/>
-          <Item year="2006" company="I build my first website" onMouseOver={() => setHoveredItem('firstwebsite')} />
+          <Item clickable year="2013" icon="bonetics" role="UX/UI Designer & Front-End Developer" company="Bonetics" onMouseOver={() => setHoveredItem('bonetics')} className={`${(hoveredItem === 'bonetics' && 'active bg-grey')}`}/>
+          <Item clickable year="2014" icon="vectary2" role="Product Designer & Front-End Engineer" company="Vectary" onMouseOver={() => setHoveredItem('vectary2')} className={`${(hoveredItem === 'vectary2' && 'active bg-grey')}`}/>
+          <Item clickable year="2016" icon="vectary" role="Head of Product" company="Vectary" onMouseOver={() => setHoveredItem('vectary')} className={`${(hoveredItem === 'vectary' && 'active bg-grey')}`}/>
+          <Item clickable year="2021" icon="admix" role="Product Lead" company="Admix" onMouseOver={() => setHoveredItem('admix')} className={`${(hoveredItem === 'admix' && 'active bg-grey')}`} />
+          <Item clickable year="2022" icon="landvault" role="Product Design Lead" company="LandVault" onMouseOver={() => setHoveredItem('landvault')}  className={`${(hoveredItem === 'landvault' && 'active bg-grey')}`} />
+          <Item year="2023" company="Still learning" />
         </div>
       </div>
       <div className="h-[530px] hidden md:flex flex-1 flex-col">
@@ -88,7 +89,7 @@ export default function Timeline(){
           {activeItem.video ?
             <RotationImage type="video" width="530" height="354" />
             :
-            <RotationImage src={`/images/portfolio/${activeItem.id}.png`} width="530" height="354" alt="Milan Gladis - Profile" />
+            <RotationImage type="image" src={`/images/portfolio/${activeItem.id}.png`} width="530" height="354" alt="Milan Gladis - Profile" />
           }
         </div>
         <div className="portfolio text-center mt-40 px-24">
@@ -108,8 +109,8 @@ export default function Timeline(){
 export function Item({...props}) {
   return(
     <div className={`experienceItem relative flex flex-0 gap-16 px-24 py-12 items-center z-10 rounded-16 group transition ${props.clickable &&  'cursor-pointer hover:bg-grey'} ${props.className}`} onMouseOver={props.onMouseOver} >
-      <div className="shrink-0 experienceYear w-40 text-center bg-white py-4 group-hover:bg-transparent transition">{props.year}</div>
-      <div className="shrink-0 w-32 h-32">{props.icon ? <img src={`/images/portfolioIcons/${props.icon}.svg`} alt="" /> : ''}</div>
+      <div className={`shrink-0 experienceYear w-40 text-center bg-white py-4 transition ${!props.clickable && 'text-black/30'}`}>{props.year}</div>
+      {props.icon ? <div className="shrink-0 h-32"><img src={`/images/portfolioIcons/${props.icon}.svg`} alt="" /></div> : ''}
       <div className="">
         {props.role ? <div className="text-16 font-semibold">{props.role}</div> : ''}
         <div className="opacity-50">{props.company}</div>

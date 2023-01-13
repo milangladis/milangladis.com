@@ -1,3 +1,7 @@
 .experienceItem.active .experienceYear {
   background: transparent;
 }
+
+.portfolioVideo {
+  aspect-ratio: 530 / 354;
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image'
 
-export default function RotationImage({src, ...props}) {
+export default function RotationImage({children, ...props}) {
   const elementRef = useRef()
 
   const [gazePosition, setGazePosition] = useState({x: 0, y:0, opacity: 0})
@@ -84,25 +84,33 @@ export default function RotationImage({src, ...props}) {
   return (
   <div className="cursor-none relative group">
       <div style={{ transform: `translate(${gazePosition.x}px, ${gazePosition.y}px)`, opacity: gazePosition.opacity }} className="absolute block w-96 h-96 rounded-full z-50 bg-white blur-3xl pointer-events-none transition-opacity opacity-50"></div>
-      <picture className="before:content-['&nbsp;'] before:absolute before:bg-grey before:rounded-16 before:-left-16 before:-bottom-16 before:top-16 before:w-full  ">
+      <div className={`${props.type !== "content" ? "before:content-[`&nbsp;`] before:absolute before:bg-grey before:rounded-16 before:-left-16 before:-bottom-16 before:top-16 before:w-full" : 'inline-block'} `}>
         <div className="relative" ref={elementRef}>
           {/* <div className="absolute top-full mt-8 left-0 w-full text-center z-10 pointer-events-none text-12 opacity-0 group-hover:opacity-100 transition">Admix</div> */}
 
+          {(props.type === "video") && 
+            <video className={`portfolioVideo rounded-16 object-cover aspect-[${props.width}/${props.height}]`} ref={videoRef} width={props.width} height={props.height} src="http://localhost:3000/images/portfolio/vectary-video.mp4" controls={true} autoPlay={true} />
+          }
 
-          {props.type === "video" ? 
-            <video ref={videoRef} src="http://localhost:3000/images/portfolio/vectary-video.mp4" controls={true} autoPlay={true} className="rounded-16" />
-            :
+          {(props.type === "image") && 
             <Image
               draggable="false" 
               {...props} 
-              src={src}
+              src={props.src}
               className="relative block rounded-16 z-0 w-full"
             />
-
           }
 
+
+          {props.type === "content" &&
+            <>
+              {children}
+            </>
+          }
+
+
         </div>
-      </picture>
+      </div>
     </div>
   )
 }

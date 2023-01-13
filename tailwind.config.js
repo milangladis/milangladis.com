@@ -54,7 +54,8 @@ module.exports = {
       48: '48px',
       64: '64px',
       80: '80px',
-      96: '96px'
+      96: '96px',
+      128: '128px'
     },
     container: {
       DEFAULT: '2.4rem',
