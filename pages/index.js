@@ -88,8 +88,8 @@ export default function Home() {
           <SideProject title="Dotbook" desc="Dotted notepad for designers" />
         </div>
 
-        <div className="flex flex-col items-center text-center mt-96 p-64 bg-gradient-to-br from-[#924FE7] to-[#5214E1] rounded-16 text-white">
-          <div className="text-24 sm:text-32 font-bold mb-48">
+        <div className="flex flex-col items-center text-center mt-48 md:mt-96 p-64 bg-gradient-to-br from-[#924FE7] to-[#5214E1] rounded-16 text-white">
+          <div className="text-32 font-bold mb-48">
             Let’s build <br className='hidden sm:block' />
             something together.
           </div>
