@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<!--  Last Published: Wed Jun 10 2020 18:11:09 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="5e86fbd7e8d859582f31c6b4" data-wf-site="5e1885e3b1025af65c880321">
+<head>
+  
+<body>
+  
+  
+  <div class="styles w-embed">
+    <style>
+    html {
+      font-size: 10px;
+      user-select: none;
+    }
+    *{
+      box-sizing:border-box;
+    }
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: "Ubuntu", Arial, sans-serif;
+    }
+    body {
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #3e4648;
+      transition: all 0.3s ease;
+      user-select: none;
+      padding: 12rem 4rem 4rem 4rem;
+    }
+    .wrapper {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 1200px;
+      max-height: 656px;
+      background-color: #ccc;
+      transition: all 0.3s ease;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 100px -70px rgb(0, 0, 0);
+    }
+    body.dark {
+      background-color: #c5cacc;
+    }
+    body.orange {
+      background-color: #E0A166;
+    }
+    body.orange .wrapper {
+      background-color: #6b4f35;
+    }
+    body.dark .wrapper {
+      background-color: #383838;
+    }
+    vctr-viewer {
+      top: 0;
+      right: -50px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      width: auto;
+      height: auto;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+    .viewer-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .arLink {
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .arLink svg {
+       fill: #4F4F4F;
+    }
+    .arLink.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .dark .arLink svg, .orange .arLink svg {
+      fill: rgba(255,255,255,0.8);
+    }
+    .sidebar {
+      flex: 0 2 100%;
+      max-width: 450px; 
+      background-color: #fbfbfb;
+      padding: 20px 60px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 4.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1.4rem;
+      opacity: 0.6;
+      margin-top: 2rem;
+      line-height: 160%;
+      margin-bottom: 3rem;
+    }
+    sub {
+      opacity: 0.4;
+      font-size: 1.2rem;
+      margin-bottom: 0rem;
+      font-weight: 500;
+      display: block;
+      text-transform: uppercase;
+      position: relative;
+    }
+    sub:after {
+      position: absolute;
+      transform: rotate(-90deg);
+      content: attr(text);
+    }
+    sub[text="Color"]:after {
+      left: -16px;
+      top: 28px;
+    }
+    sub[text="Shade"]:after {
+      left: -15px;
+      top: 29px;
+    }
+    sub[text="Position"]:after {
+      left: -22px;
+      top: 33px;
+    }
+    .category {
+      display: grid;
+      margin-bottom: 2rem;
+      grid-template-columns: 25%  25%  25%  25%;
+      text-align: center;
+      margin-left: 25px;
+    }
+    .item {
+      cursor: pointer;
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    .item img, .item svg {
+      opacity: 0.3;
+    }
+    .item.active img, .item.active svg {
+      opacity: 1;
+    }
+    .item:hover:not(.active) img, .item:hover:not(.active) svg {
+      opacity: 0.5;
+    }
+    .item img, .item svg {
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .review {
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+    }
+    .review span {
+      padding-left: .5rem;
+      opacity: 0.6;
+    }
+    .review svg {
+      margin-right: 3px;
+    }
+    .back {
+      cursor: pointer;
+      color: #3F7F9A;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    .back svg {
+      margin-right: 0.5rem;
+    }
+    .item.active .clr:after {
+      opacity: 1;
+    }
+    .item:hover:not(.active) .clr:after {
+      opacity: 0.1;
+    }
+    .clr:after {
+      position: absolute;
+      content: "";
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      opacity: 0;
+      display: block;
+      border-radius: 100%;
+      box-shadow: 0 0 0 2px #000;
+      transition: all 0.3s ease;
+    }
+    .clrs {
+      padding-left: 0.3rem;
+    }
+    .clr {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      border-radius: 13px;
+      pointer-events: none;
+    }
+    .clr1 {
+      background-color: #545454;
+    }
+    .clr2 {
+      background-color: #bfbfbf;
+    }
+    .clr3 {
+      background-color: #EFB26A;
+    }
+    .summary {
+      display: flex;
+      margin-top: 4rem;
+    }
+    .price {
+      font-size: 3.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+    .price span {
+      font-size: 1.8rem;
+      text-decoration: line-through;
+      font-weight: 400;
+      opacity: 0.4;
+      margin-left: 1.5rem;
+    }
+    .lamp-button {
+      padding: 13px 25px;
+      color: #fff;
+      margin-left: auto;
+      font-weight: 500;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      z-index: 1;
+    }
+    .orange .lamp-button:after {
+      background-color: #efb269;
+    }
+    .lamp-button:hover:after {
+      background-color: #366E86;
+    }
+    .lamp-button:active:after{
+      transform: scale(1.05);
+    }
+    .lamp-button:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      transition: all 0.1s ease;
+      background-color: #3F7F9A;
+      border-radius: 6px;
+    }
+    @media (max-height: 650px) {
+      .sidebar {
+        padding: 40px 60px;
+        display: block;
+      }
+    }
+    @media (max-width: 1300px) { 
+      vctr-viewer {
+        right: -11px;
+      }
+      .sidebar {
+        padding: 35px;
+      }
+      h1 {
+        font-size: 4rem;
+      }
+    }
+    @media (max-width: 1000px) {
+      body {
+        height: auto;
+        display: block;
+      }
+      .wrapper {
+        flex-direction: column;
+        max-height: unset;
+      }
+      .viewer-wrapper {
+        padding-bottom: 55%;
+      }
+      .sidebar {
+        max-width: 100%;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      .sidebar {
+        padding: 30px;
+      }
+      .price {
+        font-size: 3rem;
+      }
+    }
+    @media (max-width: 1100px) {
+      html {
+      }
+    }
+    @media (max-width: 760px) {
+      body {
+        padding: 8rem 0 0 0;
+      }
+      .back {
+        display: none;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      .wrapper {
+        border-radius: 0;
+      }
+      .category {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 1rem 0 2rem;
+      }
+      .summary {
+        margin-top: 2rem;
+      }
+      .price {
+        font-size: 2.5rem;
+      }
+      .arLink {
+        top: 30px;
+        right: 30px;
+      }
+    }
+</style>
+  </div>
+  <div class="wrapper">
+    <div class="content w-embed">
+      <div class="viewer-wrapper">
+        <a href="" class="arLink" target="_blank">
+            <svg width="34" height="34" viewbox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2402 16.2704L10.4043 16.0244C10.2439 16.0062 10.0592 16.0877 9.96458 16.2185L9.69994 16.5638L9.69673 16.568L9.46975 16.8642C9.23565 17.1652 9.0796 17.5235 9.02286 17.9034C8.9803 18.1829 8.98738 18.4982 9.12926 18.7777C9.9592 20.4548 16.5776 32.1796 16.8614 32.6096C16.8693 32.6232 17.5743 33.8287 18.2091 33.9712C18.8475 34.1146 20.0109 33.706 20.8337 33.1112C21.8268 32.3945 22.4581 31.9 23.1037 31.2478L23.4405 30.9118L23.4407 30.9116C24.0249 30.3329 24.572 29.7908 25.0189 29.0261C25.3946 28.3808 25.7811 27.3719 25.9882 26.6375L29.4231 29.0614L29.5579 29.0972H29.6501C29.7282 29.0972 29.7991 29.0757 29.8629 29.0255L31.9703 27.3775C32.4672 26.9477 33.1766 26.231 33.3894 25.5144C33.6022 24.7977 33.6731 23.7227 33.1766 22.361C32.9354 21.6944 26.4873 5.45441 25.8489 3.84905L25.6999 3.63405C25.3949 3.31154 24.7707 2.75253 24.4515 2.50168C24.189 2.29384 23.8059 2.07884 23.4725 2.0215L23.1746 2C22.6781 2 22.1106 2.28668 21.7559 2.57335C21.5076 2.77401 20.777 3.49787 20.4223 3.92789C20.323 4.05688 20.2662 4.21456 20.2662 4.37222L20.0534 7.74084C20.0534 7.74084 19.6987 16.6994 19.6987 17.7027L19.5929 20.4952L13.7051 16.3954C13.6035 16.3329 13.4629 16.2899 13.2402 16.2704ZM29.8944 27.1922L31.2499 26.0164C32.4519 24.913 32.2342 24.3703 30.4971 20.039L30.4679 19.9662L29.3826 17.237L25.2717 6.87474L26.083 19.4225C26.083 19.4225 26.3499 22.3689 26.2577 24.4618L26.208 25.0928L29.3096 27.2479C29.4758 27.3583 29.752 27.332 29.8944 27.1922ZM19.5567 22.1727C19.5567 22.1727 13.1236 17.7265 13.0645 17.6947C13.0476 17.6857 13.0151 17.665 12.9758 17.6399C12.8777 17.5774 12.7372 17.4878 12.6895 17.4838L11.0957 17.3524C10.9163 17.3298 10.7048 17.4398 10.6203 17.5997C10.5235 17.7524 10.533 17.9906 10.6417 18.1351L10.6707 18.177C12.4512 20.7499 17.4287 28.0229 17.4287 28.0229C17.4287 28.0229 18.365 27.1916 18.5707 26.8907C18.5707 26.8907 19.202 26.3029 19.344 25.2996C19.344 25.2996 19.4858 24.5112 19.5567 22.9345V22.1727Z"></path>
+              <path d="M5.57812 9.24219H2.49609L1.91016 11H0.0410156L3.2168 2.46875H4.8457L8.03906 11H6.16992L5.57812 9.24219ZM2.9707 7.81836H5.10352L4.03125 4.625L2.9707 7.81836ZM11.9941 7.87695H10.5938V11H8.83594V2.46875H12.0059C13.0137 2.46875 13.791 2.69336 14.3379 3.14258C14.8848 3.5918 15.1582 4.22656 15.1582 5.04688C15.1582 5.62891 15.0312 6.11523 14.7773 6.50586C14.5273 6.89258 14.1465 7.20117 13.6348 7.43164L15.4805 10.918V11H13.5938L11.9941 7.87695ZM10.5938 6.45312H12.0117C12.4531 6.45312 12.7949 6.3418 13.0371 6.11914C13.2793 5.89258 13.4004 5.58203 13.4004 5.1875C13.4004 4.78516 13.2852 4.46875 13.0547 4.23828C12.8281 4.00781 12.4785 3.89258 12.0059 3.89258H10.5938V6.45312Z"></path>
+            </svg>
+          </a>
+        <vctr-viewer id="glasses" model="90f0a3ac-aad5-47d9-aadb-989d1143841f" hdr="studio3" turntable="0" gesturehandling="superior" exposure="1.5" zoom="0" panx="0" pany="0" enableapi="1" minazimuth="30" maxazimuth="140" minpolar="30" maxpolar="90" showinteractionprompt="0"></vctr-viewer>
+      </div>
+    </div>
+    <div class="w-embed w-script">
+      <script type="module" src="https://www.vectary.com/viewer/v1/scripts/vctr-viewer.js"></script>
+      <script type="module">
+import { VctrApi } from "https://www.vectary.com/viewer-api/v1/api.js";
+async function run() {
+function errHandler(err) {
+  // console.log("API error", err);
+}
+async function onReady() {
+  // console.log("API ready");
+  try {
+    const allSceneObjects = await vctrApi.getObjects();
+    console.log("Objects", allSceneObjects);
+    const allSceneMaterials = await vctrApi.getMaterials();
+    console.log("Materials", allSceneMaterials);
+    let globalRotX = 0;
+    let globalRotY = 0;
+    var currentColor = 'color1';
+    var currentShade = 'shade1';
+    switchAR();
+    function switchAR() {
+      var uuid;
+      if ((currentColor === 'color1') && (currentShade === 'shade1')) {
+        uuid = '97313e96-e277-4923-b5b9-2a60e23fa6b7';
+      } else if ((currentColor === 'color1') && (currentShade === 'shade2')) {
+        uuid = 'a47d25fb-cec0-4f1a-98fa-ae716b2c5280';
+      } else if ((currentColor === 'color2') && (currentShade === 'shade1')) {
+        uuid = 'bcfc1c37-78c2-4892-bbee-2775aa47caf0';
+      } else if ((currentColor === 'color2') && (currentShade === 'shade2')) {
+        uuid = '2d92f350-62e6-4a84-99f4-52e6daa09db7';
+      } else if ((currentColor === 'color3') && (currentShade === 'shade1')) {
+        uuid = '76d4b5c3-0895-4351-a864-268b77389737';
+      } else if ((currentColor === 'color3') && (currentShade === 'shade2')) {
+        uuid = '16a6aaec-e7e2-46e2-8723-fe46e7e9dea6';
+      } 
+      var url = 'https://www.vectary.com/viewer-ar/v1/?model=' + uuid;
+      document.querySelector(".arLink").setAttribute("href", url);
+    }
+    const rangeTune = 0.25; // used to finetune rotation range
+    var scrollTop;
+    async function setMaterial(object, material) {
+      console.log(object + " — " + material);
+      await vctrApi.setMaterial(object, material);
+    }
+    async function setCamera(camera) {
+      await vctrApi.switchView(camera);
+    }
+    document.querySelector(".arLink").classList.add("active");
+    await vctrApi.setVisibility("Shade_1", false, false);
+    await vctrApi.setVisibility("Shade_2", true, false);         
+    document.querySelectorAll('.item').forEach(item => {
+      item.addEventListener('click', event => {
+        console.log(event.target.parentElement.children);
+        var children = Array.from(event.target.parentElement.children);
+        children.forEach(function (item, index) {
+          console.log(index);
+          console.log(item);
+          item.classList.remove("active");
+        });
+        event.target.classList.add("active");
+      })
+    })
+    var lastColor = [70,70,70];
+    var lastRoughness = [0];
+    document
+      .querySelector("[js=color1]")
+      .addEventListener("click", async e => {
+        console.log('color1');
+        animateColor("Specles Metal", lastColor, [70,70,70]);
+        animateColor("Accessories", lastColor, [70,70,70]);
+        animateColor("Rubber", lastColor, [70,70,70], lastRoughness, 0);
+        lastColor = [70,70,70];
+        lastRoughness = [0];
+        currentColor = 'color1';
+        switchAR();
+        document.querySelector("body").classList.remove("dark");
+        document.querySelector("body").classList.remove("orange");
+      });
+    document
+      .querySelector("[js=color2]")
+      .addEventListener("click", async e => {
+        animateColor("Specles Metal", lastColor, [191,191,191]);
+        animateColor("Accessories", lastColor, [191,191,191]);
+        animateColor("Rubber", lastColor, [191,191,191], lastRoughness, 0);
+        lastColor = [191,191,191];
+        lastRoughness = [0];
+        currentColor = 'color2';
+        switchAR();
+        document.querySelector("body").classList.add("dark");
+        document.querySelector("body").classList.remove("orange");
+      });
+    document
+      .querySelector("[js=color3]")
+      .addEventListener("click", async e => {
+        animateColor("Specles Metal", lastColor, [239,178,106]);
+        animateColor("Accessories", lastColor, [239,178,106]);
+        animateColor("Rubber", lastColor, [239,178,106], lastRoughness, 0.8);
+        lastColor = [239,178,106];
+        lastRoughness = [0.8];
+        currentColor = 'color3';
+        switchAR();
+        document.querySelector("body").classList.remove("dark");
+        document.querySelector("body").classList.add("orange");
+      });
+    function animateColor(material, from, to, fromRoughness, toRoughness) {
+      var roughness
+      function animation() {
+        VctrApi.Utils.animate(
+          400,
+          "easeInOutCubic",
+          async (timeFraction) => {
+            var colors = VctrApi.Utils.lerp(from, to, timeFraction);
+            colors = await rgbToHex(colors);
+            if (fromRoughness && toRoughness) {
+              roughness = VctrApi.Utils.lerp([fromRoughness, 0, 0], [toRoughness, 0, 0], timeFraction);
+            } else {
+              roughness = [0];
+            }
+            console.log(roughness);
+            var updatedMaterial = {  
+              color: colors,
+              metalness: roughness[0]
+            }
+            vctrApi.updateMaterial(material, updatedMaterial);  
+          }
+        );
+      }
+      animation();
+    }
+    document
+      .querySelector("[js=shade1]")
+      .addEventListener("click", async e => {
+        console.log('shade1');
+        shadeOne();
+        currentShade = 'shade1';
+        switchAR();
+      });
+    document
+      .querySelector("[js=shade2]")
+      .addEventListener("click", async e => {
+        console.log('shade2');
+        currentShade = 'shade2';
+        switchAR();
+        shadeTwo();
+      });
+    async function shadeOne() {
+      await vctrApi.setVisibility("Shade_1", false, false);
+      await vctrApi.setVisibility("Shade_2", true, false); 
+    }
+    async function shadeTwo() {
+      await vctrApi.setVisibility("Shade_1", true, false);
+      await vctrApi.setVisibility("Shade_2", false, false);
+    }
+    // const segment1 = vctrApi.getRotation("Segment_1");
+    // const segment2 = vctrApi.getRotation("Segment_2");
+    // const segment3 = vctrApi.getRotation("Segment_3");
+    // console.log("Segment_1", segment1);
+    // console.log("Segment_2", segment2);
+    // console.log("Segment_3", segment3);
+    var currentSegment1 = [-89.9999, 0, 0];
+    var currentSegment2 = [0, 0, 0];
+    var currentSegment3 = [0, 0, 0];
+    document.querySelectorAll('[js=position]').forEach(item => {
+      item.addEventListener('click', event => {
+        var number = event.target.id;
+        setPosition(number);
+        console.log('Position – ' + number);
+      })
+    })
+    async function setPosition(number) {
+      console.log(number);
+      // await vctrApi.switchView("Camera");
+      switch(number) {
+        case '1':
+          animateRotation("Segment_1", currentSegment1, [-89.9999, 0, 0]);
+          animateRotation("Segment_2", currentSegment2, [0, 0, 0]);
+          animateRotation("Segment_3", currentSegment3, [0, 0, 0]);
+          currentSegment1 = [-89.9999, 0, 0];
+          currentSegment2 =  [0, 0, 0];
+          currentSegment3 =  [0, 0, 0];
+          break;
+        case '2':
+          animateRotation("Segment_1", currentSegment1, [-89.9999, -50, 0]);
+          animateRotation("Segment_2", currentSegment2, [0, 40, 0]);
+          animateRotation("Segment_3", currentSegment3, [0, -50, 0]);
+          currentSegment1 = [-89.9999, -50, 0];
+          currentSegment2 = [0, 40, 0];
+          currentSegment3 = [0, -50, 0];
+          break;
+        case '3':
+          animateRotation("Segment_1", currentSegment1, [-89.9999, -30, 0]);
+          animateRotation("Segment_2", currentSegment2, [0, 20, 0]);
+          animateRotation("Segment_3", currentSegment3, [0, 10, 0]);
+          currentSegment1 = [-89.9999, -30, 0];
+          currentSegment2 = [0, 20, 0];
+          currentSegment3 = [0, 10, 0];
+          break;
+        case '4':
+          animateRotation("Segment_1", currentSegment1, [-89.9999, 30, 0]);
+          animateRotation("Segment_2", currentSegment2, [0, -40, 0]);
+          animateRotation("Segment_3", currentSegment3, [0, 10, 0]);
+          currentSegment1 = [-89.9999, 30, 0];
+          currentSegment2 =  [0, -40, 0];
+          currentSegment3 =  [0, 10, 0];
+          break;
+        default:
+      }
+    }
+    function animateRotation(object, from, to) {
+      function animation() {
+        VctrApi.Utils.animate(800, "easeInOutCubic", async timeFraction => {
+          var intensity = VctrApi.Utils.lerp(from, to, timeFraction);
+          vctrApi.setRotationAbsolute(object, intensity);
+        });
+      }
+      animation();
+    }
+    function rgbToHex(rgb) {
+      var r =  Math.round(rgb[0]);
+      var g =  Math.round(rgb[1]);
+      var b =  Math.round(rgb[2]);
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+    // document.querySelector("vctr-viewer").addEventListener("mousemove", async e => {
+    document.addEventListener("mousemove", async e => {
+      const normX = e.clientX / window.innerWidth;
+      const normY = e.clientY / window.innerHeight;
+      const rotX = rangeTune * (normX - 0.5);
+      const rotY = rangeTune * (normY - 0.5);
+      vctrApi.rotateView([rotX - globalRotX, rotY - globalRotY]);
+      globalRotX = rotX;
+      globalRotY = rotY;
+      var highlighted = await vctrApi.getHitObjects();
+    });
+    document
+      .querySelector(".content")
+      .addEventListener("mousedown", async e => {
+        document.querySelector("body").classList.add("dragging");
+      });
+    document
+      .querySelector(".content")
+      .addEventListener("mouseup", async e => {
+        document.querySelector("body").classList.remove("dragging");
+      });
+  } catch (e) {
+    errHandler(e);
+  }
+}
+const vctrApi = new VctrApi("glasses", errHandler);
+try {
+  await vctrApi.init();
+  onReady();
+} catch (e) {
+  errHandler(e);
+}
+}
+run();
+</script>
+    </div>
+    <div class="sidebar w-embed">
+      <div class="back">
+        <svg width="6" height="11" viewbox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 1.5L1 5.5L5 9.5" stroke="#3F7F9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg> Back to Lamps
+      </div>
+      <h1>Mauro Lamp</h1>
+      <div class="review">
+        <svg width="16" height="15" viewbox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.04894 0.92705C7.3483 0.00573921 8.6517 0.00573969 8.95106 0.92705L10.0206 4.21885C10.1545 4.63087 10.5385 4.90983 10.9717 4.90983H14.4329C15.4016 4.90983 15.8044 6.14945 15.0207 6.71885L12.2205 8.75329C11.87 9.00793 11.7234 9.4593 11.8572 9.87132L12.9268 13.1631C13.2261 14.0844 12.1717 14.8506 11.388 14.2812L8.58778 12.2467C8.2373 11.9921 7.7627 11.9921 7.41221 12.2467L4.61204 14.2812C3.82833 14.8506 2.77385 14.0844 3.0732 13.1631L4.14277 9.87132C4.27665 9.4593 4.12999 9.00793 3.7795 8.75329L0.979333 6.71885C0.195619 6.14945 0.598395 4.90983 1.56712 4.90983H5.02832C5.46154 4.90983 5.8455 4.63087 5.97937 4.21885L7.04894 0.92705Z" fill="#F5A725"></path>
+          </svg>
+        <svg width="16" height="15" viewbox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.04894 0.92705C7.3483 0.00573921 8.6517 0.00573969 8.95106 0.92705L10.0206 4.21885C10.1545 4.63087 10.5385 4.90983 10.9717 4.90983H14.4329C15.4016 4.90983 15.8044 6.14945 15.0207 6.71885L12.2205 8.75329C11.87 9.00793 11.7234 9.4593 11.8572 9.87132L12.9268 13.1631C13.2261 14.0844 12.1717 14.8506 11.388 14.2812L8.58778 12.2467C8.2373 11.9921 7.7627 11.9921 7.41221 12.2467L4.61204 14.2812C3.82833 14.8506 2.77385 14.0844 3.0732 13.1631L4.14277 9.87132C4.27665 9.4593 4.12999 9.00793 3.7795 8.75329L0.979333 6.71885C0.195619 6.14945 0.598395 4.90983 1.56712 4.90983H5.02832C5.46154 4.90983 5.8455 4.63087 5.97937 4.21885L7.04894 0.92705Z" fill="#F5A725"></path>
+          </svg>
+        <svg width="16" height="15" viewbox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.04894 0.92705C7.3483 0.00573921 8.6517 0.00573969 8.95106 0.92705L10.0206 4.21885C10.1545 4.63087 10.5385 4.90983 10.9717 4.90983H14.4329C15.4016 4.90983 15.8044 6.14945 15.0207 6.71885L12.2205 8.75329C11.87 9.00793 11.7234 9.4593 11.8572 9.87132L12.9268 13.1631C13.2261 14.0844 12.1717 14.8506 11.388 14.2812L8.58778 12.2467C8.2373 11.9921 7.7627 11.9921 7.41221 12.2467L4.61204 14.2812C3.82833 14.8506 2.77385 14.0844 3.0732 13.1631L4.14277 9.87132C4.27665 9.4593 4.12999 9.00793 3.7795 8.75329L0.979333 6.71885C0.195619 6.14945 0.598395 4.90983 1.56712 4.90983H5.02832C5.46154 4.90983 5.8455 4.63087 5.97937 4.21885L7.04894 0.92705Z" fill="#F5A725"></path>
+          </svg>
+        <svg width="16" height="15" viewbox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.04894 0.92705C7.3483 0.00573921 8.6517 0.00573969 8.95106 0.92705L10.0206 4.21885C10.1545 4.63087 10.5385 4.90983 10.9717 4.90983H14.4329C15.4016 4.90983 15.8044 6.14945 15.0207 6.71885L12.2205 8.75329C11.87 9.00793 11.7234 9.4593 11.8572 9.87132L12.9268 13.1631C13.2261 14.0844 12.1717 14.8506 11.388 14.2812L8.58778 12.2467C8.2373 11.9921 7.7627 11.9921 7.41221 12.2467L4.61204 14.2812C3.82833 14.8506 2.77385 14.0844 3.0732 13.1631L4.14277 9.87132C4.27665 9.4593 4.12999 9.00793 3.7795 8.75329L0.979333 6.71885C0.195619 6.14945 0.598395 4.90983 1.56712 4.90983H5.02832C5.46154 4.90983 5.8455 4.63087 5.97937 4.21885L7.04894 0.92705Z" fill="#F5A725"></path>
+          </svg>
+        <svg width="16" height="15" viewbox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.04894 0.92705C7.3483 0.00573921 8.6517 0.00573969 8.95106 0.92705L10.0206 4.21885C10.1545 4.63087 10.5385 4.90983 10.9717 4.90983H14.4329C15.4016 4.90983 15.8044 6.14945 15.0207 6.71885L12.2205 8.75329C11.87 9.00793 11.7234 9.4593 11.8572 9.87132L12.9268 13.1631C13.2261 14.0844 12.1717 14.8506 11.388 14.2812L8.58778 12.2467C8.2373 11.9921 7.7627 11.9921 7.41221 12.2467L4.61204 14.2812C3.82833 14.8506 2.77385 14.0844 3.0732 13.1631L4.14277 9.87132C4.27665 9.4593 4.12999 9.00793 3.7795 8.75329L0.979333 6.71885C0.195619 6.14945 0.598395 4.90983 1.56712 4.90983H5.02832C5.46154 4.90983 5.8455 4.63087 5.97937 4.21885L7.04894 0.92705Z" fill="#F5A725"></path>
+          </svg>
+        <span>4.7 (860 reviews)</span>
+      </div>
+      <p>Table lamp in matte metal with a speckles. <br>Adjust easily to any position with three joints.</p>
+      <div class="customizer">
+        <sub text="Color"></sub>
+        <div class="category clrs">
+          <div js="color1" class="item active">
+            <div class="clr clr1"></div>
+          </div>
+          <div js="color2" class="item">
+            <div class="clr clr2"></div>
+          </div>
+          <div js="color3" class="item">
+            <div class="clr clr3"></div>
+          </div>
+        </div>
+        <sub text="Shade"></sub>
+        <div class="category">
+          <div js="shade1" class="item active">
+            <svg width="42" height="30" viewbox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.89112 12.7667C4.8174 7.26308 9.53017 3.20271 15.2582 2.11165L16.1351 1.94463C19.3495 1.33237 22.6505 1.33237 25.8649 1.94463L26.7418 2.11165C32.4698 3.20271 37.1826 7.26308 39.1089 12.7667C40.3607 16.3432 41 20.1053 41 23.8945V24.0584C41 26.7876 38.7876 29 36.0584 29H5.94155C3.21241 29 1 26.7876 1 24.0584V23.8945C1 20.1053 1.63935 16.3432 2.89112 12.7667Z" stroke="black" stroke-width="2"></path>
+              </svg>
+          </div>
+          <div js="shade2" class="item">
+            <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="28" height="28" rx="5" stroke="black" stroke-width="2"></rect>
+              </svg>
+          </div>
+        </div>
+        <sub text="Position"></sub>
+        <div class="category positions">
+          <div js="position" id="1" class="item active">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8 7.80142C7.4012 7.44501 7 6.79129 7 6.04386C7 4.91507 7.91507 4 9.04386 4C9.79129 4 10.445 4.4012 10.8014 5H25.2863C25.6427 4.4012 26.2964 4 27.0439 4C28.1727 4 29.0877 4.91507 29.0877 6.04386C29.0877 6.82723 28.647 7.50766 28 7.85074V10.1866L28.4706 10.2744C29.882 10.5379 31.047 11.5315 31.5299 12.8836C31.841 13.7546 32 14.6727 32 15.5976V15.6373C32 16.3899 31.39 16.9999 30.6374 16.9999H23.3626C22.61 16.9999 22 16.3899 22 15.6373V15.5976C22 14.6727 22.159 13.7546 22.4701 12.8836C22.953 11.5315 24.118 10.5379 25.5294 10.2744L26 10.1866V7.80142C25.6779 7.60972 25.413 7.33203 25.237 7H10.8507C10.6589 7.36171 10.3617 7.65894 10 7.85074L10 25.237C10.647 25.5801 11.0877 26.2605 11.0877 27.0439C11.0877 27.8272 10.647 28.5076 10 28.8507L10 30H16.6374C17.39 30 18 30.61 18 31.3626V31.6374C18 32.39 17.39 33 16.6374 33H7.36257C6.61004 33 6 32.39 6 31.6374V31.3626C6 30.61 6.61004 30 7.36257 30H8.00004L8.00004 28.8014C7.40122 28.445 7 27.7913 7 27.0439C7 26.2964 7.40122 25.6427 8.00003 25.2863L8 7.80142ZM9.32405 5.03803C9.23489 5.01325 9.14092 5 9.04386 5C8.46735 5 8 5.46735 8 6.04386C8 6.14092 8.01325 6.23489 8.03803 6.32405C8.16046 6.76449 8.56441 7.08772 9.04386 7.08772C9.62037 7.08772 10.0877 6.62037 10.0877 6.04386C10.0877 5.56441 9.76449 5.16046 9.32405 5.03803ZM27.989 6.48762C27.8222 6.84223 27.4617 7.08772 27.0439 7.08772C26.4674 7.08772 26 6.62037 26 6.04386C26 5.57844 26.3046 5.18417 26.7253 5.0495C26.8257 5.01735 26.9328 5 27.0439 5C27.6204 5 28.0877 5.46735 28.0877 6.04386C28.0877 6.20254 28.0523 6.35295 27.989 6.48762ZM10 27.4633C9.83852 27.831 9.47118 28.0877 9.04386 28.0877C8.47011 28.0877 8.00448 27.6249 8.00003 27.0522C8.00001 27.0494 8 27.0466 8 27.0439C8 27.0411 8.00001 27.0383 8.00003 27.0356C8.00448 26.4629 8.47011 26 9.04386 26C9.47118 26 9.83852 26.2568 10 26.6244C10.0564 26.7528 10.0877 26.8947 10.0877 27.0439C10.0877 27.1931 10.0564 27.3349 10 27.4633Z" fill="black"/>
+            </svg>
+          </div>
+          <div js="position" id="2" class="item">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M26.3007 12.6677L24.6137 11.0072C24.4328 11.0596 24.2416 11.0877 24.0439 11.0877C23.4282 11.0877 22.8761 10.8155 22.5014 10.3848L6.07226 14.2965C6.04411 14.5248 5.9783 14.7415 5.88124 14.9401L19.269 25.152C19.508 25.054 19.7696 25 20.0439 25C21.1727 25 22.0877 25.9151 22.0877 27.0439C22.0877 27.8272 21.647 28.5077 21 28.8508V30H27.6374C28.39 30 29 30.61 29 31.3626V31.6374C29 32.39 28.39 33 27.6374 33H18.3626C17.61 33 17 32.39 17 31.6374V31.3626C17 30.61 17.61 30 18.3626 30H19V28.8014C18.4012 28.445 18 27.7913 18 27.0439C18 26.9333 18.0088 26.8248 18.0257 26.719L4.08744 16.0873C4.07295 16.0876 4.05842 16.0877 4.04386 16.0877C2.91507 16.0877 2 15.1727 2 14.0439C2 12.9151 2.91507 12 4.04386 12C4.51433 12 4.94768 12.159 5.29311 12.4261L22.0952 8.42561C22.3572 7.59903 23.1306 7 24.0439 7C25.1727 7 26.0877 7.91507 26.0877 9.04386C26.0877 9.22992 26.0629 9.41018 26.0163 9.58148L27.7101 11.2486L28.0169 11.04C29.1789 10.2498 30.6739 10.1386 31.94 10.7482C32.7383 11.1326 33.4661 11.6489 34.0926 12.2755L34.119 12.3018C34.6459 12.8287 34.6459 13.6831 34.119 14.21L29.2828 19.0462C28.7558 19.5731 27.9015 19.5731 27.3746 19.0462L27.3482 19.0199C26.7217 18.3933 26.2054 17.6656 25.821 16.8672C25.2114 15.6011 25.3225 14.1061 26.1127 12.9441L26.3007 12.6677ZM23.6565 8.07423C23.7763 8.02634 23.907 8 24.0439 8C24.4379 8 24.7809 8.21832 24.9586 8.5406C25.0409 8.68985 25.0877 8.86139 25.0877 9.04386C25.0877 9.62037 24.6204 10.0877 24.0439 10.0877C23.4674 10.0877 23 9.62037 23 9.04386C23 8.60422 23.2718 8.22805 23.6565 8.07423ZM21 27.4635C20.8384 27.831 20.4711 28.0877 20.0439 28.0877C19.4674 28.0877 19 27.6204 19 27.0439C19 26.4674 19.4674 26 20.0439 26C20.2047 26 20.357 26.0364 20.4931 26.1013C20.8448 26.2693 21.0877 26.6282 21.0877 27.0439C21.0877 27.1931 21.0564 27.3351 21 27.4635ZM5.08772 14.0439C5.08772 14.6204 4.62037 15.0877 4.04386 15.0877C3.46735 15.0877 3 14.6204 3 14.0439C3 13.4674 3.46735 13 4.04386 13C4.62037 13 5.08772 13.4674 5.08772 14.0439Z" fill="black"/>
+            </svg>
+          </div>
+          <div js="position" id="3" class="item">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M26.0439 4C25.1392 4 24.3719 4.58772 24.1028 5.40217L7.55907 8.67216C7.18511 8.25932 6.64477 8 6.04386 8C4.91507 8 4 8.91507 4 10.0439C4 11.1727 4.91507 12.0877 6.04386 12.0877C6.11171 12.0877 6.17878 12.0844 6.24493 12.078L16.2021 26.1567C16.0726 26.425 16 26.726 16 27.0439C16 27.7913 16.4012 28.4449 16.9999 28.8014V30H16.3626C15.61 30 15 30.61 15 31.3626V31.6374C15 32.39 15.61 33 16.3626 33H25.6374C26.39 33 27 32.39 27 31.6374V31.3626C27 30.61 26.39 30 25.6374 30H18.9999V28.8508C19.647 28.5077 20.0877 27.8273 20.0877 27.0439C20.0877 25.9151 19.1727 25 18.0439 25C17.9753 25 17.9075 25.0034 17.8407 25.01L7.88475 10.9329C7.93273 10.8337 7.97293 10.7301 8.00457 10.6228L24.4847 7.36538C24.6344 7.54186 24.8135 7.6926 25.0145 7.81V10.1839L24.5294 10.2744C23.118 10.5379 21.953 11.5315 21.4701 12.8836C21.159 13.7546 21 14.6727 21 15.5976V15.6373C21 16.3899 21.61 16.9999 22.3626 16.9999H29.6374C30.39 16.9999 31 16.3899 31 15.6373V15.5976C31 14.6727 30.841 13.7546 30.5299 12.8836C30.047 11.5315 28.882 10.5379 27.4706 10.2744L27.0145 10.1893V7.84295C27.6536 7.49743 28.0877 6.82134 28.0877 6.04386C28.0877 4.91507 27.1727 4 26.0439 4ZM25.4376 5.19397C25.6085 5.07185 25.8178 5 26.0439 5C26.6204 5 27.0877 5.46735 27.0877 6.04386C27.0877 6.21278 27.0476 6.37234 26.9764 6.51351C26.8045 6.85412 26.4514 7.08772 26.0439 7.08772C25.4674 7.08772 25 6.62037 25 6.04386C25 5.6934 25.1727 5.38329 25.4376 5.19397ZM6.28539 9.02808C6.20786 9.00972 6.127 9 6.04386 9C5.46735 9 5 9.46735 5 10.0439C5 10.4445 5.22575 10.7925 5.55701 10.9675C5.70236 11.0442 5.86803 11.0877 6.04386 11.0877C6.62037 11.0877 7.08772 10.6204 7.08772 10.0439C7.08772 9.55049 6.74544 9.13706 6.28539 9.02808ZM18.9999 27.4636C18.8383 27.8311 18.4711 28.0877 18.0439 28.0877C17.4674 28.0877 17 27.6204 17 27.0439C17 26.4674 17.4674 26 18.0439 26C18.2974 26 18.5299 26.0904 18.7108 26.2408C18.9411 26.4322 19.0877 26.7209 19.0877 27.0439C19.0877 27.1932 19.0564 27.3351 18.9999 27.4636Z" fill="black"/>
+            </svg>
+          </div>
+          <div js="position" id="4" class="item">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M30.9719 6.52222C31.0459 6.37891 31.0877 6.21627 31.0877 6.04386C31.0877 5.46735 30.6204 5 30.0439 5C29.8411 5 29.6519 5.05778 29.4918 5.15777C29.1965 5.34216 29 5.67006 29 6.04386C29 6.62037 29.4674 7.08772 30.0439 7.08772C30.448 7.08772 30.7984 6.8581 30.9719 6.52222ZM28.1185 5.35645C28.4008 4.56582 29.1562 4 30.0439 4C31.1727 4 32.0877 4.91507 32.0877 6.04386C32.0877 6.82724 31.647 7.50768 31 7.85076V10.1867L31.4706 10.2745C32.882 10.538 34.047 11.5316 34.5299 12.8837C34.841 13.7547 35 14.6728 35 15.5977V15.6374C35 16.39 34.39 17 33.6374 17H26.3626C25.61 17 25 16.39 25 15.6374V15.5977C25 14.6728 25.159 13.7547 25.4701 12.8837C25.953 11.5316 27.118 10.538 28.5294 10.2745L29 10.1867V7.8014C28.7912 7.67715 28.6065 7.51676 28.4544 7.32887L12.0058 10.6186C11.7738 11.4118 11.0739 12.0052 10.225 12.0798L4.60605 25.7259C4.90657 26.0817 5.08772 26.5416 5.08772 27.0439C5.08772 27.8272 4.647 28.5077 3.99997 28.8508V30H9.63743C10.39 30 11 30.61 11 31.3626V31.6374C11 32.39 10.39 33 9.63743 33H1.36257C0.610044 33 0 32.39 0 31.6374V31.3626C0 30.61 0.610045 30 1.36257 30H1.99997V28.8014C1.40119 28.445 1 27.7913 1 27.0439C1 26.021 1.75139 25.1736 2.73231 25.0236L8.40016 11.2588C8.1487 10.9192 8 10.4989 8 10.0439C8 8.91507 8.91507 8 10.0439 8C10.6432 8 11.1823 8.25796 11.5561 8.66892L28.1185 5.35645ZM9.04554 9.73795C9.16768 9.33886 9.52257 9.04145 9.95195 9.00399C9.98223 9.00135 10.0129 9 10.0439 9C10.6204 9 11.0877 9.46735 11.0877 10.0439C11.0877 10.6204 10.6204 11.0877 10.0439 11.0877C9.46735 11.0877 9 10.6204 9 10.0439C9 9.93742 9.01593 9.8347 9.04554 9.73795ZM2.05442 26.7103C2.01913 26.8151 2 26.9272 2 27.0439C2 27.0572 2.00025 27.0705 2.00075 27.0837C2.02169 27.6418 2.4807 28.0877 3.04386 28.0877C3.47112 28.0877 3.83843 27.831 3.99997 27.4634C4.0564 27.335 4.08772 27.1931 4.08772 27.0439C4.08772 27.0428 4.08772 27.0418 4.08772 27.0408C4.08606 26.4657 3.61935 26 3.04386 26C2.58398 26 2.19356 26.2974 2.05442 26.7103Z" fill="black"/>
+            </svg>
+          </div>
+        </div>
+        <div class="summary">
+          <div class="price">
+            $129
+            <span>$189</span>
+          </div>
+          <div class="lamp-button">Add to cart</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5e1885e3b1025af65c880321" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="../../js/vectary.985eb1.985eb1.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+<script src="../scripts/index.js"></script></body>
+</html>

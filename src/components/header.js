@@ -3,7 +3,7 @@ import ButtonLink from "./buttonLink"
 export default function Header() {
   
   return (
-    <header className='flex flex-col w-full pb-32 items-center md:flex-row'>
+    <header className='flex flex-col w-full p-32 items-center md:flex-row'>
       <h1 className='flex flex-col items-center mb-16 md:mb-0 md:items-start'>
         <span className='mb-8 md:mb-0 text-24 md:text-18 font-semibold'>Milan Gladiš</span>
         <span className='text-14 md:text-12 -mt-4 font-medium opacity-50'>Product · Design · Code</span>
@@ -33,3 +33,4 @@ export default function Header() {
     </header>
   )
 }
+

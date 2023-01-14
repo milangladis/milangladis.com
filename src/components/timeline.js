@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import ButtonLink from "./buttonLink";
 import RotationImage from "./rotationImage"
-useEffect
+
 
 export default function Timeline(){
   const portfolio = [
@@ -17,7 +18,7 @@ export default function Timeline(){
       company: 'Admix',
       role: 'Product Lead',
       time: 'Mar 2021 - Jun 2022',
-      description: 'In-play AdTech platform to monetise free to play games',
+      description: 'Joined to lead Product for in-play AdTech platform to monetise free to play games',
       tags: 'PM · UX · UI'
     },
     {
@@ -25,24 +26,26 @@ export default function Timeline(){
       company: 'Vectary',
       role: 'Head of Product',
       time: 'Jan 2016 - Dec 2020',
-      description: 'Pivoted 3D engine to design and e-commerce market',
+      description: 'Led the transition to online 3D design platform for designers and e-commerce.',
       video: 'vectary-video',
-      tags: ''
+      tags: '',
+      link: '/resource/lamp.html'
     },
     {
       id: 'vectary2',
       company: 'Vectary',
       role: 'Product Designer & Front-End Engineer',
       time: 'Oct 2014 - Jan 2016',
-      description: 'Web app to design, render, and share 3D content.',
-      tags: ''
+      description: 'Built online 3D modeling tool. From scratch. What a journey... 😅',
+      tags: '',
+      link: 'https://www.behance.net/gallery/76527045/Vectary-Online-3D-Design-App?tracking_source=search_projects%7Cvectary'
     },
     {
       id: 'bonetics',
       company: 'Bonetics',
       role: 'UX/UI Designer & Front-End Developer',
       time: 'Apr 2013 - Oct 2014',
-      description: 'Trying to build products for startups ',
+      description: 'Was trying to build products for startups in a digital agency.',
       tags: 'UX, UI, Front-End'
     },
     {
@@ -51,7 +54,8 @@ export default function Timeline(){
       role: 'Web Designer & Developer',
       time: 'Jan 2012 - Apr 2013',
       description: 'Web Designer was a role at that point!',
-      tags: 'Full Stack, PM, Web Design, SEO'
+      tags: 'Full Stack, PM, Web Design, SEO',
+      link: 'https://meo.milangladis.com/'
     }, 
   ]
 
@@ -70,7 +74,7 @@ export default function Timeline(){
 
 
   return(
-    <div className="flex gap-64 my-64 w-full max-w-[1100px] m-auto">
+    <div className="flex gap-64 w-full">
       <div className="flex flex-1 flex-col relative">
         <div className="flex flex-col flex-0 gap-8">
           <div className="w-2 top-32 bottom-32 absolute bg-grey left-[44px]"></div>
@@ -99,6 +103,14 @@ export default function Timeline(){
             {activeItem.description}
           </div>
           {/* <div className="mt-8 opacity-50">{activeItem.tags}</div> */}
+          {activeItem.link && 
+            <ButtonLink href={activeItem.link} target="_blank" className="mt-16 text-white bg-black">
+              Open detail
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </ButtonLink>
+          }
         </div>
       </div>
     </div>
