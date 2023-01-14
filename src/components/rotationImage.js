@@ -97,6 +97,7 @@ export default function RotationImage({children, ...props}) {
               draggable="false" 
               {...props} 
               src={props.src}
+              alt=""
               className="relative block rounded-16 z-0 w-full"
             />
           }

@@ -4,6 +4,7 @@ import Timeline from '../src/components/timeline';
 import RotationImage from '../src/components/rotationImage';
 import Header from '../src/components/header';
 import Footer from '../src/components/footer';
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -116,13 +117,13 @@ function SideProject({...props}) {
     <>
       {props.href ?
         <a href={props.href} className="group w-full sm:w-[50%] md:w-[33.3%] mb-32 flex flex-col">
-          {props.icon && <img className='hidden md:block mb-16' width={24} height={24} src={`/images/portfolioIcons/${props.icon}.svg`} />}
+          {props.icon && <Image className='hidden md:block mb-16' width={24} height={24} src={`/images/portfolioIcons/${props.icon}.svg`} alt="" />}
           <div className="text-16 font-semibold group-hover:underline">{props.title}</div>
           <div className="">{props.desc}</div>
         </a>
       :
         <div className="w-full sm:w-[50%] md:w-[33.3%] mb-32 flex flex-col">
-          {props.icon && <img className='hidden md:block mb-16' width={24} height={24} src={`/images/portfolioIcons/${props.icon}.svg`} />}
+          {props.icon && <Image className='hidden md:block mb-16' width={24} height={24} src={`/images/portfolioIcons/${props.icon}.svg`} alt="" />}
           <div className="text-16 font-semibold">{props.title}</div>
           <div className="">{props.desc}</div>
         </div>

@@ -1,69 +1,70 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import ButtonLink from "./buttonLink";
 import RotationImage from "./rotationImage"
 
-
 export default function Timeline(){
-  const portfolio = [
-    {
-      id: 'landvault',
-      company: 'LandVault',
-      role: 'Product Design Lead',
-      time: 'Jun 2022 - Present',
-      description: 'Metaverse tools for land owners, investors, advertisers, and builders.',
-      tags: 'Product · UX · UI'
-    },
-    {
-      id: 'admix',
-      company: 'Admix',
-      role: 'Product Lead',
-      time: 'Mar 2021 - Jun 2022',
-      description: 'Joined to lead Product for in-play AdTech platform to monetise free to play games',
-      tags: 'PM · UX · UI'
-    },
-    {
-      id: 'vectary',
-      company: 'Vectary',
-      role: 'Head of Product',
-      time: 'Jan 2016 - Dec 2020',
-      description: 'Led the transition to online 3D design platform for designers and e-commerce.',
-      video: 'vectary-video',
-      tags: '',
-      link: '/resource/lamp.html'
-    },
-    {
-      id: 'vectary2',
-      company: 'Vectary',
-      role: 'Product Designer & Front-End Engineer',
-      time: 'Oct 2014 - Jan 2016',
-      description: 'Built online 3D modeling tool. From scratch. What a journey... 😅',
-      tags: '',
-      link: 'https://www.behance.net/gallery/76527045/Vectary-Online-3D-Design-App?tracking_source=search_projects%7Cvectary'
-    },
-    {
-      id: 'bonetics',
-      company: 'Bonetics',
-      role: 'UX/UI Designer & Front-End Developer',
-      time: 'Apr 2013 - Oct 2014',
-      description: 'Was trying to build products for startups in a digital agency.',
-      tags: 'UX, UI, Front-End'
-    },
-    {
-      id: 'freelancer',
-      company: 'Freelancer',
-      role: 'Web Designer & Developer',
-      time: 'Jan 2012 - Apr 2013',
-      description: 'Web Designer was a role at that point!',
-      tags: 'Full Stack, PM, Web Design, SEO',
-      link: 'https://meo.milangladis.com/'
-    }, 
-  ]
+  
 
   const [hoveredItem, setHoveredItem] = useState('');
   const [activeItem, setActiveItem] = useState(portfolio[0]);
 
 
   useEffect(() => {
+    const portfolio = [
+      {
+        id: 'landvault',
+        company: 'LandVault',
+        role: 'Product Design Lead',
+        time: 'Jun 2022 - Present',
+        description: 'Metaverse tools for land owners, investors, advertisers, and builders.',
+        tags: 'Product · UX · UI'
+      },
+      {
+        id: 'admix',
+        company: 'Admix',
+        role: 'Product Lead',
+        time: 'Mar 2021 - Jun 2022',
+        description: 'Joined to lead Product for in-play AdTech platform to monetise free to play games',
+        tags: 'PM · UX · UI'
+      },
+      {
+        id: 'vectary',
+        company: 'Vectary',
+        role: 'Head of Product',
+        time: 'Jan 2016 - Dec 2020',
+        description: 'Led the transition to online 3D design platform for designers and e-commerce.',
+        video: 'vectary-video',
+        tags: '',
+        link: '/resource/lamp.html'
+      },
+      {
+        id: 'vectary2',
+        company: 'Vectary',
+        role: 'Product Designer & Front-End Engineer',
+        time: 'Oct 2014 - Jan 2016',
+        description: 'Built online 3D modeling tool. From scratch. What a journey... 😅',
+        tags: '',
+        link: 'https://www.behance.net/gallery/76527045/Vectary-Online-3D-Design-App?tracking_source=search_projects%7Cvectary'
+      },
+      {
+        id: 'bonetics',
+        company: 'Bonetics',
+        role: 'UX/UI Designer & Front-End Developer',
+        time: 'Apr 2013 - Oct 2014',
+        description: 'Was trying to build products for startups in a digital agency.',
+        tags: 'UX, UI, Front-End'
+      },
+      {
+        id: 'freelancer',
+        company: 'Freelancer',
+        role: 'Web Designer & Developer',
+        time: 'Jan 2012 - Apr 2013',
+        description: 'Web Designer was a role at that point!',
+        tags: 'Full Stack, PM, Web Design, SEO',
+        link: 'https://meo.milangladis.com/'
+      }, 
+    ]
     const item = portfolio.find(i => i.id === hoveredItem);
     if (typeof item !== "undefined") {
       console.log(item)
@@ -122,7 +123,7 @@ export function Item({...props}) {
   return(
     <div className={`experienceItem relative flex flex-0 gap-16 px-24 py-12 items-center z-10 rounded-16 group transition ${props.clickable &&  'cursor-pointer hover:bg-grey'} ${props.className}`} onMouseOver={props.onMouseOver} >
       <div className={`shrink-0 experienceYear w-40 text-center bg-white py-4 transition ${!props.clickable && 'text-black/30'}`}>{props.year}</div>
-      {props.icon ? <div className="shrink-0 h-32"><img src={`/images/portfolioIcons/${props.icon}.svg`} alt="" /></div> : ''}
+      {props.icon ? <div className="shrink-0 h-32"><Image src={`/images/portfolioIcons/${props.icon}.svg`} alt="" /></div> : ''}
       <div className="">
         {props.role ? <div className="text-16 font-semibold">{props.role}</div> : ''}
         <div className="opacity-50">{props.company}</div>
