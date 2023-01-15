@@ -12,7 +12,8 @@ export default function Timeline(){
       role: 'Product Design Lead',
       time: 'Jun 2022 - Present',
       description: 'Metaverse tools for land owners, investors, advertisers, and builders.',
-      tags: 'Product · UX · UI'
+      tags: 'Product · UX · UI',
+      link: 'https://landvault.io/'
     },
     {
       id: 'admix',
@@ -121,8 +122,8 @@ export default function Timeline(){
 
 export function Item({...props}) {
   return(
-    <div className={`experienceItem relative flex flex-0 gap-16 px-0 pointer-events-none md:pointer-events-auto md:px-24 py-12 items-center z-10 rounded-16 group transition ${props.clickable &&  'cursor-pointer md:hover:bg-grey'} ${props.className}`} onMouseOver={props.onMouseOver} >
-      <div className={`shrink-0 experienceYear w-40 text-center bg-white py-4 transition ${!props.clickable && 'text-black/30'}`}>{props.year}</div>
+    <div className={`experienceItem relative flex flex-0 gap-16 px-0 pointer-events-none md:pointer-events-auto md:px-24 py-12 items-center z-10 rounded-16 transition ${props.clickable &&  'group cursor-pointer md:hover:bg-grey'} ${props.className ? props.className : ''}`} onMouseOver={props.onMouseOver} >
+      <div className={`shrink-0 experienceYear w-40 text-center bg-white py-4 transition rounded-16 ${!props.clickable ? 'text-black/30' : 'group-hover:bg-grey'}`}>{props.year}</div>
       {props.icon ? <div className="shrink-0 h-32"><Image src={`/images/portfolioIcons/${props.icon}.svg`} width={32} height={32} alt="" /></div> : ''}
       <div className="">
         {props.role ? <div className="text-16 font-semibold">{props.role}</div> : ''}
