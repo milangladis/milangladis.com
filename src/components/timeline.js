@@ -78,7 +78,7 @@ export default function Timeline(){
     <div className="flex gap-64 w-full">
       <div className="flex flex-1 flex-col relative">
         <div className="flex flex-col flex-0 gap-8">
-          <div className="w-2 top-32 bottom-32 absolute bg-grey left-[44px]"></div>
+          <div className="w-2 top-32 bottom-32 absolute bg-grey left-[20px] md:left-[44px]"></div>
           <Item year="2006" company="Built first website" />
           <Item clickable year="2012" icon="meo" role="Web Designer & Developer" company="Freelancer" onMouseOver={() => setHoveredItem('freelancer')} className={`${(hoveredItem === 'freelancer' && 'active bg-grey')}`}/>
           <Item clickable year="2013" icon="bonetics" role="UX/UI Designer & Front-End Developer" company="Bonetics" onMouseOver={() => setHoveredItem('bonetics')} className={`${(hoveredItem === 'bonetics' && 'active bg-grey')}`}/>
@@ -121,7 +121,7 @@ export default function Timeline(){
 
 export function Item({...props}) {
   return(
-    <div className={`experienceItem relative flex flex-0 gap-16 px-24 py-12 items-center z-10 rounded-16 group transition ${props.clickable &&  'cursor-pointer hover:bg-grey'} ${props.className}`} onMouseOver={props.onMouseOver} >
+    <div className={`experienceItem relative flex flex-0 gap-16 px-0 pointer-events-none md:pointer-events-auto md:px-24 py-12 items-center z-10 rounded-16 group transition ${props.clickable &&  'cursor-pointer md:hover:bg-grey'} ${props.className}`} onMouseOver={props.onMouseOver} >
       <div className={`shrink-0 experienceYear w-40 text-center bg-white py-4 transition ${!props.clickable && 'text-black/30'}`}>{props.year}</div>
       {props.icon ? <div className="shrink-0 h-32"><Image src={`/images/portfolioIcons/${props.icon}.svg`} width={32} height={32} alt="" /></div> : ''}
       <div className="">

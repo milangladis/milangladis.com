@@ -2,6 +2,12 @@
   background: transparent;
 }
 
+@media (max-width: 768px) {
+  .experienceItem.active {
+    background: transparent;
+  }
+}
+
 .portfolioVideo {
   aspect-ratio: 530 / 354;
 }
