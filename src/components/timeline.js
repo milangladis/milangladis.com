@@ -31,7 +31,7 @@ export default function Timeline(){
       description: 'Led the transition to online 3D design platform for designers and e-commerce.',
       video: 'vectary-video',
       tags: '',
-      link: '/resource/lamp.html'
+      link: 'https://cdn.dribbble.com/users/41543/screenshots/10946125/media/c4ebe88dad5383360c5a1051f473b6c4.mp4'
     },
     {
       id: 'vectary2',
