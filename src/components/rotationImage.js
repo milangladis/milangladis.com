@@ -72,7 +72,7 @@ export default function RotationImage({children, ...props}) {
       }
     }
 
-  }, [])
+  }, [props.maxTilt])
 
   useEffect(() =>{
     if (props.type === "video") {

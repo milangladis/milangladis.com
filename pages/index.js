@@ -12,7 +12,7 @@ export default function Home(props) {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const updateModal = (bool) => {
+  const updatemodal = (bool) => {
     setIsModalOpen(bool);
   }
 
@@ -58,7 +58,7 @@ export default function Home(props) {
           </div>
           <div className="hidden md:flex">
             <RotationImage type="content" maxTilt="10">
-              <ButtonLink className="group border-2 hover:bg-black transition" updateModal={updateModal}>
+              <ButtonLink updatemodal={updatemodal} className="group border-2 hover:bg-black transition">
                 <span className='group-hover:text-white transition'>Contact me</span>
                 <svg className='group-hover:invert transition' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -80,7 +80,7 @@ export default function Home(props) {
             <div className="flex flex-col justify-center">
               <span className='block mb-16'>
                 <span className='relative text-32 md:text-48 font-bold'>
-                  Hi 👋🏻 I’m Milan
+                  Hi 👋🏻 I&apos;m Milan
                   <span className='absolute -right-48 -top-48 flex text-14 opacity-30 font-semibold'>
                     <svg className='relative top-[28px] mr-8' width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 1C15.5 1 9 5.5 3 20M3 20L1 13.5M3 20L9 17.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     for real
@@ -95,7 +95,7 @@ export default function Home(props) {
               </div>
               <div>
               <RotationImage type="content" maxTilt="10">
-                <ButtonLink target="_blank" className="pl-32 pr-24 h-64 text-white bg-black bg-gradient-to-br from-[#924FE7] to-[#5214E1]" updateModal={updateModal}>
+                <ButtonLink updatemodal={updatemodal} target="_blank" className="pl-32 pr-24 h-64 text-white bg-black bg-gradient-to-br from-[#924FE7] to-[#5214E1]">
                   <span className="flex gap-8 items-center group-hover:scale-105 transition">
                     Start a chat
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +150,7 @@ export default function Home(props) {
 
 
             <RotationImage type="content" maxTilt="10">
-              <ButtonLink updateModal={updateModal} className="pl-32 pr-24 h-64 bg-white text-[#5214E1] group">
+              <ButtonLink updatemodal={updatemodal} className="pl-32 pr-24 h-64 bg-white text-[#5214E1] group">
                 <span className="flex gap-8 items-center group-hover:scale-105 transition">
                   Start a chat
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -170,7 +170,7 @@ export default function Home(props) {
           <div className="absolute top-0 left-0 w-full h-full bg-[#5214E1]/90 z-1" onClick={() => setIsModalOpen(!isModalOpen)}></div>
           <div className="relative w-full max-w-6xl m-32 bg-white rounded-16 p-48 z-20">
             {/* <div className="text-24 md:text-32 font-bold">Hi ✌️</div> */}
-            <div className="text-24 md:text-32 font-bold">Can't wait to hear from you!</div>
+            <div className="text-24 md:text-32 font-bold">Can&apos;t wait to hear from you!</div>
             
             <div className="mt-16 text-16 leading-10">
               <div className="">Feel free to use <a href="mailto:hello@milangladis.com" className='underline font-bold text-[#5214E1]'>hello@milangladis.com</a>,
@@ -188,7 +188,7 @@ function SideProject({...props}) {
   return (
     <>
       {props.href ?
-        <a href={props.href} target="_blank" className="group w-full sm:w-[50%] md:w-[33.3%] mb-32 flex flex-col">
+        <a href={props.href} target="_blank" className="group w-full sm:w-[50%] md:w-[33.3%] mb-32 flex flex-col" rel="noreferrer">
           {props.icon && <Image className='hidden md:block mb-16' width={24} height={24} src={`/images/portfolioIcons/${props.icon}.svg`} alt="" />}
           <div className="text-16 font-semibold group-hover:underline">{props.title}</div>
           <div className="">{props.desc}</div>
