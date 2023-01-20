@@ -7,10 +7,13 @@ import Footer from '../src/components/footer';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function Home() {
+export default function Home(props) {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-//how to disable scroll?  https://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
+
+  const updateModal = (bool) => {
+    setIsModalOpen(bool);
+  }
 
   return (
     <>
@@ -31,9 +34,9 @@ export default function Home() {
             <a href="/cv.pdf" target="_blank" className='flex w-fit h-48 gap-8 px-16 items-center justify-center md:mr-24 rounded-full border-2 border-transparent hover:border-black transition'>
               Résumé
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5V13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 18H8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 10L12 14L8 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5V13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M16 18H8" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M16 10L12 14L8 10" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
             <div className="flex justify-center gap-8">
@@ -49,7 +52,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:flex">
-            <ButtonLink onClick={() => setIsModalOpen(!isModalOpen)} className="group border-2 hover:bg-black transition" >
+            <ButtonLink className="group border-2 hover:bg-black transition" updateModal={updateModal}>
               <span className='group-hover:text-white transition'>Contact me</span>
               <svg className='group-hover:invert transition' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -85,7 +88,7 @@ export default function Home() {
               </div>
               <div>
               <RotationImage type="content">
-                <ButtonLink onClick={() => setIsModalOpen(!isModalOpen)} target="_blank" className="pl-32 pr-24 h-64 text-white bg-black bg-gradient-to-br from-[#924FE7] to-[#5214E1]">
+                <ButtonLink target="_blank" className="pl-32 pr-24 h-64 text-white bg-black bg-gradient-to-br from-[#924FE7] to-[#5214E1]" updateModal={updateModal}>
                   Start a chat
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -137,7 +140,7 @@ export default function Home() {
 
 
             <RotationImage type="content">
-              <ButtonLink target="_blank" className="pl-32 pr-24 h-64 bg-white text-[#5214E1]" onClick={() => setIsModalOpen(!isModalOpen)}>
+              <ButtonLink updateModal={updateModal} className="pl-32 pr-24 h-64 bg-white text-[#5214E1]">
                 Start a chat
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="#5214E1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
