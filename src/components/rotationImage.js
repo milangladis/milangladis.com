@@ -11,7 +11,7 @@ export default function RotationImage({children, ...props}) {
     if (elementRef.current) {
 
       const tiltEffectSettings = {
-        max: 5,
+        max: props.maxTilt || 5,
         perspective: 500,
         scale: 1.05,
         speed: 500,
@@ -82,9 +82,9 @@ export default function RotationImage({children, ...props}) {
   })
 
   return (
-  <div className="relative group">
+  <div className={`relative group ${props.parentClass}`}>
       <div style={{ transform: `translate(${gazePosition.x}px, ${gazePosition.y}px)`, opacity: gazePosition.opacity }} className="absolute block w-96 h-96 rounded-full z-50 bg-white blur-3xl pointer-events-none transition-opacity opacity-50"></div>
-      <div className={`${typeof !props.cursor && 'cursor-none'} ${props.type !== "content" ? "before:content-[`&nbsp;`] before:absolute before:bg-grey before:rounded-16 before:-left-16 before:-bottom-16 before:top-16 before:w-full" : 'inline-block'} `}>
+      <div className={`${typeof !props.cursor && 'cursor-none'} ${props.type !== "content" ? "before:content-[`&nbsp;`] before:absolute before:bg-grey before:rounded-16 before:-left-16 before:-bottom-16 before:top-16 before:w-full" : 'inline-block flex-1'} `}>
         <div className="relative" ref={elementRef}>
           {/* <div className="absolute top-full mt-8 left-0 w-full text-center z-10 pointer-events-none text-12 opacity-0 group-hover:opacity-100 transition">Admix</div> */}
 
@@ -104,9 +104,9 @@ export default function RotationImage({children, ...props}) {
 
 
           {props.type === "content" &&
-            <>
+            <div src={props.src}>
               {children}
-            </>
+            </div>
           }
 
 

@@ -106,12 +106,16 @@ export default function Timeline(){
           </div>
           {/* <div className="mt-8 opacity-50">{activeItem.tags}</div> */}
           {activeItem.link && 
-            <ButtonLink href={activeItem.link} target="_blank" className="mt-16 text-white bg-black">
-              Open detail
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </ButtonLink>
+            <RotationImage type="content" maxTilt="10">
+              <ButtonLink href={activeItem.link} target="_blank" className="mt-16 text-white bg-black">
+                <span className="flex gap-8 items-center group-hover:scale-105 transition">
+                  Open detail
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  </span>
+              </ButtonLink>
+            </RotationImage>
           }
         </div>
       </div>
