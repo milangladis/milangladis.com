@@ -21,6 +21,7 @@ export default function RotationImage({children, ...props}) {
       elementRef.current.addEventListener("mouseenter", cardMouseEnter);
       elementRef.current.addEventListener("mousemove", cardMouseMove);
       elementRef.current.addEventListener("mouseleave", cardMouseLeave);
+      elementRef.current.addEventListener("click", cardMouseClick);
       
       function cardMouseEnter(event) {
         setTransition();
@@ -62,6 +63,16 @@ export default function RotationImage({children, ...props}) {
           opacity: 0
         })
       }
+
+      function cardMouseClick(event) {
+        elementRef.current.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        elementRef.current.style.transition = `none`;
+        // setTransition();
+        setGazePosition({
+          opacity: 0
+        })
+      }
+      
       
       function setTransition() {
         clearTimeout(elementRef.current.transitionTimeoutId);

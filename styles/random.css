@@ -11,3 +11,17 @@
 .portfolioVideo {
   aspect-ratio: 530 / 354;
 }
+
+
+@keyframes moveBackground {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -900px;
+  }
+}
+
+.moveBackground {
+  animation: moveBackground 30s linear infinite;
+}
