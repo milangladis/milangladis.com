@@ -80,17 +80,17 @@ export default function Timeline(){
       <div className="flex flex-1 flex-col relative">
         <div className="flex flex-col flex-0 gap-8">
           <div className="w-2 top-32 bottom-32 absolute bg-grey left-[20px] md:left-[44px]"></div>
+          <Item year="2023" company="Still learning and building" />
+          <Item clickable year="2022" icon="landvault" role="Product Design Lead" company="LandVault" onMouseOver={() => setHoveredItem('landvault')}  className={`${(hoveredItem === 'landvault' && 'active border-grey bg-white')}`} />
+          <Item clickable year="2021" icon="admix" role="Product Lead" company="Admix" onMouseOver={() => setHoveredItem('admix')} className={`${(hoveredItem === 'admix' && 'active border-grey bg-white')}`} />
+          <Item clickable year="2016" icon="vectary" role="Head of Product" company="Vectary" onMouseOver={() => setHoveredItem('vectary')} className={`${(hoveredItem === 'vectary' && 'active border-grey bg-white')}`}/>
+          <Item clickable year="2014" icon="vectary2" role="Product Designer & Front-End Engineer" company="Vectary" onMouseOver={() => setHoveredItem('vectary2')} className={`${(hoveredItem === 'vectary2' && 'active border-grey bg-white')}`}/>
+          <Item clickable year="2013" icon="bonetics" role="UX/UI Designer & Front-End Developer" company="Bonetics" onMouseOver={() => setHoveredItem('bonetics')} className={`${(hoveredItem === 'bonetics' && 'active border-grey bg-white')}`}/>
+          <Item clickable year="2012" icon="meo" role="Web Designer & Developer" company="Freelancer" onMouseOver={() => setHoveredItem('freelancer')} className={`${(hoveredItem === 'freelancer' && 'active border-grey bg-white')}`}/>
           <Item year="2006" company="Built first website" />
-          <Item clickable year="2012" icon="meo" role="Web Designer & Developer" company="Freelancer" onMouseOver={() => setHoveredItem('freelancer')} className={`${(hoveredItem === 'freelancer' && 'active bg-grey')}`}/>
-          <Item clickable year="2013" icon="bonetics" role="UX/UI Designer & Front-End Developer" company="Bonetics" onMouseOver={() => setHoveredItem('bonetics')} className={`${(hoveredItem === 'bonetics' && 'active bg-grey')}`}/>
-          <Item clickable year="2014" icon="vectary2" role="Product Designer & Front-End Engineer" company="Vectary" onMouseOver={() => setHoveredItem('vectary2')} className={`${(hoveredItem === 'vectary2' && 'active bg-grey')}`}/>
-          <Item clickable year="2016" icon="vectary" role="Head of Product" company="Vectary" onMouseOver={() => setHoveredItem('vectary')} className={`${(hoveredItem === 'vectary' && 'active bg-grey')}`}/>
-          <Item clickable year="2021" icon="admix" role="Product Lead" company="Admix" onMouseOver={() => setHoveredItem('admix')} className={`${(hoveredItem === 'admix' && 'active bg-grey')}`} />
-          <Item clickable year="2022" icon="landvault" role="Product Design Lead" company="LandVault" onMouseOver={() => setHoveredItem('landvault')}  className={`${(hoveredItem === 'landvault' && 'active bg-grey')}`} />
-          <Item year="2023" company="Still learning" />
         </div>
       </div>
-      <div className="h-[530px] hidden md:flex flex-1 flex-col">
+      <div className="h-[530px] hidden md:flex flex-1 flex-col mt-64">
         <div className="flex-0">
           {activeItem.video ?
             <RotationImage type="video" width="530" height="354" />
@@ -99,12 +99,10 @@ export default function Timeline(){
           }
         </div>
         <div className="portfolio text-center mt-40 px-24">
-          {/* {activeItem.company && <div className="text-24 font-bold mb-4">{activeItem.company}</div>} */}
           {activeItem.time ? <div className="mb-16">{activeItem.time}</div> : ''}
           <div className="text-18 leading-16">
             {activeItem.description}
           </div>
-          {/* <div className="mt-8 opacity-50">{activeItem.tags}</div> */}
           {activeItem.link && 
             <RotationImage type="content" maxTilt="10">
               <ButtonLink href={activeItem.link} target="_blank" className="mt-16 text-white bg-black">
@@ -126,12 +124,12 @@ export default function Timeline(){
 
 export function Item({...props}) {
   return(
-    <div className={`experienceItem relative flex flex-0 gap-16 px-0 pointer-events-none md:pointer-events-auto md:px-24 py-12 items-center z-10 rounded-16 transition ${props.clickable &&  'group cursor-pointer md:hover:bg-grey'} ${props.className ? props.className : ''}`} onMouseOver={props.onMouseOver} >
-      <div className={`shrink-0 experienceYear w-40 text-center bg-white py-4 transition rounded-16 ${!props.clickable ? 'text-black/30' : 'group-hover:bg-grey'}`}>{props.year}</div>
+    <div className={`experienceItem relative flex flex-0 gap-16 px-0 pointer-events-none md:pointer-events-auto md:px-24 py-12 items-center z-10 border-2 border-transparent rounded-16 transition ${props.clickable &&  'group cursor-pointer md:hover:border-grey'} ${props.className ? props.className : ''}`} onMouseOver={props.onMouseOver} >
+      <div className={`shrink-0 experienceYear w-40 text-center py-4 transition bg-white rounded-16 ${!props.clickable ? 'text-black/30' : ''}`}>{props.year}</div>
       {props.icon ? <div className="shrink-0 h-32"><Image src={`/images/portfolioIcons/${props.icon}.svg`} width={32} height={32} alt="" /></div> : ''}
       <div className="">
-        {props.role ? <div className="text-16 font-semibold">{props.role}</div> : ''}
         <div className="opacity-50">{props.company}</div>
+        {props.role ? <div className="text-16 font-semibold">{props.role}</div> : ''}
       </div>
     </div>
   )

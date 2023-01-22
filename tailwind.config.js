@@ -79,7 +79,10 @@ module.exports = {
       },
       height: {
         '48': '4.8rem',
-      }
+      },
+      backgroundImage: {
+        'iconpattern': "url('/images/portfolio/sprite.svg'), linear-gradient(to right bottom, #924FE7, #5214E1)",
+     },
     },
   },
   plugins: [
