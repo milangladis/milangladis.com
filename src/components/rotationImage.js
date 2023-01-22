@@ -93,7 +93,7 @@ export default function RotationImage({children, ...props}) {
   })
 
   return (
-  <div className={`relative group ${props.parentClass}`}>
+  <div className={`relative group w-fit m-auto ${props.parentClass}`}>
       <div style={{ transform: `translate(${gazePosition.x}px, ${gazePosition.y}px)`, opacity: gazePosition.opacity }} className="absolute block w-96 h-96 rounded-full z-50 bg-white blur-3xl pointer-events-none transition-opacity opacity-50"></div>
       <div className={`${typeof !props.cursor && 'cursor-none'} ${props.type !== "content" ? "before:content-[`&nbsp;`] before:absolute before:bg-grey before:rounded-16 before:-left-16 before:-bottom-16 before:top-16 before:w-full" : 'inline-block flex-1'} `}>
         <div className="relative" ref={elementRef}>
