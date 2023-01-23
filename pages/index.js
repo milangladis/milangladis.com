@@ -35,6 +35,13 @@ export default function Home(props) {
         <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-center md:justify-end gap-16 list-none align-middle flex-wrap '>            
           <div className="flex flex-col md:flex-row justify-center items-center gap-8">
             <RotationImage type="content" maxTilt="10">
+              <a href="https://blog.milangladis.com/" target="_blank" className='flex w-fit h-48 gap-8 px-16 items-center justify-center rounded-full font-semibold border-2 border-transparent hover:border-grey transition group'>
+                <span className="flex gap-8 items-center group-hover:scale-105 transition">
+                  Blog
+                </span>
+              </a>
+              </RotationImage>
+            <RotationImage type="content" maxTilt="10">
               <a href="/cv.pdf" target="_blank" className='flex w-fit h-48 gap-8 px-16 items-center justify-center rounded-full font-semibold border-2 border-transparent hover:border-grey transition group'>
                 <span className="flex gap-8 items-center group-hover:scale-105 transition">
                   Résumé
