@@ -69,23 +69,10 @@ const Banner = (props) => {
           </ButtonLink>
         </RotationImage>
 
-        <a href="https://www.figma.com/community/file/1198945221344862992" className='absolute flex items-center gap-8 bottom-16 right-24 uppercase font-bold opacity-70 hover:opacity-100 transition' target="_blank" rel="noreferrer">
-          <svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_752_8355)">
-            <path d="M5.33301 8.49992C5.33301 7.79267 5.61396 7.1144 6.11406 6.6143C6.61415 6.1142 7.29243 5.83325 7.99967 5.83325C8.70692 5.83325 9.3852 6.1142 9.88529 6.6143C10.3854 7.1144 10.6663 7.79267 10.6663 8.49992C10.6663 9.20716 10.3854 9.88544 9.88529 10.3855C9.3852 10.8856 8.70692 11.1666 7.99967 11.1666C7.29243 11.1666 6.61415 10.8856 6.11406 10.3855C5.61396 9.88544 5.33301 9.20716 5.33301 8.49992Z" fill="white"/>
-            <path d="M0 13.8334C0 13.1262 0.280952 12.4479 0.781048 11.9478C1.28115 11.4477 1.95942 11.1667 2.66667 11.1667H5.33333V13.8334C5.33333 14.5407 5.05238 15.2189 4.55228 15.719C4.05219 16.2191 3.37391 16.5001 2.66667 16.5001C1.95942 16.5001 1.28115 16.2191 0.781048 15.719C0.280952 15.2189 0 14.5407 0 13.8334Z" fill="white"/>
-            <path d="M5.33301 0.5V5.83333H7.99967C8.70692 5.83333 9.3852 5.55238 9.88529 5.05228C10.3854 4.55219 10.6663 3.87391 10.6663 3.16667C10.6663 2.45942 10.3854 1.78115 9.88529 1.28105C9.3852 0.780952 8.70692 0.5 7.99967 0.5L5.33301 0.5Z" fill="white"/>
-            <path d="M0 3.16667C0 3.87391 0.280952 4.55219 0.781048 5.05228C1.28115 5.55238 1.95942 5.83333 2.66667 5.83333H5.33333V0.5H2.66667C1.95942 0.5 1.28115 0.780952 0.781048 1.28105C0.280952 1.78115 0 2.45942 0 3.16667Z" fill="white"/>
-            <path d="M0 8.49992C0 9.20716 0.280952 9.88544 0.781048 10.3855C1.28115 10.8856 1.95942 11.1666 2.66667 11.1666H5.33333V5.83325H2.66667C1.95942 5.83325 1.28115 6.1142 0.781048 6.6143C0.280952 7.1144 0 7.79267 0 8.49992Z" fill="white"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_752_8355">
-            <rect width="10.6667" height="16" fill="white" transform="translate(0 0.5)"/>
-            </clipPath>
-            </defs>
-          </svg>
-
+        <a href="https://iconur.com" className='absolute flex items-center bottom-16 right-24 uppercase font-bold opacity-70 hover:opacity-100 transition' target="_blank" rel="noreferrer">
+          
           Get icons
+          <svg width="24" height="24" viewBox="0 0 24 24" stroke="#FFF" fill="none" strokeLinejoin="round" strokeWidth="2" strokeLinecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M6 12L18 12M18 12L14 8M18 12L14 16"></path></svg>
         </a>
       </div>
     </div>
