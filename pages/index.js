@@ -14,8 +14,9 @@ export default function Home(props) {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const updatemodal = (bool) => {
-    setIsModalOpen(bool);
+  const openModal = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
   }
 
   return (
@@ -67,7 +68,7 @@ export default function Home(props) {
           </div>
           <div className="hidden md:flex">
             <RotationImage type="content" maxTilt="10">
-              <ButtonLink updatemodal={updatemodal} href="mailto:hello@milangladis.com" className="group border-2 transition">
+              <ButtonLink onClick={openModal} href="mailto:hello@milangladis.com" className="group border-2 transition">
                 <span className="flex gap-8 items-center group-hover:scale-105 transition">
                   Contact me
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +107,7 @@ export default function Home(props) {
               </div>
               <div>
               <RotationImage type="content" maxTilt="10" parentClass="ml-0">
-                <ButtonLink updatemodal={updatemodal} href="mailto:hello@milangladis.com" target="_blank" className="pl-32 pr-24 h-64 text-white bg-black bg-gradient-to-br from-[#924FE7] to-[#5214E1]">
+                <ButtonLink onClick={openModal} href="mailto:hello@milangladis.com" target="_blank" className="pl-32 pr-24 h-64 text-white bg-black bg-gradient-to-br from-[#924FE7] to-[#5214E1]">
                   <span className="flex gap-8 items-center group-hover:scale-105 transition">
                     Start a chat
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,17 +144,18 @@ export default function Home(props) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <SideProject title="Moqop" desc="Design automation tool" icon="moqop" href="https://moqop.com" />
+          <SideProject title="Iconur" desc="Line icons set" icon="iconur" href="https://iconur.com" />
+          <SideProject title="WMan" desc="Ultimate travel app" icon="wman" href="https://wman.io" />
           <SideProject title="Bouldy" desc="Gym management platform" icon="bouldy" href="https://bouldy.com" />
-          <SideProject title="Runee" desc="Smart trainer for runners" icon="runee" />
-          <SideProject title="RecycleAcademy" desc="Learn how to recycle" icon="recycleacademy" />
-          <SideProject title="InvoiceLand" desc="Invoice templates for SME" icon="invoiceland" />
+          <SideProject title="Runee" desc="Smart trainer for runners" icon="runee" href="https://runee.app" />
+          <SideProject title="RecycleAcademy" desc="Learn how to recycle" icon="recycleacademy" href="https://recycleacademy.com" />
+          <SideProject title="InvoiceLand" desc="Invoice templates for SME" icon="invoiceland" href="https://www.figma.com/community/file/1065978917863536899" />
           <SideProject title="Mokop" desc="Online 3D mockups " icon="mokop" />
-          <SideProject title="Iconur" desc="AI generated icons" icon="iconur" />
           <SideProject title="Bonsaio" desc="Real-time plant tracking" icon="bonsaio" />
-          <SideProject title="Dotbook" desc="Dotted notepad for designers" icon="dotbook" />
+          {/* <SideProject title="Dotbook" desc="Dotted notepad for designers" icon="dotbook" /> */}
         </div>
 
-        <Banner updatemodal={updatemodal} />
+        <Banner onClick={openModal} />
 
       </main>
 
