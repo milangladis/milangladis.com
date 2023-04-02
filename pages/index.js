@@ -144,10 +144,10 @@ export default function Home(props) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <SideProject title="AI Nouns" desc="Build and publish AI apps" icon="ainouns" href="https://ainouns.com" />
-          <SideProject title="Traua" desc="Monetise your travel experience" icon="traua" href="https://traua.com" />
+          <SideProject title="WMan" desc="Ultimate travel app" icon="wman" href="https://wman.io" />
           <SideProject title="Moqop" desc="Design automation tool" icon="moqop" href="https://moqop.com" />
           <SideProject title="Iconur" desc="Line icons set" icon="iconur" href="https://iconur.com" />
-          <SideProject title="WMan" desc="Ultimate travel app" icon="wman" href="https://wman.io" />
+          <SideProject title="Traua" desc="Monetise your travel experience" icon="traua" href="https://traua.com" />
           <SideProject title="Bouldy" desc="Gym management platform" icon="bouldy" href="https://bouldy.com" />
           <SideProject title="Runee" desc="Smart trainer for runners" icon="runee" href="https://runee.app" />
           <SideProject title="RecycleAcademy" desc="Learn how to recycle" icon="recycleacademy" href="https://recycleacademy.com" />
