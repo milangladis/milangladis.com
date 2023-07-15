@@ -1,6 +1,7 @@
 This is my personal website project coded in [Next.js](https://nextjs.org/) and [Tailwind](https://tailwindcss.com/), deployed with [Vercel](https://vercel.com). Feel free to use the template, but keep the credentials in the footer. Thanks a lot 🙏
 
-<img width="1799" alt="Screenshot 2023-07-15 at 18 45 19" src="https://github.com/milangladis/milangladis2023/assets/1476427/43e92d4a-8ba0-410c-ae5b-91ac8291096e">
+<img width="1799" alt="Screenshot 2023-07-15 at 18 45 19" src="https://github.com/milangladis/milangladis.com/blob/main/public/images/milangladis.com-domain-screenshot.png?raw=true)">
+
 
 ## Getting Started
 
