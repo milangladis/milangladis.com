@@ -96,7 +96,7 @@ const Team = (team) => {
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 9.33337V11.3334C12 12.0698 11.4031 12.6667 10.6667 12.6667H5.33333C4.59695 12.6667 4 12.0698 4 11.3334V6.00005C4 5.26367 4.59695 4.66671 5.33333 4.66671H7.33333M9.66667 7.00004L13.3334 3.33345M13.3334 3.33345L10.3333 3.33337M13.3334 3.33345V6.33337" stroke="black" strokeWidth="1.5" strokeLinecap="round"/></svg>
             </Link> : ''}
           </div>
-          <div className="text-20 font-bold leading-snug">
+          <div className="text-18 md:text-20 font-bold leading-snug">
             {team.role.split('\n').map((str, index) => <p key={index}>{str}</p>)}
           </div>
         </div>

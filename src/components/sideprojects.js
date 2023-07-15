@@ -121,7 +121,7 @@ const Project = (project) => {
         <img src={`/images/portfolio/portfolioIcons/${project.logo}.svg`} alt="" className="h-24 w-24" />
         <div className="flex w-full">
           <div className="flex gap-2 flex-1">
-            <div className="text-20 font-bold">{project.projectName}</div>
+            <div className="text-18 md:text-20 font-bold">{project.projectName}</div>
             <div className="opacity-50 text-13 font-medium mt-2">{project.domain}</div>
           </div>
           {project.url ? <Link href={project.url} target="_blank" className="flex h-24 items-center gap-4 py-0 px-8 text-13 whitespace-nowrap font-medium opacity-50 hover:opacity-100">
