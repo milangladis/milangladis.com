@@ -12,10 +12,10 @@ export default function RotationImage({children, ...props}) {
 
       const tiltEffectSettings = {
         max: props.maxTilt || 5,
-        perspective: props.perspective || 500,
-        scale: props.scale || 1.05,
-        speed: props.speed || 500,
-        easing: props.easing || "cubic-bezier(.03,.98,.52,.99)"
+        perspective: 500,
+        scale: 1.05,
+        speed: 500,
+        easing: "cubic-bezier(.03,.98,.52,.99)"
       };
       
       elementRef.current.addEventListener("mouseenter", cardMouseEnter);

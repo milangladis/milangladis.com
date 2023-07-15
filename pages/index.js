@@ -28,10 +28,9 @@ export default function Home(props) {
       <Head>
         <title>Milan Gladiš · Product · Design · Code</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
-        <meta name="description" content="Hi 👋 I'm Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, and metaverse." />
+        <meta name="description" content="Hi 👋 I&apos;m Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, and metaverse." />
       </Head>
-      
-      
+
       <header className='flex flex-col w-full p-32 pb-0 items-center md:flex-row'>
         <h1 className='flex flex-col items-center mb-16 md:mb-0 md:items-start'>
           <span className='mb-8 md:mb-0 text-24 md:text-18 font-semibold'>Milan Gladiš</span>
@@ -144,7 +143,7 @@ export default function Home(props) {
         <div>
           <Heading2>Teams I worked with</Heading2>
           <SubHeading2>
-            Throughout my career, I've mostly worked in early-stage startups.<Br /> 
+            Throughout my career, I&apos;ve mostly worked in early-stage startups.<Br /> 
             I truly believe that exceptional growth happens only in turbulent and dynamic environment
           </SubHeading2>
           <Teams />
@@ -153,9 +152,9 @@ export default function Home(props) {
         <Divider />
         
         <div className="">
-          <Heading2>Side-projects I’ve built</Heading2>
+          <Heading2>Side-projects I&apos;ve built</Heading2>
           <SubHeading2>
-            Throughout my career, I've mostly worked in early-stage startups.<Br /> 
+            Throughout my career, I&apos;ve mostly worked in early-stage startups.<Br /> 
             I truly believe that exceptional growth happens only in turbulent and dynamic environment
           </SubHeading2>
         
