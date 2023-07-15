@@ -3,8 +3,12 @@ import ButtonLink from '../src/components/buttonLink';
 import Timeline from '../src/components/timeline';
 import RotationImage from '../src/components/rotationImage';
 import Header from '../src/components/header';
+import {Heading2, SubHeading2, Br, Divider} from '../src/components/elements';
 import Footer from '../src/components/footer';
 import Social from '../src/components/social';
+import Roles from '../src/components/roles';
+import Teams from '../src/components/teams';
+import SideProjects from '../src/components/sideprojects';
 import Image from 'next/image';
 import { useState } from 'react';
 import Banner from '../src/components/banner';
@@ -41,7 +45,7 @@ export default function Home(props) {
                   Blog
                 </span>
               </a>
-              </RotationImage>
+            </RotationImage>
             <RotationImage type="content" maxTilt="10">
               <a href="/cv.pdf" target="_blank" className='flex w-fit h-48 gap-8 px-16 items-center justify-center rounded-full font-semibold border-2 border-transparent hover:border-grey transition group'>
                 <span className="flex gap-8 items-center group-hover:scale-105 transition">
@@ -91,7 +95,7 @@ export default function Home(props) {
 
             <div className="flex flex-col justify-center">
               <span className='block mb-16'>
-                <span className='relative text-32 md:text-48 font-bold'>
+                <span className='relative text-32 md:text-40 font-bold'>
                   Hi 👋🏻 I&apos;m Milan
                   <span className='absolute -right-48 -top-48 flex text-14 opacity-30 font-semibold'>
                     <svg className='relative top-[28px] mr-8' width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 1C15.5 1 9 5.5 3 20M3 20L1 13.5M3 20L9 17.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -100,9 +104,9 @@ export default function Home(props) {
                 </span>
               </span>
               <div className="text-18 md:text-20 mb-32 leading-16">
-                Product, Design, and Technology <br className='hidden sm:block' />
-                person who builds web products <br className='hidden sm:block' />
-                for 3D, AR, AI, AdTech, blockchain, <br className='hidden sm:block' />
+                Product, Design, and Technology <Br />
+                person who builds web products <Br />
+                for 3D, AR, AI, AdTech, blockchain, <Br />
                 and metaverse.
               </div>
               <div>
@@ -124,37 +128,38 @@ export default function Home(props) {
         {/* <Divider /> */}
         <Social />
 
-        <div className="text-center mb-64">
-          <div className="text-32 md:text-40 font-bold">Experience</div>
-          <div className="text-18 max-w-1/2 mt-8 leading-16">
-            Challenging projects and a skilled team, <br className='hidden sm:block' /> 
-            the perfect combination for disruption</div>
+        <div className="">
+          <Heading2>My roles</Heading2>
+          <SubHeading2>
+            Empowering SMEs to build new or optimise existing products <Br /> 
+            in the most efficient way that maximises revenue and drives growth.
+          </SubHeading2>
+          <Roles />
         </div>
 
-        <Timeline />
+
 
         <Divider />
         
-        <div className="text-center mb-64">
-          <div className="text-32 md:text-40 font-bold">Side projects</div>
-          <div className="text-18 max-w-1/2 mt-8 leading-16">
-            Built a bunch of projects for fun, <br className='hidden sm:block' /> 
-            and to learn new tech and explore new markets</div>
+        <div>
+          <Heading2>Teams I worked with</Heading2>
+          <SubHeading2>
+            Throughout my career, I've mostly worked in early-stage startups.<Br /> 
+            I truly believe that exceptional growth happens only in turbulent and dynamic environment
+          </SubHeading2>
+          <Teams />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <SideProject title="AI Nouns" desc="Build and publish AI apps" icon="ainouns" href="https://ainouns.com" />
-          <SideProject title="WMan" desc="Ultimate travel app" icon="wman" href="https://wman.io" />
-          <SideProject title="Moqop" desc="Design automation tool" icon="moqop" href="https://moqop.com" />
-          <SideProject title="Iconur" desc="Line icons set" icon="iconur" href="https://iconur.com" />
-          <SideProject title="Traua" desc="Monetise your travel experience" icon="traua" href="https://traua.com" />
-          <SideProject title="Bouldy" desc="Gym management platform" icon="bouldy" href="https://bouldy.com" />
-          <SideProject title="Runee" desc="Smart trainer for runners" icon="runee" href="https://runee.app" />
-          <SideProject title="RecycleAcademy" desc="Learn how to recycle" icon="recycleacademy" href="https://recycleacademy.com" />
-          <SideProject title="InvoiceLand" desc="Invoice generator for freelancers" icon="invoiceland" />
-          <SideProject title="Mokop" desc="Online 3D mockups " icon="mokop" />
-          <SideProject title="Bonsaio" desc="Real-time plant tracking" icon="bonsaio" />
-          {/* <SideProject title="Dotbook" desc="Dotted notepad for designers" icon="dotbook" /> */}
+        <Divider />
+        
+        <div className="">
+          <Heading2>Side-projects I’ve built</Heading2>
+          <SubHeading2>
+            Throughout my career, I've mostly worked in early-stage startups.<Br /> 
+            I truly believe that exceptional growth happens only in turbulent and dynamic environment
+          </SubHeading2>
+        
+          <SideProjects />
         </div>
 
         <Banner onClick={openModal} />
@@ -200,11 +205,5 @@ function SideProject({...props}) {
       }
     
     </>
-  )
-}
-
-function Divider() {
-  return (
-    <div className="w-64 h-2 my-64 md:my-128 bg-[#5214E1] m-auto"></div>
   )
 }

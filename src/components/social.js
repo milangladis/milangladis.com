@@ -5,7 +5,7 @@ import RotationImage from "./rotationImage";
 const Social = () => {
   var test = "asdf";
   return (
-    <div className="my-64 md:my-128 flex flex-wrap gap-8 md:gap-16 justify-center xl:justify-between p-16">
+    <div className="my-64 md:my-96 flex flex-wrap justify-center xl:justify-between p-16 text-16">
         <Item name="GitHub" icon="github" link="https://github.com/milangladis/" color="000000" />
         <Item name="Linkedin" icon="linkedin" link="https://www.linkedin.com/in/milangladis/" color="2C64BC" />
         {/* <Item name="Notion" icon="notion" link="https://blog.milangladis.com/" color="D16A5E" /> */}

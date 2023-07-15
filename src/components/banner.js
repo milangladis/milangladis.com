@@ -54,7 +54,7 @@ const Banner = ({openModal, ...props}) => {
         </div>
 
         <RotationImage type="content" maxTilt="10">
-          <ButtonLink {...props} Click={openModal}  href="mailto:hello@milangladis.com" className="pl-32 pr-24 h-64 bg-white text-[#5214E1] group">
+          <ButtonLink {...props} click={openModal}  href="mailto:hello@milangladis.com" className="pl-32 pr-24 h-64 bg-white text-[#5214E1] group">
             <span className="flex gap-8 items-center group-hover:scale-105 transition">
               Start a chat
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
