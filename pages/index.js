@@ -31,23 +31,24 @@ export default function Home(props) {
         <meta name="description" content="Hi 👋 I&apos;m Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, and metaverse." />
       </Head>
 
-      <header className='flex flex-col w-full p-32 pb-0 items-center md:flex-row'>
-        <h1 className='flex flex-col items-center mb-16 md:mb-0 md:items-start'>
-          <span className='mb-8 md:mb-0 text-24 md:text-18 font-semibold'>Milan Gladiš</span>
-          <span className='text-14 md:text-12 -mt-4 font-medium opacity-50'>Product · Design · Code</span>
+      <header className='flex flex-wrap w-full p-32 pb-0 items-center'>
+        <h1 className='flex flex-col '>
+          <span className='mb-2 text-18 font-semibold'>Milan Gladiš</span>
+          <span className='text-12 -mt-4 font-medium opacity-50'>Product · Design · Code</span>
         </h1>
-        <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-center md:justify-end gap-16 list-none align-middle flex-wrap '>            
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-            <RotationImage type="content" maxTilt="10">
+        <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-end gap-16 list-none align-middle flex-wrap '>            
+          <div className="flex xs:justify-end items-center gap-8">
+            <RotationImage type="content" maxTilt="10" parentClass="m-0">
               <a href="https://blog.milangladis.com/" className='flex w-fit h-48 gap-8 px-16 items-center justify-center rounded-full font-semibold border-2 border-transparent hover:border-grey transition group'>
                 <span className="flex gap-8 items-center group-hover:scale-105 transition">
                   Blog
                 </span>
               </a>
             </RotationImage>
-            <RotationImage type="content" maxTilt="10">
+            <RotationImage type="content" maxTilt="10" parentClass="m-0">
               <a href="/cv.pdf" target="_blank" className='flex w-fit h-48 gap-8 px-16 items-center justify-center rounded-full font-semibold border-2 border-transparent hover:border-grey transition group'>
-                <span className="flex gap-8 items-center group-hover:scale-105 transition">
+                <span className='md:hidden'>CV</span>
+                <span className="hidden md:flex gap-8 items-center group-hover:scale-105 transition">
                   Résumé
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 5V13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -96,7 +97,7 @@ export default function Home(props) {
               <span className='block mb-16'>
                 <span className='relative text-32 md:text-40 font-bold'>
                   Hi 👋🏻 I&apos;m Milan
-                  <span className='absolute -right-48 -top-48 flex text-14 opacity-30 font-semibold'>
+                  <span className='hidden sm:flex absolute -right-48 bottom-48 text-14 opacity-30 font-semibold'>
                     <svg className='relative top-[28px] mr-8' width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 1C15.5 1 9 5.5 3 20M3 20L1 13.5M3 20L9 17.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     for real
                   </span>
