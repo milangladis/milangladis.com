@@ -88,15 +88,15 @@ const Team = (team) => {
     <div className="flex flex-col gap-12">
       <div className="flex items-center md:items-start md:flex-col gap-12">
         <img src={`/images/portfolio/portfolioIcons/${team.logo}.svg`} alt="" className="h-32 w-32" />
-        <div className="flex flex-col flex-1">
+        <div className="flex w-full flex-col flex-1 md:gap-4">
           <div className="flex gap-2 flex-1 justify-between">
-            <div className="opacity-50 text-13 font-medium mt-2">{team.company}</div>
-            {team.url ? <Link href={team.url} target="_blank" className="flex h-24 items-center gap-4 py-0 px-8 text-13 whitespace-nowrap font-medium opacity-50 hover:opacity-100">
+            <div className="opacity-50 text-13 font-semibold mt-2 flex-1">{team.company}</div>
+            {team.url ? <Link href={team.url} target="_blank" className="flex h-24 items-center gap-4 py-0 px-8 text-13 whitespace-nowrap font-semibold opacity-50 hover:opacity-100">
               Open
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 9.33337V11.3334C12 12.0698 11.4031 12.6667 10.6667 12.6667H5.33333C4.59695 12.6667 4 12.0698 4 11.3334V6.00005C4 5.26367 4.59695 4.66671 5.33333 4.66671H7.33333M9.66667 7.00004L13.3334 3.33345M13.3334 3.33345L10.3333 3.33337M13.3334 3.33345V6.33337" stroke="black" strokeWidth="1.5" strokeLinecap="round"/></svg>
             </Link> : ''}
           </div>
-          <div className="text-18 md:text-20 font-bold leading-snug">
+          <div className="text-16 md:text-20 font-bold leading-snug">
             {team.role.split('\n').map((str, index) => <p key={index}>{str}</p>)}
           </div>
         </div>
