@@ -69,12 +69,10 @@ export default function Home(props) {
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5301)"><path d="M23.954 4.569C23.069 4.958 22.124 5.223 21.129 5.344C22.143 4.733 22.923 3.77 23.292 2.621C22.341 3.176 21.287 3.58 20.165 3.805C19.269 2.846 17.992 2.246 16.574 2.246C13.857 2.246 11.654 4.449 11.654 7.163C11.654 7.553 11.699 7.928 11.781 8.287C7.691 8.094 4.066 6.13 1.64 3.161C1.213 3.883 0.974 4.722 0.974 5.636C0.974 7.346 1.844 8.849 3.162 9.732C2.355 9.706 1.596 9.484 0.934 9.116V9.177C0.934 11.562 2.627 13.551 4.88 14.004C4.467 14.115 4.031 14.175 3.584 14.175C3.27 14.175 2.969 14.145 2.668 14.089C3.299 16.042 5.113 17.466 7.272 17.506C5.592 18.825 3.463 19.611 1.17 19.611C0.78 19.611 0.391 19.588 0 19.544C2.189 20.938 4.768 21.753 7.557 21.753C16.611 21.753 21.556 14.257 21.556 7.767C21.556 7.558 21.556 7.347 21.541 7.137C22.502 6.448 23.341 5.577 24.001 4.589L23.954 4.569Z" fill="black"/></g><defs><clipPath id="clip0_201_5301"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
               </a>
             </div> */}
-          </div>
-          <div className="hidden md:flex">
-            <RotationImage type="content" maxTilt="10">
+            <RotationImage type="content" maxTilt="10" parentClass="mx-0">
               <ButtonLink onClick={openModal} href="mailto:hello@milangladis.com" className="group border-2 transition">
                 <span className="flex gap-8 items-center group-hover:scale-105 transition">
-                  Contact me
+                  <span className='hidden md:block'>Contact me</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
