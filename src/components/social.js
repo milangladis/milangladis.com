@@ -28,7 +28,7 @@ const Item = ({ name, link, icon, color }) => {
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-1 items-center justify-center border-2 border-transparent xs:hover:border-grey rounded-full xs:p-8 md:px-16 md:py-12 group font-semibold"
+        className="flex flex-1 items-center justify-center text-14 border-2 border-transparent xs:hover:border-grey rounded-full xs:p-8 md:px-16 md:py-12 group font-semibold"
         style={{ color: color}}
       >
         <span className="flex items-center group-hover:scale-105 transition">
