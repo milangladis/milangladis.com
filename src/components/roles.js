@@ -46,7 +46,7 @@ const Role = (role) => {
       <div className="flex items-center md:items-start md:flex-col gap-12">
         <div className="text-32">{role.emoji}</div>
         <div className="flex flex-col md:gap-4">
-          <div className="opacity-50 uppercase text-13 font-semibold">{role.suptitle}</div>
+          <div className="opacity-50 uppercase text-13">{role.suptitle}</div>
           <div className="text-16 md:text-20 font-bold">{role.roleName}</div>
         </div>
       </div>
