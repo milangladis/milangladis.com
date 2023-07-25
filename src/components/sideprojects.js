@@ -44,18 +44,18 @@ const SideProjects = () => {
       description: 'Generating simple AI apps by writing text prompt speeds up repetitive tasks within the team, easily shareable with the community ',
     },
     {
+      logo: 'runee',
+      projectName: 'Runee',
+      domain: '.app',
+      url: 'https://runee.app',
+      description: 'Connecting runners with professional trainers, building a training plan, progress tracking, and getting feedback. All in your palm',
+    },
+    {
       logo: 'bouldy',
       projectName: 'Bouldy',
       domain: '.com',
       url: 'https://bouldy.com',
       description: 'Gym management platform to store climbing routes, print labels with QR codes and track the climbing progress of visitors',
-    },
-    {
-      logo: 'runee',
-      projectName: 'Runee',
-      domain: '.app',
-      // url: 'https://runee.app',
-      description: 'Connecting runners with professional trainers, building a training plan, progress tracking, and getting feedback. All in your palm',
     },
     {
       logo: 'recycleacademy',
