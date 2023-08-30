@@ -9,11 +9,11 @@ const SideProjects = () => {
 
   const roles = [
     {
-      logo: 'wman',
-      projectName: 'WMan',
-      domain: '.io',
-      url: 'https://wman.io',
-      description: 'Ultimate AI travel app creates a travel plan for you. By using various APIs and GPT4, I was able to prepare bullet proof itinerary for any destination',
+      logo: 'traua',
+      projectName: 'Traua',
+      domain: '.com',
+      url: 'https://traua.com',
+      description: 'Platform helps influencers to monetise their travel experience by sharing itinerary, and tips&tricks from the destination',
     },
     {
       logo: 'iconur',
@@ -30,11 +30,11 @@ const SideProjects = () => {
       description: 'Design automation tool that currently generates Instagram Stories from athletes\' Strava activities. Imagine rendering images with pure JSON',
     },
     {
-      logo: 'traua',
-      projectName: 'Traua',
-      domain: '.com',
-      url: 'https://traua.com',
-      description: 'Platform helps influencers to monetise their travel experience by sharing itinerary, and tips&tricks from the destination',
+      logo: 'wman',
+      projectName: 'WMan',
+      domain: '.io',
+      url: 'https://wman.io',
+      description: 'Ultimate AI travel app creates a travel plan for you. By using various APIs and GPT4, I was able to prepare bullet proof itinerary for any destination',
     },
     {
       logo: 'ainouns',
