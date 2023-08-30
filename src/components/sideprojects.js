@@ -47,7 +47,6 @@ const SideProjects = () => {
       logo: 'runee',
       projectName: 'Runee',
       domain: '.app',
-      url: 'https://runee.app',
       description: 'Connecting runners with professional trainers, building a training plan, progress tracking, and getting feedback. All in your palm',
     },
     {
