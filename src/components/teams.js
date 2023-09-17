@@ -14,7 +14,7 @@ const Teams = () => {
       role: 'Product Design Lead',
       date: 'Jun 2022 - Present',
       url: 'https://landvault.io',
-      description: 'Developing web3 tools that supported immersive 3D experiences creation for metaverses and virtual spaces backed by blockchain',
+      description: 'Developing web3 tools that supported immersive 3D experiences creation for metaverses and virtual spaces',
     },
     {
       logo: 'admix',
@@ -22,7 +22,7 @@ const Teams = () => {
       role: 'Product Lead',
       date: 'Mar 2021 - Jun 2022',
       // url: 'https://',
-      description: 'Leading the creation of the mobile games monetisation platform that used in-play and non-intrusive, no code ad solution',
+      description: 'Creating the mobile games monetisation platform that used no code and non-intrusive in-play ad solution',
     },
     {
       logo: 'vectary',
@@ -30,7 +30,7 @@ const Teams = () => {
       role: 'Head of Product',
       date: 'Jan 2016 - Dec 2020',
       url: 'https://vectary.com',
-      description: 'Leading product development of an innovative online 3D design platform we built from scratch, and which democratised 3D content creation',
+      description: 'Leading product of unique online 3D design engine and platform to democratise 3D content creation',
     },
     {
       logo: 'vectary',

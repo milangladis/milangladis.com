@@ -127,10 +127,10 @@ export default function Home(props) {
         <Social />
 
         <div className="">
-          <Heading2>My roles</Heading2>
+          <Heading2>I'd a product guy</Heading2>
           <SubHeading2>
             Empowering SMEs to build new or optimise existing products <Br /> 
-            in the most efficient way that maximises revenue and drives growth.
+            in the most efficient way that maximises revenue and drives growth
           </SubHeading2>
           <Roles />
         </div>
@@ -140,10 +140,10 @@ export default function Home(props) {
         <Divider />
         
         <div>
-          <Heading2>Teams I worked with</Heading2>
+          <Heading2>Working with top teams</Heading2>
           <SubHeading2>
             Throughout my career, I&apos;ve mostly worked in early-stage startups.<Br /> 
-            I truly believe that exceptional growth happens only in turbulent and dynamic environment
+            I truly believe that exceptional growth happens only in dynamic environment
           </SubHeading2>
           <Teams />
         </div>
@@ -151,10 +151,9 @@ export default function Home(props) {
         <Divider />
         
         <div className="">
-          <Heading2>Side-projects I&apos;ve built</Heading2>
+          <Heading2>Building side-projects for fun</Heading2>
           <SubHeading2>
-            Throughout my career, I&apos;ve mostly worked in early-stage startups.<Br /> 
-            I truly believe that exceptional growth happens only in turbulent and dynamic environment
+            I always build projects to learn, experiment, and grow <Br />
           </SubHeading2>
         
           <SideProjects />

@@ -23,6 +23,6 @@ export const Br = () => {
 
 export const Divider = () => {
   return (
-    <div className="w-64 h-2 bg-black my-64 md:my-64 m-auto"></div>
+    <div className="w-full h-2 bg-black my-64 md:my-64 m-auto  opacity-5"></div>
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import RotationImage from "./rotationImage";
 import ButtonLink from "./buttonLink";
+import { Br } from "./elements";
 
 const Banner = ({openModal, ...props}) => {
 
@@ -49,8 +50,8 @@ const Banner = ({openModal, ...props}) => {
       <div ref={bgRef} className="moveBackground absolute top-0 right-0 bottom-0 left-0 bg-iconpattern  rounded-16"></div>
       <div className="">
         <div className="text-32 font-bold mb-48">
-          Let’s build <br className='hidden sm:block' />
-          something together
+          Let’s build <Br />
+          a project together
         </div>
 
         <RotationImage type="content" maxTilt="10">
