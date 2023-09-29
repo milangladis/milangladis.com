@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import ButtonLink from '../src/components/buttonLink';
-import Timeline from '../src/components/timeline';
+// import Timeline from '../src/components/timeline';
 import RotationImage from '../src/components/rotationImage';
 import Header from '../src/components/header';
 import {Heading2, SubHeading2, Br, Divider} from '../src/components/elements';
@@ -151,7 +151,7 @@ export default function Home(props) {
         <Divider />
         
         <div className="">
-          <Heading2>Side-projects I've built</Heading2>
+          <Heading2>Side-projects I&apos;ve built</Heading2>
           <SubHeading2>
             I always build projects to learn, experiment, and grow <Br />
           </SubHeading2>

@@ -1,4 +1,5 @@
 import RotationImage from "./rotationImage"
+import Image from "next/image"
 
 const Roles = () => {
 
@@ -66,7 +67,7 @@ const Role = (role) => {
 const RoleIcon = ({ icon }) => {
   return (
     <div className="flex items-center justify-center hover:scale-125 duration-75 w-32 h-32">
-      <img src={`./images/tools/${icon}.svg`} alt="" className="w-24 h-24" />
+      <Image src={`./images/tools/${icon}.svg`} alt={icon} width={24} height={24} className="w-24 h-24" />
     </div>
   )
 }

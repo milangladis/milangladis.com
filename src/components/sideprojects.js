@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link"
 import { useState } from "react";
 import RotationImage from "./rotationImage";
+
 
 const SideProjects = () => {
 
@@ -117,7 +119,7 @@ const Project = (project) => {
   return (
     <div className="flex flex-col gap-12">
       <div className="flex items-center md:items-start md:flex-col gap-12">
-        <img src={`/images/portfolio/portfolioIcons/${project.logo}.svg`} alt="" className="h-24 w-24" />
+        <Image src={`/images/portfolio/portfolioIcons/${project.logo}.svg`} alt={project.logo} width={24} height={24} className="h-24 w-24" />
         <div className="flex w-full">
           {project.url ? 
             <Link href={project.url} target="_blank" className="flex h-24 items-center gap-4 py-0 whitespace-nowrap">
