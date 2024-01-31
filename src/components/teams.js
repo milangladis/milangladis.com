@@ -5,10 +5,18 @@ import RotationImage from "./rotationImage";
 
 const Teams = () => {
 
-  const [itemsToShow, setItemsToShow] = useState(3);
+  const [itemsToShow, setItemsToShow] = useState(30);
 
 
   const teams = [
+    {
+      logo: 'qubu',
+      company: 'Qubu',
+      role: 'CPO',
+      date: 'Oct 2023 - Present',
+      url: 'https://qubu.io',
+      description: 'Building powerful generative and collaborative AI powered software for Architects, Engineers & Construction.',
+    },
     {
       logo: 'landvault',
       company: 'Landvault',
@@ -22,7 +30,7 @@ const Teams = () => {
       company: 'Admix',
       role: 'Product Lead',
       date: 'Mar 2021 - Jun 2022',
-      // url: 'https://',
+      url: 'https://admixplay.com',
       description: 'Creating the mobile games monetisation platform that used no code and non-intrusive in-play ad solution',
     },
     {
@@ -38,6 +46,7 @@ const Teams = () => {
       company: 'Vectary',
       role: 'Product Designer \n & Front-End Developer',
       date: 'Oct 2014 - Jan 2016',
+      url: 'https://vectary.com',
       description: 'Designing MVP of 3D content creation and 3D printing engine, creating concepts, interactive prototypes, but also developing the front-end',
     },
     {
@@ -45,6 +54,7 @@ const Teams = () => {
       company: 'Bonetics',
       role: 'UX/UI Designer \n & Front-End Developer',
       date: 'Apr 2013 - Oct 2014',
+      url: 'https://bonetics.com/',
       description: 'Delivering UX and UI of web and mobile applications for agency’s internal projects and startup clients',
     },
     {

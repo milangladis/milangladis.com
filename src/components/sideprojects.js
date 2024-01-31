@@ -6,7 +6,7 @@ import RotationImage from "./rotationImage";
 
 const SideProjects = () => {
 
-  const [itemsToShow, setItemsToShow] = useState(6);
+  const [itemsToShow, setItemsToShow] = useState(30);
 
 
   const roles = [
