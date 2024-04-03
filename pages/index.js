@@ -8,6 +8,7 @@ import Footer from '../src/components/footer';
 import Social from '../src/components/social';
 import Roles from '../src/components/roles';
 import Teams from '../src/components/teams';
+import Skills from '../src/components/skills';
 import SideProjects from '../src/components/sideprojects';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -28,7 +29,7 @@ export default function Home(props) {
       <Head>
         <title>Milan Gladiš · Product · Design · Code</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
-        <meta name="description" content="Hi 👋 I&apos;m Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, and metaverse." />
+        <meta name="description" content="Hi 👋 I&apos;m Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, metaverse, and architecture." />
       </Head>
 
       <header className='flex flex-wrap w-full p-32 pb-0 items-center'>
@@ -103,9 +104,9 @@ export default function Home(props) {
               </span>
               <div className="text-18 md:text-20 mb-32 leading-16">
                 Product, Design, and Technology <Br />
-                person who builds web products <Br />
-                for 3D, AR, AI, AdTech, blockchain, <Br />
-                and metaverse.
+                person who builds products for<Br />
+                3D, AR, AI, AdTech, Metaverse, <Br />
+                Blockchain, and Architecture.
               </div>
               <div>
               <RotationImage type="content" maxTilt="10" parentClass="ml-0">
@@ -135,14 +136,23 @@ export default function Home(props) {
           <Roles />
         </div>
 
+        {/* <Divider /> */}
+        
+        <div className='py-96'>
+          {/* <Heading2>Skillset</Heading2>
+          <SubHeading2>
+            Throughout my career, I&apos;ve mostly worked within early-stage startups.<Br /> 
+            I truly believe that exceptional growth happens only in dynamic environment
+          </SubHeading2> */}
+          <Skills />
+        </div>
 
-
-        <Divider />
+        {/* <Divider /> */}
         
         <div>
           <Heading2>Working with the best</Heading2>
           <SubHeading2>
-            Throughout my career, I&apos;ve mostly worked in early-stage startups.<Br /> 
+            Throughout my career, I&apos;ve mostly worked within early-stage startups.<Br /> 
             I truly believe that exceptional growth happens only in dynamic environment
           </SubHeading2>
           <Teams />
@@ -168,13 +178,13 @@ export default function Home(props) {
       {isModalOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-30 flex items-center justify-center" >
           <div className="absolute top-0 left-0 w-full h-full bg-[#5214E1]/90 z-10" onClick={() => setIsModalOpen(!isModalOpen)}></div>
-          <div className="relative w-full max-w-6xl m-32 bg-white rounded-16 p-48 z-50">
+          <div className="relative w-full max-w-6xl m-32 text-center bg-white rounded-16 p-64 z-50">
             {/* <div className="text-24 md:text-32 font-bold">Hi ✌️</div> */}
-            <div className="text-24 md:text-32 font-bold">Can&apos;t wait to hear from you!</div>
+            <div className="text-24 md:text-32 font-bold">Let&apos;s have a chat!</div>
             
-            <div className="mt-16 text-16 leading-10">
-              <div className="">Feel free to use <a href="mailto:hello@milangladis.com" className='underline font-bold text-[#5214E1]'>hello@milangladis.com</a>,
-              or find me anywhere as <strong className='text-[#5214E1]'>@milangladis</strong> on messenger, telegram, or twitter.</div>
+            <div className="mt-16 text-16 leading-18">
+              <div className="">Send a message to <a href="mailto:hello@milangladis.com" className='underline font-bold text-[#5214E1]'>hello@milangladis.com</a>, <Br/ >
+              or find <strong className='text-[#5214E1]'>@milangladis</strong> on the social platforms.</div>
             </div>
           </div>
         </div>

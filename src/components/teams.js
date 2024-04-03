@@ -12,7 +12,7 @@ const Teams = () => {
     {
       logo: 'qubu',
       company: 'Qubu',
-      role: 'CPO',
+      role: 'Chief Product Officer',
       date: 'Oct 2023 - Present',
       url: 'https://qubu.io',
       description: 'Building powerful generative and collaborative AI powered software for Architects, Engineers & Construction.',
