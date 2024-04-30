@@ -1,6 +1,14 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image'
 
+function Page(props) {
+  return (
+    <RotationImage>
+      asdf
+    </RotationImage>
+  )
+}
+
 export default function RotationImage({children, ...props}) {
   const elementRef = useRef()
 
