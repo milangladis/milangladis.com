@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player with Timeline</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap">
+    <style>
+      body, html {
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        max-width: 640px;
+        max-height: 640px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+
+      video::-webkit-media-controls-panel {
+        display: none !important;
+        opacity: 1 !important;
+      }
+
+      #intro {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 10;
+        font-size: 24px;
+        color: white;
+        pointer-events: none;
+      }
+
+      #intro.hide {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+
+      .point {
+        position: absolute;
+        font-size: 32px;
+        color: white;
+        font-weight: 800;
+        z-index: 100;
+        transform: translate(-50%, -100%);
+        animation: moveUpFadeOut 0.3s forwards;
+      }
+
+      @keyframes moveUpFadeOut {
+        0% {
+          transform: translate(-50%, -50px);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -80px);
+          opacity: 0;
+        }
+      }
+
+      .clickCounterWrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        font-size: 24px;
+        color: white;
+        font-weight: 800;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 8px 16px;
+        border-radius: 8px;
+      }
+
+      .clickCounterWrapper span {
+        min-width: -32px;
+        display: block;
+      }
+
+      #booster {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-size: 20px;
+        font-weight: 800; /* Extra bold */
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="clickCounterWrapper">
+      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_i_6058_13290)">
+          <rect x="1.5" y="2" width="21" height="21" rx="10.5" fill="url(#paint0_linear_6058_13290)"/>
+        </g>
+        <rect x="3" y="3.5" width="18" height="18" rx="9" stroke="url(#paint1_linear_6058_13290)" stroke-width="3"/>
+        <defs>
+          <filter id="filter0_i_6058_13290" x="1.5" y="2" width="21" height="22" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="1"/>
+            <feGaussianBlur stdDeviation="4"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_6058_13290"/>
+          </filter>
+          <linearGradient id="paint0_linear_6058_13290" x1="1.5" y1="2" x2="22.5" y2="23" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFBD01"/>
+            <stop offset="1" stop-color="#FBA300"/>
+          </linearGradient>
+          <linearGradient id="paint1_linear_6058_13290" x1="12" y1="2" x2="12" y2="23" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFDE8C"/>
+            <stop offset="1" stop-color="#FDC95E"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span id="clickCounter">0</span>
+    </div>
+    <video id="myVideo" width="640" height="360" controls="false">
+        <source src="https://milangladis.com/tmp/procreate.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <button id="playByPortion"></button>
+    <!-- <button id="booster">Booster</button> -->
+    <div id="intro">Give it a click</div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('myVideo');
+      const playByPortionButton = document.getElementById('playByPortion');
+      const boosterButton = document.getElementById('booster');
+      const clickCounter = document.getElementById('clickCounter');
+      const intro = document.getElementById('intro');
+      let clickCount = 0;
+
+      playByPortionButton.addEventListener('click', function(event) {
+        intro.classList.add('hide');
+        const portion = video.duration / 1000;
+        video.currentTime += portion;
+
+        // Increment the click counter
+        clickCount++;
+        clickCounter.textContent = clickCount;
+
+        // Get the click position
+        const x = event.clientX;
+        const y = event.clientY;
+
+        // Create the +1 element
+        const point = document.createElement('div');
+        point.classList.add('point');
+        point.textContent = '+1';
+        point.style.left = `${x}px`;
+        point.style.top = `${y}px`;
+        document.body.appendChild(point);
+
+        // Remove the element after animation completes
+        point.addEventListener('animationend', function() {
+          point.remove();
+        });
+      });
+
+      boosterButton.addEventListener('click', function() {
+        const boosterPortion = video.duration / 10; // 100/1000 of the video duration
+        video.currentTime += boosterPortion;
+
+        // Increment the click counter
+        clickCount++;
+        clickCounter.textContent = clickCount;
+
+        // Create the +1 element at the booster button position
+        const boosterRect = boosterButton.getBoundingClientRect();
+        const x = boosterRect.left + (boosterRect.width / 2);
+        const y = boosterRect.top;
+
+        const point = document.createElement('div');
+        point.classList.add('point');
+        point.textContent = '+1';
+        point.style.left = `${x}px`;
+        point.style.top = `${y}px`;
+        document.body.appendChild(point);
+
+        // Remove the element after animation completes
+        point.addEventListener('animationend', function() {
+          point.remove();
+        });
+      });
+
+      video.addEventListener('loadedmetadata', function() {
+        // This ensures the video duration is available before clicking the button
+        console.log('Video duration:', video.duration);
+      });
+    });
+  </script>
+</body>
+</html>
