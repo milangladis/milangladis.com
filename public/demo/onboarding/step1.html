@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expanded Frame</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #482567;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .expanded-frame {
+      width: 450px;
+      height: 320px;
+      padding: 12px 12px 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    /* Container that holds all the groups */
+    .groups-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /* overflow: hidden;  If you want to clip anything that falls past boundary */
+    }
+
+    /* Each .group is absolutely positioned inside .groups-container. */
+    .group {
+      position: absolute;
+      display: flex;
+      width: fit-content;
+      flex: none;
+      left: 20%;
+      /* transform:; */
+      justify-content: center;
+      align-items: center;
+      border-radius: 53.76px;
+      padding: 16px;
+      box-shadow: 0px 4px 68px rgba(0,0,0,0.25);
+      /* Transition for both transform & opacity to make the movement fluid */
+      transition: all 0.5s ease;
+      background: #fff;
+    }
+
+    /* Default content styling */
+    .group-content {
+      display: flex;
+      align-items: center;
+      gap: 15.36px;
+      padding-right: 16px;
+    }
+    .group-image {
+      width: 56px;
+      height: 56px;
+      flex: none;
+      border-radius: 50%;
+    }
+    .group-text {
+      display: flex;
+      flex: none;
+      flex-direction: column;
+      gap: 0;
+    }
+    .group-title {
+      font-size: 17.28px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .group-subtitle {
+      font-size: 13.44px;
+      font-weight: 500;
+      letter-spacing: -0.4px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Points button (optional) */
+    .points-button {
+      position: absolute;
+      z-index: 100;
+      top: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 149.6px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4.8px;
+      background-color: #8c13f7;
+      border-radius: 33.6px;
+      box-shadow: 0px 6px 20px rgba(140, 13, 247, 1);
+    }
+    .points-icon {
+      width: 28.8px;
+      height: 28.8px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    .points-text {
+      font-size: 15.6px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.4px;
+    }
+
+    /* The "fall" class animates the group off the screen:
+       translateY(200px) and random rotation, plus fading out. */
+    .group.fall {
+      opacity: 0 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="expanded-frame">
+    <div class="points-button">
+      <div class="points-icon"></div>
+      <div class="points-text">2 Free Bidz</div>
+    </div>
+    <div class="groups-container"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.groups-container');
+
+      // Some dummy data for new items
+      // BTC, Solana, Ethereum, Ton, USDT 
+      const newGroupsData = [
+        { title: 'Win 10 ETH',   subtitle: 'Value: $16,000 USD', image: 'eth'},
+        { title: 'Win 200 BTC',  subtitle: 'Value: $40,000 USD', image: 'btc'},
+        { title: 'Win 50 TON',   subtitle: 'Value: $312 USD', image: 'ton'},
+        { title: 'Win 100 Solana', subtitle: 'Value: $15 USD', image: 'solana'},
+        { title: 'Win 2 USDT',    subtitle: 'Value: $54,000 USD', image: 'usdt'},
+      ];
+      let newGroupIndex = 0;
+
+      /**
+       * Returns a random rotation in the range [-6, +6].
+       */
+      function getRandomRotation() {
+        return (Math.random() * 24 - 12).toFixed(2); // e.g. -5.23, +3.11, etc.
+      }
+
+      /**
+       * Create a new group (DIV) with random rotation, placed above the container.
+       */
+      function createGroupElement(data) {
+        const groupDiv = document.createElement('div');
+        groupDiv.classList.add('group');
+
+        // Position: you can adjust these for different horizontal offsets
+        groupDiv.style.opacity = '0';
+        groupDiv.style.top = '-20px'; 
+        // groupDiv.style.left = '0';
+
+        const initialRotation = getRandomRotation();
+        groupDiv.style.transform = `rotate(${initialRotation}deg) translateY(0) `;
+
+        // Fill the content
+        groupDiv.innerHTML = `
+          <div class="group-content">
+            <img class="group-image" src="./${data.image}.png"/> 
+            <div class="group-text">
+              <div class="group-title">${data.title}</div>
+              <div class="group-subtitle">${data.subtitle}</div>
+            </div>
+          </div>
+        `;
+        return groupDiv;
+      }
+
+      /**
+       * Animate the new group from outside the container (top) to final position.
+       */
+      function dropNewGroup(groupDiv) {
+        // Force reflow to apply initial transform
+        groupDiv.getBoundingClientRect();
+
+        // Then animate it to final location. We'll choose a random final rotation, too.
+        const finalRotation = getRandomRotation();
+        requestAnimationFrame(() => {
+          groupDiv.style.top = '0px'; // final top
+          groupDiv.style.transform = `rotate(${finalRotation}deg) translateY(0) `;
+          groupDiv.style.opacity = '1';
+        });
+      }
+
+      /**
+       * Insert a new group, then drop it into place.
+       */
+      function addNewGroup() {
+        const data = newGroupsData[newGroupIndex];
+        // cycle through data array
+        newGroupIndex = (newGroupIndex + 1) % newGroupsData.length;
+
+        const newGroup = createGroupElement(data);
+        container.prepend(newGroup); // place it at the top of DOM
+
+        // Animate it downward into place
+        dropNewGroup(newGroup);
+      }
+
+      /**
+       * Animate the bottom-most group to fall +200px with random rotation and fade out,
+       * then remove from the DOM.
+       */
+      function removeBottomGroup() {
+        const groups = container.querySelectorAll('.group');
+        if (groups.length === 0) return;
+
+        const bottomGroup = groups[groups.length - 1];
+        const fallRotation = getRandomRotation();
+        bottomGroup.classList.add('fall');
+        bottomGroup.style.transform = `rotate(${fallRotation}deg) translateY(120px)`;
+        bottomGroup.style.opacity = '0';
+
+        // Remove from DOM after transition
+        bottomGroup.addEventListener(
+          'transitionend',
+          () => {
+            if (bottomGroup.parentNode) {
+              bottomGroup.parentNode.removeChild(bottomGroup);
+            }
+          },
+          { once: true }
+        );
+      }
+
+      /**
+       * Helper: Add `count` new groups at once.
+       */
+      function addMultipleGroups(count = 4) {
+        for (let i = 0; i < count; i++) {
+          addNewGroup();
+        }
+      }
+
+      /**
+       * Helper: Remove `count` groups from the bottom at once.
+       */
+      function removeMultipleGroups(count = 4) {
+        for (let i = 0; i < count; i++) {
+          removeBottomGroup();
+        }
+      }
+
+      // 1) Initially load 4 cards
+      addMultipleGroups(4);
+
+      // 2) Every 2 seconds, drop in 4 new cards and remove 4 old ones
+   
+      setInterval(() => {
+        removeMultipleGroups();
+        addMultipleGroups(1);
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
