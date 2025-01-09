@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Particle Emitter with Random Images</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #482567;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    /* Basic reset and layout for the entire page */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Hide scrollbars to emphasize the effect */
+      background: #222; /* Dark background */
+    }
+
+    /* Emitter container (optional styling) */
+    #emitter {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(120px);
+      z-index: 1;
+    }
+
+    /* Each particle styling */
+    .particle {
+      position: absolute;
+      left: 50%;                /* Start horizontally centered */
+      bottom: 20px;            /* Start near bottom */
+      width: 80px;             /* Adjust to suit your images */
+      height: 80px;            /* Adjust to suit your images */
+      background-size: cover;  /* Make sure the image fills the particle */
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateX(-50%);
+      animation: floatUp 2s forwards;
+    }
+
+    .bagFullOfMoney {
+      position: relative;
+      z-index: 10;
+    }
+
+
+    /* Keyframes for floating up and disappearing */
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      30% {
+        opacity: 1;
+      }
+      80% {
+        /* opacity: 0.2; */
+        transform: translate(-50%, -120px) scale(1); /* Move 100px upward */
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(0.6); /* Move 100px upward */
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="groups-container">
+    <div id="emitter"></div>
+    <img class="bagFullOfMoney" src="./bag.png" width="268" height="207" alt="Bag" />
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Emitter interval in milliseconds
+      const EMIT_INTERVAL = 500; // 0.2s
+
+      // List of images to pick from
+      const images = [
+        './btc.png',
+        './eth.png',
+        './solana.png',
+        './ton.png',
+        './usdt.png'
+      ];
+
+      // Select the emitter container
+      const emitter = document.getElementById('emitter');
+
+      // Function to create and emit a particle
+      function emitParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        // Choose a random image from the array
+        const randomIndex = Math.floor(Math.random() * images.length);
+        const randomImage = images[randomIndex];
+
+        // Set the background image
+        particle.style.backgroundImage = `url('${randomImage}')`;
+
+        // Add the particle to the emitter container
+        emitter.appendChild(particle);
+
+        // Remove the particle after its animation is done + slight buffer
+        setTimeout(() => {
+          emitter.removeChild(particle);
+        }, 2200); // 1s animation + 0.2s buffer
+      }
+
+      // Continuously emit particles at the specified interval
+      setInterval(emitParticle, EMIT_INTERVAL);
+    });
+  </script>
+</body>
+</html>
