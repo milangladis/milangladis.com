@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Particle Emitter with Inline SVG</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #482567;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Basic reset and layout for the entire page */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* Hide scrollbars to emphasize the effect */
+      background: #482567; /* Dark background */
+    }
+
+    /* Emitter container (optional styling) */
+    #emitter {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      /* Lowering it just a bit for demo */
+      transform: translateY(100px);
+      z-index: 1;
+    }
+
+    /* Each particle styling */
+    .particle {
+      position: absolute;
+      left: 50%;    
+      bottom: 20px; 
+      width: 64px;
+      height: 64px;
+
+      /* No more background-image */
+      /* Instead we'll inline the SVG below */
+      
+      transform: translateX(-50%);
+      animation: floatUp 2s forwards;
+      overflow: visible; /* so the SVG can show fully if bigger */
+    }
+
+    /* Make sure the inline SVG fits the .particle box */
+    .particle svg {
+      width: 100%;
+      height: 100%;
+      display: block; /* remove any default inline spacing */
+    }
+
+    .bagFullOfMoney {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Keyframes for floating up and disappearing */
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, 0px) scale(1);
+      }
+      80% {
+        transform: translate(var(--random-x), -100px) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--random-x), -100px) scale(0.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="groups-container">
+    <div id="emitter"></div>
+    <img class="bagFullOfMoney" src="./bag.png" width="268" height="207" alt="Bag" />
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Emitter interval in milliseconds
+      const EMIT_INTERVAL = 500;
+
+      // Your inline SVG string
+      const mySVG = `
+<svg width="176" height="176" viewBox="0 0 176 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M25.9014 66.1914L66.3125 25.7803M92.723 52.1907L52.3118 92.6018" stroke="white" stroke-width="12"/>
+  <path d="M52.6565 97.2966L22.0034 66.6435L13.5181 75.1288C12.698 75.9489 12.698 77.2785 13.5181 78.0986L41.2014 105.782C42.0215 106.602 43.3511 106.602 44.1712 105.782L52.6565 97.2966Z" stroke="white" stroke-width="12"/>
+  <path d="M77.9454 13.6714C77.1253 12.8513 75.7956 12.8513 74.9755 13.6714L66.4902 22.1567L97.1433 52.8097L105.629 44.3245C106.449 43.5044 106.449 42.1747 105.629 41.3546L77.9454 13.6714Z" stroke="white" stroke-width="12"/>
+  <path d="M109.785 121.068L71.0776 78.0249L78.1447 70.9578L121.188 109.666L121.194 109.672C122.366 110.844 122.366 112.743 121.194 113.915L114.035 121.074C112.863 122.246 110.964 122.246 109.792 121.074L109.785 121.068Z" stroke="white" stroke-width="12"/>
+  <path d="M51.9243 38.2803L48.8905 35.2465C45.3758 31.7318 39.6773 31.7318 36.1626 35.2465L35.3671 36.042C31.8524 39.5567 31.8524 45.2552 35.3671 48.7699L38.4009 51.8037" stroke="white" stroke-width="12"/>
+</svg>
+`;
+
+      // Select the emitter container
+      const emitter = document.getElementById('emitter');
+
+      // Function to create and emit a particle
+      function emitParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Set the inline SVG as the particle's content
+        particle.innerHTML = mySVG;
+
+        // Generate a random horizontal offset
+        const randomOffset = (Math.random() - 0.5) * 100;
+        particle.style.setProperty('--random-x', `calc(-50% + ${randomOffset}px)`);
+
+        // Add the particle to the emitter container
+        emitter.appendChild(particle);
+
+        // Remove the particle after its animation is done + slight buffer
+        setTimeout(() => {
+          emitter.removeChild(particle);
+        }, 2200);
+      }
+
+      // Continuously emit particles at the specified interval
+      setInterval(emitParticle, EMIT_INTERVAL);
+    });
+  </script>
+</body>
+</html>
