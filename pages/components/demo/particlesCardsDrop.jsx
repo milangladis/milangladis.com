@@ -11,7 +11,7 @@ const particleData = [
   { title: "Win 2 USDT", subtitle: "Value: $54,000 USD", image: "usdt.png" },
 ]
 
-export function EmitDataCardsAnimation() {
+export default function EmitDataCardsAnimation() {
   // We'll emit our particles into this container
   const emitterRef = useRef(null)
 

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react"
 
-export function EmitImageAnimation() {
+export default function EmitImageAnimation() {
   const emitterRef = useRef(null)
 
   useEffect(() => {
