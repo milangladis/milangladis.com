@@ -16,7 +16,7 @@ const Skills = () => {
     'Go-To-Market',
     'UX',
     'UI',
-    'Iconography',
+    'Icons',
     'Full-stack Web Engineering',
     'Design Systems',
     'Branding',

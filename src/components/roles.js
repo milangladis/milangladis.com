@@ -8,23 +8,24 @@ const Roles = () => {
       emoji: '🙋🏻‍♂️',
       suptitle: 'Plan · Lead · Research',
       roleName: 'Product Manager',
-      description: 'Driving the growth, researching the market, planning the roadmap, OKRs, and leading cross-functional teams to deliver world-class products',
-      expert: 'Expertise in scoping, organisation, ideation, problem solving, and leadership',
+      // description: 'Driving the growth, researching the market, planning the roadmap, OKRs, and leading cross-functional teams to deliver world-class products',
+      description: 'Driving product growth with strong leadership, roadmap planning, and OKR alignment – from discovery to delivery.',
+      expert: 'm a hands-on builder who thrives in dynamic environments.',
       icons: ['atlassian', 'miro', 'trello', 'notion']
     },
     {
       emoji: '👨🏻‍🎨',
       suptitle: 'Design UX · UI · 3D · Icon',
       roleName: 'Product Designer',
-      description: 'Validating ideas, designing minimalistic and functional interface, engaging micro-interactions, meaningful icons, and immersive 3D content',
-      expert: 'Specialist at pixel perfection, consistency, user experience, icon design, and 3D creation',
+      description: 'Designing clean, functional interfaces with attention to every detail — from user flows and UI states to icons and microinteractions.',
+      expert: 'I balance form and function, keeping consistency and usability at the center of everything.',
       icons: ['figma', 'adobe', 'vectary', 'blender']
     },
     {
       emoji: '👨🏻‍💻',
       suptitle: 'Code · no-code',
       roleName: 'Full-Stack Engineer',
-      description: 'Developing functional and robust codebase with a focus on seamless user experience by using modern JavaScript tech stack',
+      description: 'Bringing ideas to life with modern JavaScript tech — building front-ends that pixel perfect, and back-ends that scale.',
       expert: 'Excellence in uniting design and code, micro interactions, and swift delivery',
       icons: ['reactjs', 'nextjs', 'mongodb', 'framer', 'webflow']
     }
@@ -53,13 +54,13 @@ const Role = (role) => {
       </div>
       <div className="">{role.description}</div>
       <div className="text-14 opacity-70">{role.expert}</div>
-      <div className="flex gap-8 mt-8">
+      {/* <div className="flex gap-8 mt-8">
         {
           role.icons.map((icon, index) => (
             <RoleIcon key={index} icon={icon} />
           ))
         }
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -12,7 +12,7 @@ const Teams = () => {
     {
       logo: 'qubu',
       company: 'Qubu',
-      role: 'Chief Product Officer',
+      role: 'Product',
       date: 'Oct 2023 - Present',
       url: 'https://qubu.io',
       description: 'Building powerful generative and collaborative AI powered software for Architects, Engineers & Construction.',
@@ -21,7 +21,7 @@ const Teams = () => {
       logo: 'landvault',
       company: 'Landvault',
       role: 'Product Design Lead',
-      date: 'Jun 2022 - Present',
+      date: 'Jun 2022 - Sep 2024',
       url: 'https://landvault.io',
       description: 'Developing web3 tools that supported immersive 3D experiences creation for metaverses and virtual spaces',
     },
@@ -116,8 +116,8 @@ const Team = (team) => {
               {team.date}
             </div>
           </div>
-          <div className="text-16 md:text-20 font-bold leading-snug">
-            {team.role.split('\n').map((str, index) => <p key={index}>{str}</p>)}
+          <div className="text-16 md:text-20 font-bold leading-snug md:whitespace-pre-line">
+            {team.role}
           </div>
         </div>
       </div>
