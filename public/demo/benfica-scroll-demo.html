@@ -38,10 +38,22 @@
         }
 
         .indicator-line {
-            height: 2px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 2px;
-            cursor: pointer;
+          height: 2px;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 2px;
+          cursor: pointer;
+          position: relative;
+        }
+
+        .indicator-line::before {
+          content: '';
+          position: absolute;
+          top: -15px;
+          bottom: -15px;
+          left: -20px;
+          right: -20px;
+          cursor: pointer;
+          z-index: 5;
         }
 
         .indicator-line:hover {
@@ -156,17 +168,23 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .scroll-indicator {
-                right: 20px;
-            }
-            
-            .section-content h2 {
-                font-size: 2rem;
-            }
-            
-            .section-content p {
-                font-size: 1rem;
-            }
+          .scroll-indicator {
+              right: 20px;
+          }
+          
+          .section-content h2 {
+              font-size: 2rem;
+          }
+          
+          .section-content p {
+              font-size: 1rem;
+          }
+          .indicator-line::before {
+            top: -20px;
+            bottom: -20px;
+            left: -30px;
+            right: -30px;
+          }
         }
     </style>
 </head>
