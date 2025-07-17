@@ -96,9 +96,9 @@ export default function Home(props) {
               <span className='block mb-16'>
                 <span className='relative text-32 md:text-40 font-bold'>
                   Hi 👋🏻 I&apos;m Milan
-                  <span className='hidden sm:flex absolute -right-48 bottom-48 text-14 opacity-30 font-semibold'>
-                    <svg className='relative top-[28px] mr-8' width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 1C15.5 1 9 5.5 3 20M3 20L1 13.5M3 20L9 17.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                    for real
+                  <span className='hidden sm:flex absolute -right-64 bottom-64 text-14 opacity-30 font-semibold'>
+                    <svg className='relative top-[22px] mr-8' width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 1C15.5 1 9 5.5 3 20M3 20L1 13.5M3 20L9 17.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    [MEE-lahn]
                   </span>
                 </span>
               </span>
