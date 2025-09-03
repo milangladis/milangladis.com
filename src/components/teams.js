@@ -60,7 +60,7 @@ const Teams = () => {
       role: 'UX/UI Designer \n & Front-End Developer',
       date: '2013 - 2014',
       dateBackup: 'Apr 2013 - Oct 2014',
-      url: 'https://bonetics.com/',
+      // url: 'https://bonetics.com/',
       description: 'Delivering UX and UI of web and mobile applications for agency’s internal projects and startup clients',
     },
     {

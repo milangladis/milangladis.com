@@ -11,11 +11,11 @@ const SideProjects = () => {
 
   const roles = [
     {
-      logo: 'traua',
-      projectName: 'Traua',
+      logo: 'moqop',
+      projectName: 'Moqop',
       domain: '.com',
-      url: 'https://traua.com',
-      description: 'Platform helps influencers to monetise their travel experience by sharing itinerary, and tips&tricks from the destination',
+      url: 'https://moqop.com',
+      description: 'Design automation tool that currently generates Instagram Stories from athletes\' Strava activities. Imagine rendering images with pure JSON',
     },
     {
       logo: 'iconur',
@@ -25,11 +25,11 @@ const SideProjects = () => {
       description: 'Simple and consistent line icon set available as an interactive web application, but also as Figma and Figjam Plugin. Just click or drag & drop',
     },
     {
-      logo: 'moqop',
-      projectName: 'Moqop',
+      logo: 'traua',
+      projectName: 'Traua',
       domain: '.com',
-      url: 'https://moqop.com',
-      description: 'Design automation tool that currently generates Instagram Stories from athletes\' Strava activities. Imagine rendering images with pure JSON',
+      url: 'https://traua.com',
+      description: 'Platform helps influencers to monetise their travel experience by sharing itinerary, and tips&tricks from the destination',
     },
     {
       logo: 'wman',
@@ -72,7 +72,7 @@ const SideProjects = () => {
     },
     {
       logo: 'mokop',
-      projectName: 'Moqop',
+      projectName: 'Moqop 3D',
       description: 'First Moqop platform was an online 3D mockup tool that generated images of pre-rendered 3D devices with replaceable screens',
     },
     {
@@ -83,7 +83,7 @@ const SideProjects = () => {
     {
       logo: 'dotbook',
       projectName: 'Dotbook',
-      description: 'One of my favourite offline project was dotted notepad for designers with simple dot grid helps designers mock up wireframes and user flow',
+      description: 'One of my favourite offline project was dotted notepad for designers with simple dot grid helps designers mock up wireframes and user flows',
     },
   ]
 
