@@ -28,7 +28,7 @@ const Banner = ({openModal, ...props}) => {
 
 
   useEffect(() => {
-    if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in window && bgRef.current) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -38,9 +38,12 @@ const Banner = ({openModal, ...props}) => {
           }
         });
       });
-      observer.observe(bgRef.current);
+      const currentElement = bgRef.current;
+      observer.observe(currentElement);
       return () => {
-        observer.unobserve(bgRef.current);
+        if (currentElement) {
+          observer.unobserve(currentElement);
+        }
       }
     }
   }, [bgRef]);

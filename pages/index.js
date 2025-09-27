@@ -33,10 +33,25 @@ export default function Home(props) {
       </Head>
 
       <header className='flex flex-wrap w-full p-32 pb-0 items-center'>
-        <h1 className='flex flex-col '>
-          <span className='mb-2 text-18 font-semibold'>Milan Gladiš</span>
-          <span className='text-12 -mt-4 font-medium opacity-50'>Product Leader · Design · Code</span>
-        </h1>
+        <div className="flex items-center gap-16 flex-1">
+          <svg width="32" height="32" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_5135_421)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.95369 4.79057C0 6.66739 0 9.1243 0 14.038C0 18.9518 0 21.4087 0.95369 23.2855C1.79258 24.9364 3.13117 26.2787 4.77758 27.1199C6.64932 28.0761 9.09958 28.0761 14 28.0761C18.9004 28.0761 21.3507 28.0761 23.2224 27.1199C24.8689 26.2787 26.2075 24.9364 27.0464 23.2855C28 21.4087 28 18.9518 28 14.038C28 9.1243 28 6.66739 27.0464 4.79057C26.2075 3.13967 24.8689 1.79746 23.2224 0.956283C21.3507 6.10118e-08 18.9004 0 14 0C9.09958 0 6.64932 6.10118e-08 4.77758 0.956283C3.13117 1.79746 1.79258 3.13967 0.95369 4.79057Z" fill="#38424B"/>
+            <path d="M18.8682 8.48145C20.2235 8.48145 21.297 8.89387 22.0887 9.71875C22.8938 10.5298 23.2964 11.7534 23.2964 13.3893V13.8843V19.7407H20.1564V13.8843C20.1564 13.0044 19.9752 12.3514 19.613 11.9252C19.2641 11.4853 18.7609 11.2654 18.1033 11.2654C17.3653 11.2654 16.7816 11.5128 16.3522 12.0077C15.9228 12.4889 15.7081 13.2106 15.7081 14.173V19.7407H12.5681V13.8843C12.5681 12.1383 11.8838 11.2654 10.5151 11.2654C9.79047 11.2654 9.21346 11.5128 8.78407 12.0077C8.35467 12.4889 8.13997 13.2106 8.13997 14.173V19.7407H5V8.64641H7.99907V9.92498C8.40164 9.45749 8.89141 9.10009 9.46842 8.85263C10.0588 8.60518 10.703 8.48145 11.4007 8.48145C12.1656 8.48145 12.8566 8.63954 13.4739 8.95573C14.0911 9.25818 14.5877 9.70497 14.9634 10.2961C15.4062 9.71875 15.963 9.27194 16.634 8.95573C17.3184 8.63954 18.0631 8.48145 18.8682 8.48145Z" fill="white"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_5135_421">
+            <rect width="28" height="28" fill="white"/>
+            </clipPath>
+            </defs>
+          </svg>
+
+          <h1 className='flex flex-col '>
+            <span className='mb-2 text-18 font-semibold'>Milan Gladiš</span>
+            <span className='text-12 -mt-4 font-medium opacity-50'>Product Leader | Design & Code</span>
+          </h1>
+        </div>
+
         <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-end gap-16 list-none align-middle flex-wrap '>            
           <div className="flex xs:justify-end items-center gap-8">
             {/* <RotationImage type="content" maxTilt="10" parentClass="m-0">
@@ -46,34 +61,34 @@ export default function Home(props) {
                 </span>
               </a>
             </RotationImage> */}
+            <div className="flex justify-center gap-8">
+              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://www.linkedin.com/in/milangladis/" target="_blank" rel="noreferrer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_546_6429)"><path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z" fill="black"/></g><defs><clipPath id="clip0_546_6429"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
+              </a>
+              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://twitter.com/milangladis" target="_blank" rel="noreferrer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21.742 21.75L14.179 10.571L21.235 2.25H18.779L13.088 8.964L8.548 2.25H2.359L9.649 13.026L2.25 21.75H4.706L10.741 14.632L15.559 21.75H21.75H21.742ZM7.739 3.818L18.81 20.182H16.363L5.29 3.818H7.737H7.739Z" fill="black"/>
+                </svg>
+
+              </a>
+            </div>
             <RotationImage type="content" maxTilt="10" parentClass="mx-0">
               <a href="/cv.pdf" target="_blank" className='flex w-fit h-48 gap-8 px-16 items-center justify-center rounded-full font-semibold border-2 border-transparent hover:border-grey transition group'>
                 <span className='md:hidden'>CV</span>
                 <span className="hidden md:flex gap-8 items-center group-hover:scale-105 transition">
-                  Résumé
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 5V13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M16 18H8" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M16 10L12 14L8 10" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
+                  PDF Résumé
                 </span>
               </a>
               </RotationImage>
-            {/* <div className="flex justify-center gap-8">
-              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://blog.milangladis.com" target="_blank" rel="noreferrer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_545_6425)"><path d="M1.44408 1.03513L14.724 0.0542516C16.3553 -0.0856684 16.7743 0.00865156 17.8001 0.754332L22.0392 3.74065C22.7383 4.25425 22.9711 4.39417 22.9711 4.95337V21.3317C22.9711 22.3582 22.5984 22.9654 21.2935 23.058L5.87208 23.9921C4.89288 24.0384 4.42656 23.8985 3.91368 23.245L0.792 19.1856C0.23208 18.4385 0 17.8793 0 17.2255V2.66713C0 1.82785 0.37272 1.12801 1.44408 1.03513Z" fill="white"/><path fillRule="evenodd" clipRule="evenodd" d="M14.724 0.0544916L1.44408 1.03537C0.37272 1.12801 0 1.82809 0 2.66713V17.2255C0 17.8791 0.23208 18.4383 0.792 19.1856L3.91368 23.2447C4.42656 23.8983 4.89288 24.0384 5.87208 23.9919L21.2938 23.0583C22.5977 22.9654 22.9714 22.3582 22.9714 21.3319V4.95361C22.9714 4.42321 22.7618 4.27033 22.145 3.81769L17.8001 0.754332C16.7746 0.00865156 16.3553 -0.0856684 14.724 0.0542516V0.0544916ZM6.2208 4.68553C4.96152 4.77025 4.67592 4.78945 3.96072 4.20793L2.14248 2.76169C1.95768 2.57449 2.05056 2.34097 2.51616 2.29441L15.2825 1.36153C16.3546 1.26793 16.9128 1.64161 17.3321 1.96801L19.5216 3.55441C19.6152 3.60169 19.848 3.88081 19.5679 3.88081L6.384 4.67449L6.2208 4.68577V4.68553ZM4.75272 21.192V7.28809C4.75272 6.68089 4.9392 6.40081 5.49744 6.35377L20.64 5.46721C21.1536 5.42089 21.3857 5.74729 21.3857 6.35353V20.1648C21.3857 20.772 21.2921 21.2856 20.4538 21.3319L5.96328 22.1719C5.12496 22.2183 4.75296 21.9391 4.75296 21.192H4.75272ZM19.0567 8.03353C19.1496 8.45353 19.0567 8.87353 18.6367 8.92153L17.9383 9.06001V19.3255C17.3318 19.6519 16.7736 19.8384 16.307 19.8384C15.5614 19.8384 15.3751 19.6049 14.8166 18.9055L10.2494 11.7199V18.672L11.6942 18.9991C11.6942 18.9991 11.6942 19.8391 10.5286 19.8391L7.31496 20.0256C7.22136 19.8384 7.31496 19.3721 7.64064 19.2792L8.47992 19.0464V9.85441L7.3152 9.76009C7.2216 9.34009 7.4544 8.73361 8.1072 8.68657L11.5553 8.45449L16.3073 15.733V9.29377L15.096 9.15457C15.0024 8.64025 15.3751 8.26657 15.8407 8.22097L19.0567 8.03377V8.03353Z" fill="black"/></g><defs><clipPath id="clip0_545_6425"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
-              </a>
-              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://www.linkedin.com/in/milangladis/" target="_blank" rel="noreferrer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_546_6429)"><path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z" fill="black"/></g><defs><clipPath id="clip0_546_6429"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
-              </a>
-              <a className='flex w-48 h-48 items-center justify-center rounded-full border-2 border-transparent hover:border-black transition' href="https://twitter.com/milangladis" target="_blank" rel="noreferrer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_201_5301)"><path d="M23.954 4.569C23.069 4.958 22.124 5.223 21.129 5.344C22.143 4.733 22.923 3.77 23.292 2.621C22.341 3.176 21.287 3.58 20.165 3.805C19.269 2.846 17.992 2.246 16.574 2.246C13.857 2.246 11.654 4.449 11.654 7.163C11.654 7.553 11.699 7.928 11.781 8.287C7.691 8.094 4.066 6.13 1.64 3.161C1.213 3.883 0.974 4.722 0.974 5.636C0.974 7.346 1.844 8.849 3.162 9.732C2.355 9.706 1.596 9.484 0.934 9.116V9.177C0.934 11.562 2.627 13.551 4.88 14.004C4.467 14.115 4.031 14.175 3.584 14.175C3.27 14.175 2.969 14.145 2.668 14.089C3.299 16.042 5.113 17.466 7.272 17.506C5.592 18.825 3.463 19.611 1.17 19.611C0.78 19.611 0.391 19.588 0 19.544C2.189 20.938 4.768 21.753 7.557 21.753C16.611 21.753 21.556 14.257 21.556 7.767C21.556 7.558 21.556 7.347 21.541 7.137C22.502 6.448 23.341 5.577 24.001 4.589L23.954 4.569Z" fill="black"/></g><defs><clipPath id="clip0_201_5301"><rect width="24" height="24" fill="white"/></clipPath></defs></svg>
-              </a>
-            </div> */}
             <RotationImage type="content" maxTilt="10" parentClass="mx-0">
               <ButtonLink onClick={openModal} href="mailto:hello@milangladis.com" className="group border-2 transition">
                 <span className="flex gap-8 items-center group-hover:scale-105 transition">
-                  <span className='hidden md:block'>Contact me</span>
+                  <span className='hidden md:block'>Schedule call</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.82843 14.8284L11.5859 19.7467C12.005 20.4942 13.1086 20.4028 13.399 19.5966L17.9363 7.00023C18.2232 6.20399 17.4529 5.43369 16.6566 5.72051L4.06029 10.2579C3.25409 10.5483 3.1627 11.6519 3.91015 12.0709L8.82843 14.8284ZM8.82843 14.8284L10.7441 12.9127" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -95,27 +110,27 @@ export default function Home(props) {
             <div className="flex flex-col justify-center">
               <span className='block mb-16'>
                 <span className='relative text-32 md:text-40 font-bold'>
-                  Hi 👋🏻 I&apos;m Milan
-                  <span className='hidden sm:flex absolute -right-64 bottom-64 text-14 opacity-30 font-semibold'>
+                  {/* Hi 👋🏻  */}
+                  {/* <span className='hidden sm:flex absolute -right-64 bottom-64 text-14 opacity-30 font-semibold'>
                     <svg className='relative top-[22px] mr-8' width="29" height="21" viewBox="0 0 29 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28 1C15.5 1 9 5.5 3 20M3 20L1 13.5M3 20L9 17.5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                     [MEE-lahn]
-                  </span>
+                  </span> */}
                 </span>
               </span>
-              <div className="text-18 md:text-20 mb-8 leading-16">
-                Product leader & strategist <Br /> 
+              <div className="text-32 md:text-40 font-bold mb-16 leading-16">
+                Product leader & advisor <Br/> 
                 for startups and founders.
               </div>
-              <div className="text-13 md:text-16 mb-32 leading-16">
+              <div className="text-13 md:text-20 mb-32 leading-16">
                 Fluent in design & code, can guide <Br/>
                 vision with execution insight.
               </div>
-              <div className="hidden text-18 md:text-20 mb-32 leading-16">
+              {/* <div className=" text-18 md:text-20 mb-32 leading-16">
               Product, design, and tech leader <Br /> 
               leading research and development <Br />
               in 3D, AR, AI, and AEC markets <Br />
               for startups, product teams, founders.
-              </div>
+              </div> */}
               <div>
               <RotationImage type="content" maxTilt="10" parentClass="ml-0">
                 <ButtonLink onClick={openModal} href="mailto:hello@milangladis.com" target="_blank" className="pl-24 pr-32 h-64 text-white bg-black bg-gradient-to-br from-[#924FE7] to-[#5214E1]">
@@ -132,10 +147,9 @@ export default function Home(props) {
           </div>
         </div>
 
-        {/* <Divider /> */}
-        <Social />
+        
 
-        <div className="">
+        <div className="py-96">
           <Heading2>My roles</Heading2>
           <SubHeading2>
             Empowering SMEs to build new or optimise existing products <Br /> 
@@ -166,7 +180,10 @@ export default function Home(props) {
           <Teams />
         </div>
 
-        <Divider />
+
+
+
+        <Social />
         
         <div className="">
           <Heading2>Side-projects I&apos;ve built</Heading2>

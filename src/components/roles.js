@@ -6,8 +6,8 @@ const Roles = () => {
   const roles = [
     {
       emoji: '🙋🏻‍♂️',
-      suptitle: 'Plan · Lead · Research',
-      roleName: 'Product Manager',
+      suptitle: 'Discover · Plan · Deliver',
+      roleName: 'Product Leader',
       // description: 'Driving the growth, researching the market, planning the roadmap, OKRs, and leading cross-functional teams to deliver world-class products',
       description: 'Driving product growth with strong leadership, roadmap planning, and OKR alignment – from discovery to delivery.',
       expert: 'm a hands-on builder who thrives in dynamic environments.',

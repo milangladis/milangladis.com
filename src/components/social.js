@@ -8,7 +8,7 @@ const Social = () => {
     <div className=" my-64 md:my-96 flex flex-wrap justify-center xl:justify-between text-16 overflow-hidden">
         <Item name="Strava" icon="strava" link="https://www.strava.com/athletes/42409445" color="FC4C01" />
         <Item name="Linkedin" icon="linkedin" link="https://www.linkedin.com/in/milangladis/" color="2C64BC" />
-        <Item name="Twitter" icon="twitter" link="https://twitter.com/milangladis" color="4A99E9" />
+        <Item name="Twitter" icon="twitter" link="https://twitter.com/milangladis" color="000000" />
         <Item name="GitHub" icon="github" link="https://github.com/milangladis/" color="000000" />
         {/* <Item name="Notion" icon="notion" link="https://blog.milangladis.com/" color="D16A5E" /> */}
         <Item name="Figma" icon="figma" link="https://www.figma.com/@milangladis" color="000000" />

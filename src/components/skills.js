@@ -9,18 +9,20 @@ const Skills = () => {
 
 
   const skills = [
-    'Product Management',  
-    'Project Management',  
-    'Market Research',
+    'Product Leadership',  
     'Product Design',
-    'Go-To-Market',
-    'UX',
-    'UI',
-    'Icons',
     'Full-stack Web Engineering',
+    'Automation',  
+    'LLMs',  
+    'Go-To-Market',
+    'UX/UI',
+    'Icons',
     'Design Systems',
     'Branding',
-    'Early-stage Principles Setup',
+    'Sales',
+    'Marketing',
+    'SEO',
+    'Early-stage Startups',
     'Hiring',
   ]
 
