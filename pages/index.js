@@ -27,7 +27,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Milan Gladiš · Product · Design · Code</title>
+        <title>Milan Gladiš · Product leader & strategist for startups and founders.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
         <meta name="description" content="Hi 👋 I&apos;m Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, metaverse, and architecture." />
       </Head>
@@ -35,7 +35,7 @@ export default function Home(props) {
       <header className='flex flex-wrap w-full p-32 pb-0 items-center'>
         <h1 className='flex flex-col '>
           <span className='mb-2 text-18 font-semibold'>Milan Gladiš</span>
-          <span className='text-12 -mt-4 font-medium opacity-50'>Product · Design · Code</span>
+          <span className='text-12 -mt-4 font-medium opacity-50'>Product Leader · Design · Code</span>
         </h1>
         <div className='navigation flex flex-col md:flex-row navigation flex-1 justify-end gap-16 list-none align-middle flex-wrap '>            
           <div className="flex xs:justify-end items-center gap-8">
@@ -102,11 +102,19 @@ export default function Home(props) {
                   </span>
                 </span>
               </span>
-              <div className="text-18 md:text-20 mb-32 leading-16">
-              Product, design, and tech generalist <Br /> 
-              building cutting-edge digital tools <Br />
+              <div className="text-18 md:text-20 mb-8 leading-16">
+                Product leader & strategist <Br /> 
+                for startups and founders.
+              </div>
+              <div className="text-13 md:text-16 mb-32 leading-16">
+                Fluent in design & code, can guide <Br/>
+                vision with execution insight.
+              </div>
+              <div className="hidden text-18 md:text-20 mb-32 leading-16">
+              Product, design, and tech leader <Br /> 
+              leading research and development <Br />
               in 3D, AR, AI, and AEC markets <Br />
-              for companies with bold vision.
+              for startups, product teams, founders.
               </div>
               <div>
               <RotationImage type="content" maxTilt="10" parentClass="ml-0">
