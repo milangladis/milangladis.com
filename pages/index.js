@@ -118,7 +118,7 @@ export default function Home(props) {
                 </span>
               </span>
               <div className="text-32 md:text-40 font-bold mb-16 leading-16">
-                Hi, I'm Milan 👋🏼 <Br />
+                Hi, I&apos;m Milan 👋🏼 <Br />
                 Product leader & advisor. <Br/> 
               </div>
               <div className="text-18 md:text-20 mb-32 leading-16">
