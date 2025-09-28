@@ -119,17 +119,17 @@ const Team = (team) => {
               </div> 
             } 
 
-            <div className="flex h-24 items-center gap-4 py-0 px-8 text-13 whitespace-nowrap opacity-50">
+            <div className="flex h-24 items-center gap-4 py-0 px-8 text-14 whitespace-nowrap opacity-50">
               {team.date}
             </div>
           </div>
-          <div className="text-16 md:text-20 font-bold leading-snug md:whitespace-pre-line">
+          <h3 className="leading-snug md:whitespace-pre-line">
             {team.role}
-          </div>
+          </h3>
         </div>
       </div>
       <div className="">{team.description}</div>
-      <div className="text-14 opacity-70">{team.expert}</div>
+      <div className="opacity-70">{team.expert}</div>
     </div>
   )
 }

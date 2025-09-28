@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react"
+import Image from "next/image"
 
 export default function EmitImageAnimation() {
   const emitterRef = useRef(null)
@@ -83,7 +84,7 @@ export default function EmitImageAnimation() {
         }}
       ></div>
 
-      <img
+      <Image
         className="bagFullOfMoney"
         src="https://milangladis.com/demo/onboarding/bag.png"
         width={268}

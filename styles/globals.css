@@ -26,7 +26,7 @@ body {
   min-height: 100vh;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 160%;
   -webkit-font-smoothing: antialiased;
 }
@@ -68,4 +68,9 @@ section {
 
 .page {
   min-height: calc(100vh - 167px);
+}
+
+
+h3 {
+  @apply text-18 md:text-24 font-bold;
 }

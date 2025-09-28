@@ -76,21 +76,21 @@ export default function Home(props) {
             <div className="flex flex-col justify-center items-center">            
               1.
               <RotationImage type="content" maxTilt="10" parentClass="ml-0">
-                <Image src="/resource/badge.svg" width={384} height={384} />
+                <Image src="/resource/badge.svg" width={384} height={384} alt="3D badge with minimal tilt effect" />
               </RotationImage>
             </div>
 
             <div className="flex flex-col justify-center items-center">  
             2.            
               <RotationImage type="content" maxTilt="15" scale="1.1" parentClass="ml-0">
-                <Image src="/resource/badge.svg" width={384} height={384} />
+                <Image src="/resource/badge.svg" width={384} height={384} alt="3D badge with medium tilt effect" />
               </RotationImage>
             </div>
 
             <div className="flex flex-col justify-center items-center">   
             3.           
               <RotationImage type="content" maxTilt="20" scale="1.2" parentClass="ml-0">
-                <Image src="/resource/badge.svg" width={384} height={384} />
+                <Image src="/resource/badge.svg" width={384} height={384} alt="3D badge with maximum tilt effect" />
               </RotationImage>
             </div>
           </div>
