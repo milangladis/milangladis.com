@@ -46,6 +46,12 @@ const SideProjects = () => {
       description: 'Generating simple AI apps by writing text prompt speeds up repetitive tasks within the team, easily shareable with the community ',
     },
     {
+      logo: 'doname',
+      projectName: 'DoName',
+      url: 'https://doname.milangladis.com',
+      description: 'Quick domain name checker with the vision to build a platform that uses LLM to generate names based on keywords, and suggests alternatives',
+    },
+    {
       logo: 'runee',
       projectName: 'Runee',
       domain: '.app',
