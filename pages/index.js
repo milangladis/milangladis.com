@@ -27,7 +27,7 @@ export default function Home(props) {
   return (
     <>
       <Head>
-        <title>Milan Gladiš · Product leader & strategist for startups and founders.</title>
+        <title>Milan Gladiš · Product leader & Strategist for startups and founders.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
         <meta name="description" content="Hi 👋 I&apos;m Milan. Product, design, and tech person who builds web products for 3D, AR, AI, AdTech, blockchain, metaverse, and architecture." />
       </Head>
